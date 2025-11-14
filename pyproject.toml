@@ -1,0 +1,27 @@
+[project]
+name = "dashboard-cientifico"
+version = "0.1.0"
+description = "Proyecto final #3 del curso superior de Python en Deusto Formación"
+authors = [
+    {name = "jmnicolas64",email = "josemanuelnicolassanchez@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.12"
+dependencies = [
+    "pandas (>=2.3.3,<3.0.0)",
+    "numpy (>=2.3.4,<3.0.0)",
+    "matplotlib (>=3.10.7,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.0,<10.0.0)",
+    "mypy (>=1.18.2,<2.0.0)",
+    "ruff (>=0.14.4,<0.15.0)"
+]
