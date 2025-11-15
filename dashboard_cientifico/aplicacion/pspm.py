@@ -1,7 +1,9 @@
 import csv
 import json
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 import os
 from datetime import datetime # ¡Necesario para convertir la fecha a día de la semana!
 
@@ -202,50 +204,57 @@ def calcular_totales_y_extremos(datos, metrica):
 # EJEMPLO DE MEJORA EN UN GRÁFICO DE QUESO ESTÁNDAR
 def generar_grafica_queso(totales_por_provincia, metrica, provincia_max, provincia_min):
     """
-    Genera un gráfico de queso para las provincias con mayor y menor valor, 
-    y el resto agrupado.
+    Genera un gráfico de queso visualmente mejorado usando estilos de Seaborn,
+    enfatizando el máximo y el mínimo mediante 'explode' y paletas de color.
     """
-    
-    # Obtener el valor de la provincia con máximo y mínimo
+    # 1. Preparación de datos (Se mantiene la lógica de Extremos vs Resto)
     valor_max = totales_por_provincia[provincia_max]
     valor_min = totales_por_provincia[provincia_min]
-    
-    # Calcular el resto (la suma de todas las demás provincias)
     total_general = sum(totales_por_provincia.values())
-    
-    # Restar los extremos para obtener la suma del 'Resto'
     valor_resto = total_general - valor_max - valor_min
     
-    # 1. Definir los datos para el pie chart
     etiquetas = [
-        f'{provincia_max} (Máximo)', 
-        f'{provincia_min} (Mínimo)', 
-        'Resto de Provincias'
+        f'{provincia_max} (Máx: {valor_max})', 
+        f'{provincia_min} (Mín: {valor_min})', 
+        f'Resto de Provincias ({valor_resto})'
     ]
     datos = [valor_max, valor_min, valor_resto]
     
     titulo_limpio = metrica.replace('_', ' ').title()
     titulo = f'Distribución de {titulo_limpio} (Extremos vs Resto)'
 
-    # 2. Dibujar el Gráfico
+    # 2. Configuración y Dibujo del Gráfico
+    
+    # 📈 Aplicar un estilo de Seaborn (mejora fuentes y fondo)
     sns.set_style("whitegrid") 
-    plt.figure(figsize=(9, 9))
+    plt.figure(figsize=(10, 10)) 
+
+    # 💥 EXPLODE: Separa la porción del máximo (0.1) y del mínimo (0.05) para dar énfasis.
+    explode = (0.1, 0.05, 0)
+    
+    # 🌈 PALETA: Usamos una paleta de Seaborn (ej: 'Set2' o 'Pastel1')
+    # Se genera un conjunto de 3 colores.
+    colores = sns.color_palette('pastel', n_colors=3) 
     
     plt.pie(
         datos, 
         labels=etiquetas, 
         autopct='%1.1f%%',       # Muestra el porcentaje con un decimal
         startangle=90, 
-        wedgeprops={'edgecolor': 'black', 'linewidth': 1.5}
+        wedgeprops={'edgecolor': 'black', 'linewidth': 1.5}, # Borde negro para definir las porciones
+        explode=explode,  # Aplica la separación
+        colors=colores,   # Aplica los colores de Seaborn
+        # Sombra sutil para darle profundidad
+        shadow=True 
     )
     
     plt.title(titulo, fontsize=16, fontweight='bold')
     plt.axis('equal') 
-    plt.show() # Mantener plt.show()
+    plt.show() 
     
-    # Añadido: Espera de usuario para no bloquear el menú
+    # Manejo del modo interactivo
     input("Presiona ENTER para volver al menú...")
-    plt.close() # Cierra la ventana del gráfico al volver al menú
+    plt.close()
 
 def menu_ejercicio3(datos):
     """Menú interactivo para el análisis de extremos (Ejercicio 3)."""
