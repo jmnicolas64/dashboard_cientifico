@@ -46,3 +46,31 @@ NOMBRE_ARCHIVO_ENTRADA: str = "datos_mediciones.csv"
 
 # Ruta ABSOLUTA completa al archivo de entrada (asumiendo que está en la carpeta 'archivos')
 RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
+
+# C:\...\dashboard_cientifico\aplicacion\config\settings.py
+
+# --- CONFIGURACIÓN DE ARCHIVOS ---
+NOMBRE_CSV = 'datos_covid.csv'
+NOMBRE_JSON = 'datos_agrupados.json'
+NOMBRE_BBDD = 'covid_data.sqlite' # Para la versión ampliada (Flask)
+
+# --- MÉTODOS DE AGRUPACIÓN ---
+DIAS_SEMANA = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+
+# --- MAPEO DE MÉTRICAS ---
+# Mapeo de las métricas del proyecto a las columnas del CSV
+METRICAS_MAPEO = {
+    'num_def': 'deceased',
+    'new_cases': 'new_cases',
+    'num_hosp': 'num_hosp',
+    'num_uci': 'num_uci'
+}
+METRICAS_CLAVES = list(METRICAS_MAPEO.keys()) 
+
+# Opciones de menú para la selección de gráficos
+OPCIONES_GRAFICOS = {
+    1: {'metrica': 'num_def', 'nombre': 'Defunciones'},
+    2: {'metrica': 'new_cases', 'nombre': 'Casos'},
+    3: {'metrica': 'num_hosp', 'nombre': 'Hospitalizados'},
+    4: {'metrica': 'num_uci', 'nombre': 'UCI'}
+}
