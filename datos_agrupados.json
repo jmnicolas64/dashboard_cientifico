@@ -1,0 +1,2290 @@
+{
+    "Albacete": {
+        "Lunes": {
+            "num_def": 3539,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 3539,
+            "new_cases": 0,
+            "num_hosp": 8,
+            "num_uci": 2
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3540,
+            "new_cases": 0,
+            "num_hosp": 9,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 3540,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 3540,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 10,
+            "num_uci": 3
+        }
+    },
+    "Alicante/Alacant": {
+        "Lunes": {
+            "num_def": 14098,
+            "new_cases": 330,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 11270,
+            "new_cases": 136,
+            "num_hosp": 10,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 11277,
+            "new_cases": 184,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 11284,
+            "new_cases": 217,
+            "num_hosp": 10,
+            "num_uci": 2
+        },
+        "Viernes": {
+            "num_def": 11290,
+            "new_cases": 256,
+            "num_hosp": 8,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 8422,
+            "new_cases": 162,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 70,
+            "num_hosp": 5,
+            "num_uci": 2
+        }
+    },
+    "Almer\u00eda": {
+        "Lunes": {
+            "num_def": 4103,
+            "new_cases": 0,
+            "num_hosp": 21,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 3279,
+            "new_cases": 0,
+            "num_hosp": 29,
+            "num_uci": 6
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3289,
+            "new_cases": 0,
+            "num_hosp": 15,
+            "num_uci": 2
+        },
+        "Jueves": {
+            "num_def": 3293,
+            "new_cases": 0,
+            "num_hosp": 14,
+            "num_uci": 2
+        },
+        "Viernes": {
+            "num_def": 2465,
+            "new_cases": 0,
+            "num_hosp": 12,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 3277,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 5
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 21,
+            "num_uci": 2
+        }
+    },
+    "Araba/\u00c1lava": {
+        "Lunes": {
+            "num_def": 0,
+            "new_cases": 147,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 0,
+            "new_cases": 150,
+            "num_hosp": 0,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 0,
+            "new_cases": 159,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 0,
+            "new_cases": 174,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 0,
+            "new_cases": 161,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 725,
+            "new_cases": 203,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 725,
+            "new_cases": 154,
+            "num_hosp": 2,
+            "num_uci": 0
+        }
+    },
+    "Asturias": {
+        "Lunes": {
+            "num_def": 9817,
+            "new_cases": 284,
+            "num_hosp": 34,
+            "num_uci": 6
+        },
+        "Martes": {
+            "num_def": 7847,
+            "new_cases": 208,
+            "num_hosp": 23,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 7851,
+            "new_cases": 222,
+            "num_hosp": 27,
+            "num_uci": 3
+        },
+        "Jueves": {
+            "num_def": 7852,
+            "new_cases": 238,
+            "num_hosp": 30,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 7855,
+            "new_cases": 237,
+            "num_hosp": 23,
+            "num_uci": 4
+        },
+        "S\u00e1bado": {
+            "num_def": 9810,
+            "new_cases": 292,
+            "num_hosp": 27,
+            "num_uci": 5
+        },
+        "Domingo": {
+            "num_def": 9813,
+            "new_cases": 174,
+            "num_hosp": 23,
+            "num_uci": 2
+        }
+    },
+    "\u00c1vila": {
+        "Lunes": {
+            "num_def": 3674,
+            "new_cases": 44,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 2936,
+            "new_cases": 61,
+            "num_hosp": 3,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2938,
+            "new_cases": 64,
+            "num_hosp": 9,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 2941,
+            "new_cases": 40,
+            "num_hosp": 1,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 2942,
+            "new_cases": 59,
+            "num_hosp": 4,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 3672,
+            "new_cases": 62,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 3672,
+            "new_cases": 47,
+            "num_hosp": 6,
+            "num_uci": 3
+        }
+    },
+    "Badajoz": {
+        "Lunes": {
+            "num_def": 4524,
+            "new_cases": 244,
+            "num_hosp": 11,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 3619,
+            "new_cases": 203,
+            "num_hosp": 8,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3619,
+            "new_cases": 189,
+            "num_hosp": 7,
+            "num_uci": 2
+        },
+        "Jueves": {
+            "num_def": 3619,
+            "new_cases": 199,
+            "num_hosp": 14,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 3619,
+            "new_cases": 178,
+            "num_hosp": 10,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 4523,
+            "new_cases": 152,
+            "num_hosp": 15,
+            "num_uci": 2
+        },
+        "Domingo": {
+            "num_def": 4523,
+            "new_cases": 102,
+            "num_hosp": 11,
+            "num_uci": 5
+        }
+    },
+    "Balears, Illes": {
+        "Lunes": {
+            "num_def": 4167,
+            "new_cases": 0,
+            "num_hosp": 17,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 3330,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3334,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 2
+        },
+        "Jueves": {
+            "num_def": 3336,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 3342,
+            "new_cases": 0,
+            "num_hosp": 13,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 3324,
+            "new_cases": 0,
+            "num_hosp": 13,
+            "num_uci": 2
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        }
+    },
+    "Barcelona": {
+        "Lunes": {
+            "num_def": 89071,
+            "new_cases": 0,
+            "num_hosp": 132,
+            "num_uci": 14
+        },
+        "Martes": {
+            "num_def": 71230,
+            "new_cases": 0,
+            "num_hosp": 96,
+            "num_uci": 6
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 71254,
+            "new_cases": 0,
+            "num_hosp": 90,
+            "num_uci": 11
+        },
+        "Jueves": {
+            "num_def": 71275,
+            "new_cases": 0,
+            "num_hosp": 83,
+            "num_uci": 8
+        },
+        "Viernes": {
+            "num_def": 71289,
+            "new_cases": 0,
+            "num_hosp": 91,
+            "num_uci": 7
+        },
+        "S\u00e1bado": {
+            "num_def": 89011,
+            "new_cases": 0,
+            "num_hosp": 91,
+            "num_uci": 16
+        },
+        "Domingo": {
+            "num_def": 89040,
+            "new_cases": 0,
+            "num_hosp": 102,
+            "num_uci": 8
+        }
+    },
+    "Bizkaia": {
+        "Lunes": {
+            "num_def": 0,
+            "new_cases": 1091,
+            "num_hosp": 42,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 0,
+            "new_cases": 1113,
+            "num_hosp": 49,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 0,
+            "new_cases": 1056,
+            "num_hosp": 32,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 0,
+            "new_cases": 970,
+            "num_hosp": 31,
+            "num_uci": 2
+        },
+        "Viernes": {
+            "num_def": 0,
+            "new_cases": 945,
+            "num_hosp": 23,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 2317,
+            "new_cases": 1024,
+            "num_hosp": 48,
+            "num_uci": 3
+        },
+        "Domingo": {
+            "num_def": 2317,
+            "new_cases": 848,
+            "num_hosp": 24,
+            "num_uci": 5
+        }
+    },
+    "Burgos": {
+        "Lunes": {
+            "num_def": 6884,
+            "new_cases": 142,
+            "num_hosp": 25,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 5501,
+            "new_cases": 268,
+            "num_hosp": 20,
+            "num_uci": 3
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 5504,
+            "new_cases": 245,
+            "num_hosp": 27,
+            "num_uci": 5
+        },
+        "Jueves": {
+            "num_def": 5507,
+            "new_cases": 266,
+            "num_hosp": 15,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 5511,
+            "new_cases": 277,
+            "num_hosp": 21,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 6876,
+            "new_cases": 316,
+            "num_hosp": 20,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 6878,
+            "new_cases": 180,
+            "num_hosp": 14,
+            "num_uci": 4
+        }
+    },
+    "C\u00e1ceres": {
+        "Lunes": {
+            "num_def": 4282,
+            "new_cases": 87,
+            "num_hosp": 7,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 3425,
+            "new_cases": 114,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3427,
+            "new_cases": 60,
+            "num_hosp": 1,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 3427,
+            "new_cases": 67,
+            "num_hosp": 5,
+            "num_uci": 2
+        },
+        "Viernes": {
+            "num_def": 3427,
+            "new_cases": 100,
+            "num_hosp": 5,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 4280,
+            "new_cases": 94,
+            "num_hosp": 3,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 4281,
+            "new_cases": 63,
+            "num_hosp": 3,
+            "num_uci": 0
+        }
+    },
+    "C\u00e1diz": {
+        "Lunes": {
+            "num_def": 7339,
+            "new_cases": 0,
+            "num_hosp": 25,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 5871,
+            "new_cases": 0,
+            "num_hosp": 28,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 5877,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 5881,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 4404,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 4
+        },
+        "S\u00e1bado": {
+            "num_def": 5864,
+            "new_cases": 0,
+            "num_hosp": 30,
+            "num_uci": 3
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 18,
+            "num_uci": 2
+        }
+    },
+    "Cantabria": {
+        "Lunes": {
+            "num_def": 2826,
+            "new_cases": 0,
+            "num_hosp": 34,
+            "num_uci": 7
+        },
+        "Martes": {
+            "num_def": 2258,
+            "new_cases": 0,
+            "num_hosp": 27,
+            "num_uci": 6
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2259,
+            "new_cases": 0,
+            "num_hosp": 27,
+            "num_uci": 5
+        },
+        "Jueves": {
+            "num_def": 2260,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 4
+        },
+        "Viernes": {
+            "num_def": 2264,
+            "new_cases": 0,
+            "num_hosp": 31,
+            "num_uci": 5
+        },
+        "S\u00e1bado": {
+            "num_def": 2825,
+            "new_cases": 0,
+            "num_hosp": 31,
+            "num_uci": 11
+        },
+        "Domingo": {
+            "num_def": 2826,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 5
+        }
+    },
+    "Castell\u00f3n/Castell\u00f3": {
+        "Lunes": {
+            "num_def": 4007,
+            "new_cases": 96,
+            "num_hosp": 11,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 3204,
+            "new_cases": 104,
+            "num_hosp": 9,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3208,
+            "new_cases": 99,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 3209,
+            "new_cases": 111,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 3210,
+            "new_cases": 102,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 2398,
+            "new_cases": 73,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 43,
+            "num_hosp": 7,
+            "num_uci": 4
+        }
+    },
+    "Ceuta": {
+        "Lunes": {
+            "num_def": 562,
+            "new_cases": 8,
+            "num_hosp": 3,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 448,
+            "new_cases": 6,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 450,
+            "new_cases": 6,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 450,
+            "new_cases": 4,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 561,
+            "new_cases": 3,
+            "num_hosp": 1,
+            "num_uci": 1
+        }
+    },
+    "Ciudad Real": {
+        "Lunes": {
+            "num_def": 6859,
+            "new_cases": 0,
+            "num_hosp": 11,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 6864,
+            "new_cases": 0,
+            "num_hosp": 13,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 6867,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 6869,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 6873,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 9,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 13,
+            "num_uci": 1
+        }
+    },
+    "C\u00f3rdoba": {
+        "Lunes": {
+            "num_def": 4738,
+            "new_cases": 0,
+            "num_hosp": 30,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 3786,
+            "new_cases": 0,
+            "num_hosp": 25,
+            "num_uci": 5
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3791,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 4
+        },
+        "Jueves": {
+            "num_def": 3793,
+            "new_cases": 0,
+            "num_hosp": 14,
+            "num_uci": 4
+        },
+        "Viernes": {
+            "num_def": 2840,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 4
+        },
+        "S\u00e1bado": {
+            "num_def": 3786,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 2
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 36,
+            "num_uci": 8
+        }
+    },
+    "Coru\u00f1a, A": {
+        "Lunes": {
+            "num_def": 5834,
+            "new_cases": 0,
+            "num_hosp": 29,
+            "num_uci": 5
+        },
+        "Martes": {
+            "num_def": 4665,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 3
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 4666,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 7
+        },
+        "Jueves": {
+            "num_def": 4667,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 4667,
+            "new_cases": 0,
+            "num_hosp": 16,
+            "num_uci": 4
+        },
+        "S\u00e1bado": {
+            "num_def": 5830,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 3
+        },
+        "Domingo": {
+            "num_def": 5831,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 7
+        }
+    },
+    "Cuenca": {
+        "Lunes": {
+            "num_def": 2155,
+            "new_cases": 0,
+            "num_hosp": 8,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 2158,
+            "new_cases": 0,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2158,
+            "new_cases": 0,
+            "num_hosp": 2,
+            "num_uci": 2
+        },
+        "Jueves": {
+            "num_def": 2158,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 2158,
+            "new_cases": 0,
+            "num_hosp": 2,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        }
+    },
+    "Gipuzkoa": {
+        "Lunes": {
+            "num_def": 0,
+            "new_cases": 822,
+            "num_hosp": 2,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 0,
+            "new_cases": 619,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 0,
+            "new_cases": 607,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 0,
+            "new_cases": 604,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 0,
+            "new_cases": 616,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 1178,
+            "new_cases": 627,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 1178,
+            "new_cases": 612,
+            "num_hosp": 0,
+            "num_uci": 0
+        }
+    },
+    "Girona": {
+        "Lunes": {
+            "num_def": 10636,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 8502,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 8507,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 8511,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 8516,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 10626,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 10631,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        }
+    },
+    "Granada": {
+        "Lunes": {
+            "num_def": 8643,
+            "new_cases": 0,
+            "num_hosp": 87,
+            "num_uci": 12
+        },
+        "Martes": {
+            "num_def": 6913,
+            "new_cases": 0,
+            "num_hosp": 75,
+            "num_uci": 11
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 6923,
+            "new_cases": 0,
+            "num_hosp": 60,
+            "num_uci": 15
+        },
+        "Jueves": {
+            "num_def": 6931,
+            "new_cases": 0,
+            "num_hosp": 63,
+            "num_uci": 12
+        },
+        "Viernes": {
+            "num_def": 5187,
+            "new_cases": 0,
+            "num_hosp": 75,
+            "num_uci": 9
+        },
+        "S\u00e1bado": {
+            "num_def": 6894,
+            "new_cases": 0,
+            "num_hosp": 79,
+            "num_uci": 13
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 69,
+            "num_uci": 11
+        }
+    },
+    "Guadalajara": {
+        "Lunes": {
+            "num_def": 2487,
+            "new_cases": 0,
+            "num_hosp": 2,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 2488,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2488,
+            "new_cases": 0,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 2489,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 2490,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 0,
+            "num_uci": 0
+        }
+    },
+    "Huelva": {
+        "Lunes": {
+            "num_def": 1852,
+            "new_cases": 0,
+            "num_hosp": 36,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 1481,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 3
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1484,
+            "new_cases": 0,
+            "num_hosp": 28,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 1486,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 1110,
+            "new_cases": 0,
+            "num_hosp": 19,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 1482,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 4
+        }
+    },
+    "Huesca": {
+        "Lunes": {
+            "num_def": 2396,
+            "new_cases": 117,
+            "num_hosp": 4,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 1916,
+            "new_cases": 135,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1916,
+            "new_cases": 105,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 1917,
+            "new_cases": 124,
+            "num_hosp": 7,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 1917,
+            "new_cases": 116,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 2394,
+            "new_cases": 90,
+            "num_hosp": 9,
+            "num_uci": 2
+        },
+        "Domingo": {
+            "num_def": 2394,
+            "new_cases": 39,
+            "num_hosp": 10,
+            "num_uci": 2
+        }
+    },
+    "Ja\u00e9n": {
+        "Lunes": {
+            "num_def": 4862,
+            "new_cases": 0,
+            "num_hosp": 39,
+            "num_uci": 8
+        },
+        "Martes": {
+            "num_def": 3889,
+            "new_cases": 0,
+            "num_hosp": 34,
+            "num_uci": 6
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3892,
+            "new_cases": 0,
+            "num_hosp": 47,
+            "num_uci": 6
+        },
+        "Jueves": {
+            "num_def": 3895,
+            "new_cases": 0,
+            "num_hosp": 44,
+            "num_uci": 5
+        },
+        "Viernes": {
+            "num_def": 2918,
+            "new_cases": 0,
+            "num_hosp": 29,
+            "num_uci": 4
+        },
+        "S\u00e1bado": {
+            "num_def": 3885,
+            "new_cases": 0,
+            "num_hosp": 25,
+            "num_uci": 7
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 32,
+            "num_uci": 3
+        }
+    },
+    "Le\u00f3n": {
+        "Lunes": {
+            "num_def": 10563,
+            "new_cases": 80,
+            "num_hosp": 18,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 8449,
+            "new_cases": 211,
+            "num_hosp": 12,
+            "num_uci": 3
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 8451,
+            "new_cases": 228,
+            "num_hosp": 16,
+            "num_uci": 4
+        },
+        "Jueves": {
+            "num_def": 8453,
+            "new_cases": 183,
+            "num_hosp": 16,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 8454,
+            "new_cases": 249,
+            "num_hosp": 18,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 10556,
+            "new_cases": 250,
+            "num_hosp": 11,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 10560,
+            "new_cases": 106,
+            "num_hosp": 19,
+            "num_uci": 4
+        }
+    },
+    "Lleida": {
+        "Lunes": {
+            "num_def": 3993,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 3192,
+            "new_cases": 0,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3194,
+            "new_cases": 0,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 3195,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 3198,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 3989,
+            "new_cases": 0,
+            "num_hosp": 3,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 3991,
+            "new_cases": 0,
+            "num_hosp": 0,
+            "num_uci": 0
+        }
+    },
+    "Lugo": {
+        "Lunes": {
+            "num_def": 1071,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 855,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 856,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 4
+        },
+        "Jueves": {
+            "num_def": 857,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 858,
+            "new_cases": 0,
+            "num_hosp": 2,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 1071,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 1071,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        }
+    },
+    "Madrid": {
+        "Lunes": {
+            "num_def": 84530,
+            "new_cases": 0,
+            "num_hosp": 461,
+            "num_uci": 48
+        },
+        "Martes": {
+            "num_def": 67532,
+            "new_cases": 0,
+            "num_hosp": 454,
+            "num_uci": 43
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 67587,
+            "new_cases": 0,
+            "num_hosp": 383,
+            "num_uci": 47
+        },
+        "Jueves": {
+            "num_def": 67632,
+            "new_cases": 0,
+            "num_hosp": 370,
+            "num_uci": 34
+        },
+        "Viernes": {
+            "num_def": 50876,
+            "new_cases": 0,
+            "num_hosp": 413,
+            "num_uci": 41
+        },
+        "S\u00e1bado": {
+            "num_def": 84408,
+            "new_cases": 0,
+            "num_hosp": 354,
+            "num_uci": 37
+        },
+        "Domingo": {
+            "num_def": 84470,
+            "new_cases": 0,
+            "num_hosp": 365,
+            "num_uci": 40
+        }
+    },
+    "M\u00e1laga": {
+        "Lunes": {
+            "num_def": 8179,
+            "new_cases": 0,
+            "num_hosp": 49,
+            "num_uci": 7
+        },
+        "Martes": {
+            "num_def": 6546,
+            "new_cases": 0,
+            "num_hosp": 40,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 6548,
+            "new_cases": 0,
+            "num_hosp": 45,
+            "num_uci": 7
+        },
+        "Jueves": {
+            "num_def": 6551,
+            "new_cases": 0,
+            "num_hosp": 34,
+            "num_uci": 4
+        },
+        "Viernes": {
+            "num_def": 4908,
+            "new_cases": 0,
+            "num_hosp": 32,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 6542,
+            "new_cases": 0,
+            "num_hosp": 47,
+            "num_uci": 4
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 38,
+            "num_uci": 4
+        }
+    },
+    "Melilla": {
+        "Lunes": {
+            "num_def": 477,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 382,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 383,
+            "new_cases": 0,
+            "num_hosp": 8,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 384,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 384,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 475,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 475,
+            "new_cases": 0,
+            "num_hosp": 8,
+            "num_uci": 1
+        }
+    },
+    "Murcia": {
+        "Lunes": {
+            "num_def": 7988,
+            "new_cases": 434,
+            "num_hosp": 30,
+            "num_uci": 7
+        },
+        "Martes": {
+            "num_def": 6388,
+            "new_cases": 336,
+            "num_hosp": 26,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 6390,
+            "new_cases": 318,
+            "num_hosp": 33,
+            "num_uci": 4
+        },
+        "Jueves": {
+            "num_def": 6391,
+            "new_cases": 353,
+            "num_hosp": 27,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 6392,
+            "new_cases": 286,
+            "num_hosp": 27,
+            "num_uci": 5
+        },
+        "S\u00e1bado": {
+            "num_def": 7985,
+            "new_cases": 217,
+            "num_hosp": 23,
+            "num_uci": 4
+        },
+        "Domingo": {
+            "num_def": 7985,
+            "new_cases": 81,
+            "num_hosp": 21,
+            "num_uci": 7
+        }
+    },
+    "Navarra": {
+        "Lunes": {
+            "num_def": 5900,
+            "new_cases": 0,
+            "num_hosp": 21,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 4715,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 4719,
+            "new_cases": 0,
+            "num_hosp": 13,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 4719,
+            "new_cases": 0,
+            "num_hosp": 29,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 4719,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 5889,
+            "new_cases": 0,
+            "num_hosp": 15,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 5898,
+            "new_cases": 0,
+            "num_hosp": 21,
+            "num_uci": 4
+        }
+    },
+    "Ourense": {
+        "Lunes": {
+            "num_def": 2085,
+            "new_cases": 0,
+            "num_hosp": 10,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 1669,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1669,
+            "new_cases": 0,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 1669,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 1669,
+            "new_cases": 0,
+            "num_hosp": 3,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 2085,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 3
+        },
+        "Domingo": {
+            "num_def": 2085,
+            "new_cases": 0,
+            "num_hosp": 10,
+            "num_uci": 1
+        }
+    },
+    "Palencia": {
+        "Lunes": {
+            "num_def": 4019,
+            "new_cases": 65,
+            "num_hosp": 12,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 3212,
+            "new_cases": 56,
+            "num_hosp": 9,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3212,
+            "new_cases": 74,
+            "num_hosp": 12,
+            "num_uci": 2
+        },
+        "Jueves": {
+            "num_def": 3215,
+            "new_cases": 75,
+            "num_hosp": 13,
+            "num_uci": 2
+        },
+        "Viernes": {
+            "num_def": 3216,
+            "new_cases": 92,
+            "num_hosp": 10,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 4012,
+            "new_cases": 120,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 4014,
+            "new_cases": 55,
+            "num_hosp": 7,
+            "num_uci": 1
+        }
+    },
+    "Palmas, Las": {
+        "Lunes": {
+            "num_def": 1628,
+            "new_cases": 224,
+            "num_hosp": 12,
+            "num_uci": 7
+        },
+        "Martes": {
+            "num_def": 1299,
+            "new_cases": 279,
+            "num_hosp": 15,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1302,
+            "new_cases": 246,
+            "num_hosp": 18,
+            "num_uci": 3
+        },
+        "Jueves": {
+            "num_def": 1305,
+            "new_cases": 226,
+            "num_hosp": 16,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 1308,
+            "new_cases": 222,
+            "num_hosp": 11,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 1625,
+            "new_cases": 202,
+            "num_hosp": 26,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 1627,
+            "new_cases": 223,
+            "num_hosp": 11,
+            "num_uci": 2
+        }
+    },
+    "Pontevedra": {
+        "Lunes": {
+            "num_def": 3031,
+            "new_cases": 0,
+            "num_hosp": 33,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 2419,
+            "new_cases": 0,
+            "num_hosp": 33,
+            "num_uci": 4
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2422,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 3
+        },
+        "Jueves": {
+            "num_def": 2424,
+            "new_cases": 0,
+            "num_hosp": 21,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 2427,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 3026,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 3028,
+            "new_cases": 0,
+            "num_hosp": 17,
+            "num_uci": 4
+        }
+    },
+    "Rioja, La": {
+        "Lunes": {
+            "num_def": 3833,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 3064,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3066,
+            "new_cases": 0,
+            "num_hosp": 15,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 3067,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 7
+        },
+        "Viernes": {
+            "num_def": 3069,
+            "new_cases": 0,
+            "num_hosp": 18,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 1529,
+            "new_cases": 0,
+            "num_hosp": 16,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 1530,
+            "new_cases": 0,
+            "num_hosp": 17,
+            "num_uci": 4
+        }
+    },
+    "Salamanca": {
+        "Lunes": {
+            "num_def": 8419,
+            "new_cases": 45,
+            "num_hosp": 14,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 6733,
+            "new_cases": 106,
+            "num_hosp": 13,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 6734,
+            "new_cases": 95,
+            "num_hosp": 8,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 6734,
+            "new_cases": 97,
+            "num_hosp": 9,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 6736,
+            "new_cases": 91,
+            "num_hosp": 10,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 8417,
+            "new_cases": 152,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 8419,
+            "new_cases": 75,
+            "num_hosp": 7,
+            "num_uci": 2
+        }
+    },
+    "Santa Cruz de Tenerife": {
+        "Lunes": {
+            "num_def": 2155,
+            "new_cases": 309,
+            "num_hosp": 21,
+            "num_uci": 4
+        },
+        "Martes": {
+            "num_def": 1722,
+            "new_cases": 256,
+            "num_hosp": 23,
+            "num_uci": 3
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1725,
+            "new_cases": 389,
+            "num_hosp": 16,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 1726,
+            "new_cases": 289,
+            "num_hosp": 14,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 1727,
+            "new_cases": 261,
+            "num_hosp": 20,
+            "num_uci": 2
+        },
+        "S\u00e1bado": {
+            "num_def": 2150,
+            "new_cases": 287,
+            "num_hosp": 24,
+            "num_uci": 4
+        },
+        "Domingo": {
+            "num_def": 2154,
+            "new_cases": 293,
+            "num_hosp": 17,
+            "num_uci": 6
+        }
+    },
+    "Segovia": {
+        "Lunes": {
+            "num_def": 4876,
+            "new_cases": 47,
+            "num_hosp": 10,
+            "num_uci": 3
+        },
+        "Martes": {
+            "num_def": 3900,
+            "new_cases": 90,
+            "num_hosp": 8,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 3901,
+            "new_cases": 72,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 3901,
+            "new_cases": 76,
+            "num_hosp": 8,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 3901,
+            "new_cases": 73,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 4874,
+            "new_cases": 104,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 4875,
+            "new_cases": 60,
+            "num_hosp": 8,
+            "num_uci": 0
+        }
+    },
+    "Sevilla": {
+        "Lunes": {
+            "num_def": 9810,
+            "new_cases": 0,
+            "num_hosp": 107,
+            "num_uci": 10
+        },
+        "Martes": {
+            "num_def": 7849,
+            "new_cases": 0,
+            "num_hosp": 82,
+            "num_uci": 8
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 7868,
+            "new_cases": 0,
+            "num_hosp": 116,
+            "num_uci": 18
+        },
+        "Jueves": {
+            "num_def": 7876,
+            "new_cases": 0,
+            "num_hosp": 95,
+            "num_uci": 6
+        },
+        "Viernes": {
+            "num_def": 5892,
+            "new_cases": 0,
+            "num_hosp": 86,
+            "num_uci": 11
+        },
+        "S\u00e1bado": {
+            "num_def": 7844,
+            "new_cases": 0,
+            "num_hosp": 92,
+            "num_uci": 12
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 76,
+            "num_uci": 8
+        }
+    },
+    "Soria": {
+        "Lunes": {
+            "num_def": 3105,
+            "new_cases": 26,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 2481,
+            "new_cases": 28,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2484,
+            "new_cases": 24,
+            "num_hosp": 0,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 2484,
+            "new_cases": 31,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 2484,
+            "new_cases": 35,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 3101,
+            "new_cases": 33,
+            "num_hosp": 1,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 3104,
+            "new_cases": 24,
+            "num_hosp": 1,
+            "num_uci": 0
+        }
+    },
+    "Tarragona": {
+        "Lunes": {
+            "num_def": 6457,
+            "new_cases": 0,
+            "num_hosp": 7,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 5159,
+            "new_cases": 0,
+            "num_hosp": 8,
+            "num_uci": 2
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 5163,
+            "new_cases": 0,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 5165,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 5169,
+            "new_cases": 0,
+            "num_hosp": 6,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 6451,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Domingo": {
+            "num_def": 6454,
+            "new_cases": 0,
+            "num_hosp": 5,
+            "num_uci": 0
+        }
+    },
+    "Teruel": {
+        "Lunes": {
+            "num_def": 2075,
+            "new_cases": 39,
+            "num_hosp": 2,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 1660,
+            "new_cases": 34,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 1660,
+            "new_cases": 37,
+            "num_hosp": 5,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 1660,
+            "new_cases": 29,
+            "num_hosp": 3,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 1660,
+            "new_cases": 27,
+            "num_hosp": 3,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 2075,
+            "new_cases": 8,
+            "num_hosp": 2,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 2075,
+            "new_cases": 12,
+            "num_hosp": 3,
+            "num_uci": 1
+        }
+    },
+    "Toledo": {
+        "Lunes": {
+            "num_def": 8869,
+            "new_cases": 0,
+            "num_hosp": 32,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 8884,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 2
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 8895,
+            "new_cases": 0,
+            "num_hosp": 22,
+            "num_uci": 5
+        },
+        "Jueves": {
+            "num_def": 8903,
+            "new_cases": 0,
+            "num_hosp": 24,
+            "num_uci": 3
+        },
+        "Viernes": {
+            "num_def": 8917,
+            "new_cases": 0,
+            "num_hosp": 20,
+            "num_uci": 3
+        },
+        "S\u00e1bado": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 23,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 0,
+            "num_hosp": 28,
+            "num_uci": 3
+        }
+    },
+    "Valencia/Val\u00e8ncia": {
+        "Lunes": {
+            "num_def": 18870,
+            "new_cases": 380,
+            "num_hosp": 19,
+            "num_uci": 1
+        },
+        "Martes": {
+            "num_def": 15090,
+            "new_cases": 242,
+            "num_hosp": 23,
+            "num_uci": 2
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 15096,
+            "new_cases": 329,
+            "num_hosp": 23,
+            "num_uci": 1
+        },
+        "Jueves": {
+            "num_def": 15104,
+            "new_cases": 353,
+            "num_hosp": 21,
+            "num_uci": 4
+        },
+        "Viernes": {
+            "num_def": 15111,
+            "new_cases": 291,
+            "num_hosp": 24,
+            "num_uci": 0
+        },
+        "S\u00e1bado": {
+            "num_def": 11287,
+            "new_cases": 198,
+            "num_hosp": 20,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 0,
+            "new_cases": 120,
+            "num_hosp": 11,
+            "num_uci": 3
+        }
+    },
+    "Valladolid": {
+        "Lunes": {
+            "num_def": 9639,
+            "new_cases": 118,
+            "num_hosp": 29,
+            "num_uci": 2
+        },
+        "Martes": {
+            "num_def": 7708,
+            "new_cases": 217,
+            "num_hosp": 19,
+            "num_uci": 2
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 7712,
+            "new_cases": 240,
+            "num_hosp": 28,
+            "num_uci": 4
+        },
+        "Jueves": {
+            "num_def": 7716,
+            "new_cases": 209,
+            "num_hosp": 12,
+            "num_uci": 0
+        },
+        "Viernes": {
+            "num_def": 7722,
+            "new_cases": 215,
+            "num_hosp": 18,
+            "num_uci": 5
+        },
+        "S\u00e1bado": {
+            "num_def": 9633,
+            "new_cases": 352,
+            "num_hosp": 23,
+            "num_uci": 2
+        },
+        "Domingo": {
+            "num_def": 9633,
+            "new_cases": 162,
+            "num_hosp": 23,
+            "num_uci": 4
+        }
+    },
+    "Zamora": {
+        "Lunes": {
+            "num_def": 3617,
+            "new_cases": 20,
+            "num_hosp": 8,
+            "num_uci": 0
+        },
+        "Martes": {
+            "num_def": 2893,
+            "new_cases": 48,
+            "num_hosp": 7,
+            "num_uci": 1
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 2894,
+            "new_cases": 57,
+            "num_hosp": 4,
+            "num_uci": 0
+        },
+        "Jueves": {
+            "num_def": 2895,
+            "new_cases": 48,
+            "num_hosp": 4,
+            "num_uci": 1
+        },
+        "Viernes": {
+            "num_def": 2896,
+            "new_cases": 59,
+            "num_hosp": 7,
+            "num_uci": 1
+        },
+        "S\u00e1bado": {
+            "num_def": 3616,
+            "new_cases": 95,
+            "num_hosp": 7,
+            "num_uci": 1
+        },
+        "Domingo": {
+            "num_def": 3617,
+            "new_cases": 25,
+            "num_hosp": 5,
+            "num_uci": 1
+        }
+    },
+    "Zaragoza": {
+        "Lunes": {
+            "num_def": 12815,
+            "new_cases": 569,
+            "num_hosp": 91,
+            "num_uci": 12
+        },
+        "Martes": {
+            "num_def": 10235,
+            "new_cases": 858,
+            "num_hosp": 66,
+            "num_uci": 11
+        },
+        "Mi\u00e9rcoles": {
+            "num_def": 10248,
+            "new_cases": 816,
+            "num_hosp": 63,
+            "num_uci": 8
+        },
+        "Jueves": {
+            "num_def": 10257,
+            "new_cases": 722,
+            "num_hosp": 69,
+            "num_uci": 4
+        },
+        "Viernes": {
+            "num_def": 10264,
+            "new_cases": 696,
+            "num_hosp": 68,
+            "num_uci": 9
+        },
+        "S\u00e1bado": {
+            "num_def": 12801,
+            "new_cases": 656,
+            "num_hosp": 54,
+            "num_uci": 4
+        },
+        "Domingo": {
+            "num_def": 12810,
+            "new_cases": 367,
+            "num_hosp": 57,
+            "num_uci": 9
+        }
+    }
+}
