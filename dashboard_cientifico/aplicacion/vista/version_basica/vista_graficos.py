@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 # Importa la configuración para imprimir los títulos de los menús
-from aplicacion.config.settings import OPCIONES_GRAFICOS 
+from ...config.settings import OPCIONES_GRAFICOS 
 
 plt.ion() # Modo interactivo
 

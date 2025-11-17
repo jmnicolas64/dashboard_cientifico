@@ -1,9 +1,9 @@
 # C:\...\controlador\version_basica\controlador_app.py
 
 # Importación de los módulos Modelo y Vista
-from aplicacion.modelo.version_basica import modelo_datos as modelo
-from aplicacion.vista.version_basica import vista_graficos as vista
-from aplicacion.config.settings import NOMBRE_JSON, OPCIONES_GRAFICOS
+from ...modelo.version_basica import modelo_datos as modelo
+from ...vista.version_basica import vista_graficos as vista
+from ...config.settings import NOMBRE_JSON, OPCIONES_GRAFICOS
 
 class ControladorBasico:
     

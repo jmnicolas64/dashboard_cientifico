@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 # Importaciones desde tu carpeta de configuración
-from aplicacion.config.settings import (
+from ...config.settings import (
     NOMBRE_CSV, NOMBRE_JSON, METRICAS_MAPEO, 
     METRICAS_CLAVES, DIAS_SEMANA
 )

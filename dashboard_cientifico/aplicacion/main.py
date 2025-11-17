@@ -1,7 +1,7 @@
 # C:\USERS\JOSEM\...\PROYECTO_FINAL\DASHBOARD_CIENTIFICO\main.py
 
 # Importación de la función de inicio del controlador básico
-from aplicacion.controlador.version_basica import controlador_app as basico
+from ..aplicacion.controlador.version_basica import controlador_app as basico
 # from aplicacion.controlador.version_ampliada import controlador_web as ampliado # Pendiente
 
 def menu_selector_version():
