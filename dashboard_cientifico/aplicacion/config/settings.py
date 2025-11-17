@@ -1,5 +1,3 @@
-# dashboard_cientifico/aplicacion/config/settings.py
-
 from pathlib import Path
 
 # =========================================================================
@@ -11,24 +9,22 @@ from pathlib import Path
 # La ruta base es C:\...\Proyecto_Final\
 RUTA_BASE: Path = Path(__file__).resolve().parent.parent.parent.parent
 
-
 # =========================================================================
 # 2. Definición de RUTAS de Recursos
 # =========================================================================
 
-# Nota: Usamos la RUTA_BASE para construir rutas absolutas.
+CARPETA_CODIGO="dashboard_cientifico"
 
-# La carpeta que contiene el código de la aplicación (dashboard_cientifico/)
-RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / "dashboard_cientifico"
+RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_CODIGO
 
 # Rutas a tus carpetas de recursos (datos, db, descargas)
 RUTA_ARCHIVOS: Path = RUTA_PAQUETE_PRINCIPAL / "archivos"
-CARPETA_ARCHIVOS = "dashboard_cientifico/archivos"
+CARPETA_ARCHIVOS = f"{CARPETA_CODIGO}/archivos"
 RUTA_DB: Path = RUTA_PAQUETE_PRINCIPAL / "db"
 RUTA_DESCARGAS: Path = RUTA_PAQUETE_PRINCIPAL / "descargas"
-CARPETA_DESCARGAS = "dashboard_cientifico/descargas"
+CARPETA_DESCARGAS = f"{CARPETA_CODIGO}/descargas"
 RUTA_IMAGENES: Path = RUTA_PAQUETE_PRINCIPAL / "img"
-CARPETA_IMG = "dashboard_cientifico/img"
+CARPETA_IMG = f"{CARPETA_CODIGO}/img"
 
 
 # =========================================================================
@@ -42,17 +38,13 @@ NOMBRE_DB: str = "datos_analisis.sqlite"
 RUTA_SQLITE_DB: Path = RUTA_DB / NOMBRE_DB
 
 # Nombre del archivo CSV de entrada (ejemplo)
-NOMBRE_ARCHIVO_ENTRADA: str = "datos_mediciones.csv"
+NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid.csv"
 
 # Ruta ABSOLUTA completa al archivo de entrada (asumiendo que está en la carpeta 'archivos')
 RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
 
-# C:\...\dashboard_cientifico\aplicacion\config\settings.py
-
 # --- CONFIGURACIÓN DE ARCHIVOS ---
-NOMBRE_CSV = 'datos_covid.csv'
-NOMBRE_JSON = 'datos_agrupados.json'
-NOMBRE_BBDD = 'covid_data.sqlite' # Para la versión ampliada (Flask)
+NOMBRE_JSON = 'datos_covid.json'
 
 # --- MÉTODOS DE AGRUPACIÓN ---
 DIAS_SEMANA = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]

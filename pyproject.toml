@@ -13,7 +13,7 @@ dependencies = [
     "seaborn (>=0.13.2,<0.14.0)",
     "matplotlib (>=3.10.7,<4.0.0)",
     "plotly (>=6.4.0,<7.0.0)",
-    "django (>=5.2.8,<6.0.0)"
+    "streamlit (>=1.51.0,<2.0.0)",
 ]
 
 [tool.poetry]

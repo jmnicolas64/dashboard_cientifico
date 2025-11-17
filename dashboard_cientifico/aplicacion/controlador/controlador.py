@@ -1,9 +1,16 @@
-# C:\...\controlador\version_basica\controlador_app.py
+from ..config.settings import (NOMBRE_JSON,
+                               OPCIONES_GRAFICOS,
+                               NOMBRE_ARCHIVO_ENTRADA)
 
-# Importación de los módulos Modelo y Vista
-from ...modelo.version_basica import modelo_datos as modelo
-from ...vista.version_basica import vista_graficos as vista
-from ...config.settings import NOMBRE_JSON, OPCIONES_GRAFICOS
+from ..modelo.carga_datos import (cargar_datos,
+                                  calcular_totales_y_extremos,
+                                  procesar_datos_csv)
+
+from ..vista.vista_graficos import (mostrar_menu_ejercicio_secundario,
+                                    mostrar_menu_principal,
+                                    generar_grafica_barras,
+                                    generar_grafica_queso)
+
 
 class ControladorBasico:
     
@@ -14,7 +21,7 @@ class ControladorBasico:
     def _cargar_datos_si_necesario(self):
         """Intenta cargar los datos del JSON si aún no están en memoria."""
         if self.datos_agrupados is None:
-            self.datos_agrupados = modelo.cargar_datos(self.nombre_json)
+            self.datos_agrupados = cargar_datos(self.nombre_json)
         return self.datos_agrupados
 
     def ejecutar_menu_ejercicio2(self):
@@ -22,7 +29,7 @@ class ControladorBasico:
         if not datos: return
         
         while True:
-            vista.mostrar_menu_ejercicio_secundario("GRÁFICAS DE BARRAS POR PROVINCIA")
+            mostrar_menu_ejercicio_secundario("GRÁFICAS DE BARRAS POR PROVINCIA")
             opcion = input("Introduce tu elección (1-5): ")
             if opcion == '5': break
             
@@ -30,7 +37,7 @@ class ControladorBasico:
                 opcion_int = int(opcion)
                 if opcion_int in OPCIONES_GRAFICOS:
                     metrica = OPCIONES_GRAFICOS[opcion_int]['metrica']
-                    vista.generar_grafica_barras(datos, metrica)
+                    generar_grafica_barras(datos, metrica)
                 else:
                     print("Opción no válida.")
             except ValueError:
@@ -41,7 +48,7 @@ class ControladorBasico:
         if not datos: return
 
         while True:
-            vista.mostrar_menu_ejercicio_secundario("ANÁLISIS DE EXTREMOS Y GRÁFICAS DE QUESO")
+            mostrar_menu_ejercicio_secundario("ANÁLISIS DE EXTREMOS Y GRÁFICAS DE QUESO")
             opcion = input("Introduce tu elección (1-5): ")
             if opcion == '5': break
 
@@ -49,9 +56,9 @@ class ControladorBasico:
                 opcion_int = int(opcion)
                 if opcion_int in OPCIONES_GRAFICOS:
                     metrica = OPCIONES_GRAFICOS[opcion_int]['metrica']
-                    totales, p_max, p_min = modelo.calcular_totales_y_extremos(datos, metrica)
+                    totales, p_max, p_min = calcular_totales_y_extremos(datos, metrica)
                     if totales:
-                        vista.generar_grafica_queso(totales, metrica, p_max, p_min)
+                        generar_grafica_queso(totales, metrica, p_max, p_min)
                 else:
                     print("Opción no válida.")
             except ValueError:
@@ -60,11 +67,11 @@ class ControladorBasico:
     def ejecutar_menu_principal(self):
         """Bucle principal de la versión básica."""
         while True:
-            vista.mostrar_menu_principal()
+            mostrar_menu_principal()
             opcion = input("Selecciona una opción (1-4): ")
             
             if opcion == '1':
-                self.datos_agrupados = modelo.procesar_datos_csv(modelo.NOMBRE_CSV, self.nombre_json)
+                self.datos_agrupados = procesar_datos_csv(NOMBRE_ARCHIVO_ENTRADA, self.nombre_json)
             
             elif opcion == '2':
                 self.ejecutar_menu_ejercicio2()

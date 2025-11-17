@@ -1,10 +1,8 @@
-# C:\...\vista\version_basica\vista_graficos.py
 import matplotlib.pyplot as plt
 import seaborn as sns
-# Importa la configuración para imprimir los títulos de los menús
-from ...config.settings import OPCIONES_GRAFICOS 
+from ..config.settings import OPCIONES_GRAFICOS 
 
-plt.ion() # Modo interactivo
+plt.ion()
 
 
 def mostrar_menu_principal():

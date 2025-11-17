@@ -1,8 +1,9 @@
-# C:\USERS\JOSEM\...\PROYECTO_FINAL\DASHBOARD_CIENTIFICO\main.py
+"""
+Ejecución: python -m dashboard_cientifico.aplicacion.main
+"""
 
-# Importación de la función de inicio del controlador básico
-from ..aplicacion.controlador.version_basica import controlador_app as basico
-# from aplicacion.controlador.version_ampliada import controlador_web as ampliado # Pendiente
+from ..aplicacion.controlador.controlador import iniciar_version_basica
+
 
 def menu_selector_version():
     """Permite al usuario elegir la versión a ejecutar (Consola o Web)."""
@@ -20,7 +21,7 @@ def menu_selector_version():
         
         if opcion == '1':
             # Llamada al controlador de la versión básica
-            basico.iniciar_version_basica() 
+            iniciar_version_basica() 
         elif opcion == '2':
             # ¡Aquí irá la lógica de Django!
             # ampliado.iniciar_version_ampliada() 

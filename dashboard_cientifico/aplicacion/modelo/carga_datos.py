@@ -2,10 +2,8 @@ import csv
 import json
 import os
 from datetime import datetime
-
-# Importaciones desde tu carpeta de configuración
-from ...config.settings import (
-    NOMBRE_CSV, NOMBRE_JSON, METRICAS_MAPEO, 
+from ..config.settings import (
+    NOMBRE_ARCHIVO_ENTRADA, NOMBRE_JSON, METRICAS_MAPEO, 
     METRICAS_CLAVES, DIAS_SEMANA
 )
 
