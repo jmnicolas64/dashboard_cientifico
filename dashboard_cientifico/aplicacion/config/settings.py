@@ -16,6 +16,7 @@ RUTA_BASE: Path = Path(__file__).resolve().parent.parent.parent.parent
 CARPETA_CODIGO="dashboard_cientifico"
 
 RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_CODIGO
+RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/controlador/app_dashboard.py'
 
 # Rutas a tus carpetas de recursos (datos, db, descargas)
 RUTA_ARCHIVOS: Path = RUTA_PAQUETE_PRINCIPAL / "archivos"

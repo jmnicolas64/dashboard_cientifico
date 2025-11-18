@@ -2,7 +2,7 @@ from ..config.settings import (NOMBRE_JSON,
                                OPCIONES_GRAFICOS,
                                NOMBRE_ARCHIVO_ENTRADA)
 
-from ..modelo.carga_datos import (cargar_datos,
+from ..modelo.carga_datos2 import (cargar_datos,
                                   calcular_totales_y_extremos,
                                   procesar_datos_csv)
 

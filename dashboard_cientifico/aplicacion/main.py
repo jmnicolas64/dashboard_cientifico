@@ -2,37 +2,34 @@
 Ejecución: python -m dashboard_cientifico.aplicacion.main
 """
 
-from ..aplicacion.controlador.controlador import iniciar_version_basica
+import subprocess
+import os
+from dashboard_cientifico.aplicacion.config.settings import RUTA_STREAMLIT
 
+# Define la ruta al script principal de Streamlit (la nueva VISTA principal)
+# Asumiendo que has creado app_dashboard.py dentro de la carpeta controlador
+#STREAMLIT_SCRIPT_PATH = 'controlador/app_dashboard.py' 
 
-def menu_selector_version():
-    """Permite al usuario elegir la versión a ejecutar (Consola o Web)."""
-    while True:
-        print("\n" + "#"*60)
-        print("         💻 PROYECTO FINAL 3: DASHBOARD CIENTÍFICO")
-        print("             (Selección de Versión)")
-        print("#"*60)
-        print("1. Versión Básica (Consola, JSON)")
-        print("2. Versión Ampliada (Web, Django/BBDD)")
-        print("3. Salir")
-        print("="*60)
-        
-        opcion = input("Selecciona la versión (1-3): ")
-        
-        if opcion == '1':
-            # Llamada al controlador de la versión básica
-            iniciar_version_basica() 
-        elif opcion == '2':
-            # ¡Aquí irá la lógica de Django!
-            # ampliado.iniciar_version_ampliada() 
-            print("Versión Ampliada aún en desarrollo. ¡Volviendo al menú principal!")
-        elif opcion == '3':
-            print("Programa finalizado. ¡Hasta pronto!")
-            break
-        else:
-            print("Opción no válida.")
+def iniciar_dashboard_streamlit():
+    """Lanza la aplicación de Streamlit."""
+    # Necesitas la ruta completa para ejecutarlo desde la raíz
+    script_path = str(RUTA_STREAMLIT)
+    
+    if not os.path.exists(script_path):
+        print(f"❌ Error: No se encontró el script de Streamlit en: {script_path}")
+        return
 
+    print("🚀 Iniciando Streamlit Dashboard...")
+    
+    # Comando para iniciar Streamlit
+    # El subprocess se usa para ejecutar un comando externo
+    try:
+        subprocess.run(["streamlit", "run", script_path], check=True)
+    except FileNotFoundError:
+        print("\n❌ Error: El comando 'streamlit' no se encontró.")
+        print("Asegúrate de que estás en el entorno virtual de Poetry o que Streamlit está instalado correctamente.")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Error al ejecutar Streamlit: {e}")
 
 if __name__ == "__main__":
-    # La aplicación arranca aquí
-    menu_selector_version()
+    iniciar_dashboard_streamlit()
