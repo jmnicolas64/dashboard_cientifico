@@ -11,9 +11,14 @@ st.title("Dashboard Científico")
 st.sidebar.title("Menú")
 
 if st.sidebar.button("Cargar datos iniciales", type='primary'):
-    cargar_datos_iniciales()
-    st.success("Datos iniciales cargados")
-    generar_json()
+    num_filas=cargar_datos_iniciales()
+    st.success(num_filas)
+    
+    datos_eliminados, datos_exportados = generar_json()
+    st.success(datos_exportados)
+
+    if datos_eliminados:
+        st.warning(datos_eliminados)
 
     
 pagina=st.sidebar.selectbox("Selecciona página", [

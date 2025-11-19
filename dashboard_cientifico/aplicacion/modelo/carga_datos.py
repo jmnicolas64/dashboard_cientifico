@@ -4,7 +4,7 @@ import pandas as pd
 import sqlite3
 from ..config.settings import (RUTA_DB,
                                NOMBRE_DB,
-                               RUTA_ARCHIVOS,
+                               CARPETA_DB,
                                CARPETA_ARCHIVOS,
                                NOMBRE_ARCHIVO_ENTRADA,
                                RUTA_ARCHIVO_ENTRADA,
@@ -15,29 +15,39 @@ from ..config.settings import (RUTA_DB,
                                NOMBRE_JSON_ELIMINADOS)
 
 
-def cargar_datos_iniciales() -> None:  
+def cargar_datos_iniciales() -> str:
     try:
-        #print(f"⏳ Cargando datos desde {CARPETA_ARCHIVOS}/{NOMBRE_ARCHIVO_ENTRADA} e insertando en SQLite...")
-        
-        if not RUTA_ARCHIVO_ENTRADA.exists():
-             raise FileNotFoundError(f"Archivo {CARPETA_ARCHIVOS}/{NOMBRE_ARCHIVO_ENTRADA} no encontrado.")
-
-        # Carga del CSV
         df = pd.read_csv(RUTA_ARCHIVO_ENTRADA, sep=',', encoding='UTF-8')
         df.columns = df.columns.str.strip()
-        df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
+        
+        df['date_temp'] = pd.to_datetime(df['date'], format='%Y-%m-%d', errors='coerce') 
+        
+        df_filas_invalidas = df[df['date_temp'].isnull()].copy()
+        filas_omitidas = len(df_filas_invalidas)
+        
+        df.dropna(subset=['date_temp'], inplace=True)
+        
+        df['date'] = df['date_temp']
+        df.drop(columns=['date_temp'], inplace=True)
+        
         df['date'] = df['date'].dt.strftime('%d/%m/%Y')
-
-        # 1. Conexión a la DB
+        
         db :Path = RUTA_DB / NOMBRE_DB
         conn = sqlite3.connect(db)
         
-        # 2. Escritura: Usamos if_exists='replace' para borrar y recrear la tabla
         df.to_sql(TABLA_IMPORTACION, conn, if_exists='replace', index=False)
         
         conn.close()
-        #print(f"🎉 Datos cargados exitosamente. La tabla '{TABLA_IMPORTACION}' ha sido reemplazada en: {RUTA_DB}")
-
+        
+        msg_exito = (f"{len(df)} filas válidas cargadas en la base de datos: "
+                    f"'{CARPETA_DB}/{NOMBRE_DB}'")
+        
+        if filas_omitidas > 0:
+            msg_advertencia = f"{filas_omitidas} filas fueron omitidas por tener fechas inválidas."
+            return (msg_exito + msg_advertencia)
+        
+        return msg_exito
+        
     except FileNotFoundError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -47,25 +57,29 @@ def cargar_datos_iniciales() -> None:
 
 
 
-def generar_json() -> None:
+def generar_json() -> 'tuple[str, str]':
+    datos_exportados_json: str = ""
+    datos_eliminados_json: str = ""
+
     try:
         df = obtener_datos_completos()
         
         if df.empty:
             print("No hay datos en la base de datos para procesar.")
-            return
+            return datos_eliminados_json, datos_exportados_json
 
-        df['date'] = pd.to_datetime(df['date'], errors='coerce') 
+        df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce') 
         df_eliminados = df[df['date'].isnull()].copy()
 
         if not df_eliminados.empty:
             ruta_log: Path = RUTA_DESCARGAS / NOMBRE_JSON_ELIMINADOS
-            datos_eliminados_json = df_eliminados.to_json(orient='records', indent=4)
+            datos_eliminados = df_eliminados.to_json(orient='records', indent=4)
             
             with open(ruta_log, 'w', encoding='utf-8') as archivo_json:
-                archivo_json.write(datos_eliminados_json)
+                archivo_json.write(datos_eliminados)
                 
-            print(f"{len(df_eliminados)} filas con fechas inválidas exportadas a: {CARPETA_DESCARGAS}/{NOMBRE_JSON_ELIMINADOS}")
+            datos_eliminados_json=(f"{len(df_eliminados)} filas con fechas inválidas exportadas a: "
+                                   f"{CARPETA_DESCARGAS}/{NOMBRE_JSON_ELIMINADOS}")
 
         df.dropna(subset=['date'], inplace=True)
 
@@ -83,13 +97,18 @@ def generar_json() -> None:
         with open(ruta_salida, 'w', encoding='utf-8') as f:
             f.write(datos_json)
 
-        print(f"Datos agrupados por día/provincia y guardados en: {ruta_salida}")
+        datos_exportados_json=(f"{len(df_agrupado)} filas de datos agrupados por día/provincia y exportadas a: "
+                               f"'{CARPETA_DESCARGAS}/{NOMBRE_JSON}'")
+
+        return datos_eliminados_json, datos_exportados_json
     
     except KeyError as e:
-        print(f"Error: Una columna necesaria no fue encontrada. Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
+        mensaje_error=(f"Error: Una columna necesaria no fue encontrada. Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
+        return mensaje_error, mensaje_error
+    
     except Exception as e:
-        print(f"Error al generar el JSON: {e}")
-
+        mensaje_error=(f"Error al generar el JSON: {e}")
+        return mensaje_error, mensaje_error
 
 
 def obtener_datos_completos() -> pd.DataFrame:
@@ -97,7 +116,7 @@ def obtener_datos_completos() -> pd.DataFrame:
         conn = sqlite3.connect(RUTA_DB / NOMBRE_DB)
         query = f"SELECT * FROM {TABLA_IMPORTACION}"
 
-        df = pd.read_sql(query, conn, parse_dates=['date'])
+        df = pd.read_sql(query, conn)
         conn.close()
         return df
 
