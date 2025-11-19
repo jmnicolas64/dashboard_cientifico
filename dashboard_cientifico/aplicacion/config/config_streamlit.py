@@ -13,7 +13,6 @@ def configura_locale():
             st.warning("No se pudo establecer la configuración regional a español.")
 
 
-
 def configura_logo_estilos():
     st.set_page_config(
         page_title="Dashboard Científico",

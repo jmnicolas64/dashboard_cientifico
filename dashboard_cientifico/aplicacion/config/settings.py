@@ -1,53 +1,41 @@
 from pathlib import Path
 
 # =========================================================================
-# 1. Definición de la RUTA BASE del proyecto
+# 1. Definición de constantes generales
 # =========================================================================
-
-# Path(__file__).resolve() obtiene la ruta absoluta de este archivo (settings.py).
-# .parent.parent.parent.parent sube 4 niveles para llegar a la raíz del repositorio.
-# La ruta base es C:\...\Proyecto_Final\
 RUTA_BASE: Path = Path(__file__).resolve().parent.parent.parent.parent
 
-# =========================================================================
-# 2. Definición de RUTAS de Recursos
-# =========================================================================
+CARPETA_APLICACION="dashboard_cientifico"
 
-CARPETA_CODIGO="dashboard_cientifico"
+RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_APLICACION
 
-RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_CODIGO
-RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/controlador/app_dashboard.py'
-
-# Rutas a tus carpetas de recursos (datos, db, descargas)
 RUTA_ARCHIVOS: Path = RUTA_PAQUETE_PRINCIPAL / "archivos"
-CARPETA_ARCHIVOS = f"{CARPETA_CODIGO}/archivos"
+CARPETA_ARCHIVOS = f"{CARPETA_APLICACION}/archivos"
 RUTA_DB: Path = RUTA_PAQUETE_PRINCIPAL / "db"
 RUTA_DESCARGAS: Path = RUTA_PAQUETE_PRINCIPAL / "descargas"
-CARPETA_DESCARGAS = f"{CARPETA_CODIGO}/descargas"
+CARPETA_DESCARGAS = f"{CARPETA_APLICACION}/descargas"
 RUTA_IMAGENES: Path = RUTA_PAQUETE_PRINCIPAL / "img"
-CARPETA_IMG = f"{CARPETA_CODIGO}/img"
+CARPETA_IMG = f"{CARPETA_APLICACION}/img"
 
 
 # =========================================================================
-# 3. Definición de CONSTANTES (Base de Datos y Archivos de Entrada)
+# 2. Definición de constantes particulares
 # =========================================================================
+RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/controlador/app_dashboard.py'
 
-# Nombre del archivo de la base de datos que se guardará en la carpeta 'db'
-NOMBRE_DB: str = "datos_analisis.sqlite"
+# --- CONFIGURACIÓN DB ---
+NOMBRE_DB: str = "datos_covid.sqlite"
 
-# Ruta ABSOLUTA completa a la base de datos (para usar con librerías como SQLAlchemy)
-RUTA_SQLITE_DB: Path = RUTA_DB / NOMBRE_DB
-
-# Nombre del archivo CSV de entrada (ejemplo)
-NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid.csv"
-
-# Ruta ABSOLUTA completa al archivo de entrada (asumiendo que está en la carpeta 'archivos')
-RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
+TABLA_IMPORTACION = 'datos_covid'
 
 # --- CONFIGURACIÓN DE ARCHIVOS ---
-NOMBRE_JSON = 'datos_covid.json'
+NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid.csv"
+RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
 
-# --- MÉTODOS DE AGRUPACIÓN ---
+NOMBRE_JSON = 'datos_covid.json'
+NOMBRE_JSON_ELIMINADOS='datos_eliminados.json'
+
+# --- DIAS DE LA SEMANA ---
 DIAS_SEMANA = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 
 # --- MAPEO DE MÉTRICAS ---
