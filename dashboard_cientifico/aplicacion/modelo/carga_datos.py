@@ -1,5 +1,7 @@
 from pathlib import Path
+from typing import Dict, Any
 import shutil
+import os
 import pandas as pd
 import sqlite3
 import json
@@ -8,44 +10,142 @@ from ..config.settings import (RUTA_DB,
                                CARPETA_DB,
                                RUTA_ARCHIVOS,
                                CARPETA_ARCHIVOS,
+                               RUTA_COPIA_ARCHIVOS,
                                NOMBRE_ARCHIVO_ENTRADA,
                                RUTA_ARCHIVO_ENTRADA,
                                CARPETA_DESCARGAS,
                                RUTA_DESCARGAS,
-                               TABLA_IMPORTACION,
+                               TABLA_DATOS_COVID,
+                               TABLA_CARGAS_ID,
                                NOMBRE_JSON_PEDIDO,
-                               NOMBRE_JSON_ELIMINADOS)
+                               NOMBRE_JSON_ELIMINADOS,
+                               NOMBRE_JSON_CARGAS_ID)
 
 
-def crear_tabla_carga_ids(db_path: Path, json_path: Path) -> str:
+def verificar_db() -> Dict[str, Any]:
+    ruta_db: Path = RUTA_DB / NOMBRE_DB
+    
+    estado = {
+        "db_existe": False,
+        "datos_covid_existe": False,
+        "cargas_id_existe": False,
+        "final": False
+    }
+
+    if not ruta_db.exists():
+        estado["final"] = False
+        return estado
+
+    estado["db_existe"] = True
+
     try:
-        # 1. Leer el archivo JSON
-        with open(json_path, 'r', encoding='utf-8') as f:
+        conn = sqlite3.connect(ruta_db)
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tablas_existentes = [row[0] for row in cursor.fetchall()]
+
+        conn.close()
+        
+        if TABLA_DATOS_COVID in tablas_existentes:
+            estado["datos_covid_existe"] = True
+        
+        if TABLA_CARGAS_ID in tablas_existentes:
+            estado["cargas_id_existe"] = True
+
+        if estado["datos_covid_existe"] and estado["cargas_id_existe"]:
+            estado["final"] = True
+        else:
+            tablas_faltantes = []
+            if not estado["datos_covid_existe"]:
+                tablas_faltantes.append(f"'{TABLA_DATOS_COVID}'")
+            if not estado["cargas_id_existe"]:
+                tablas_faltantes.append(f"'{TABLA_CARGAS_ID}'")
+            
+            estado["final"] = False
+
+    except sqlite3.Error as e:
+        estado["final"] = False
+
+    return estado
+
+def reset_datos() -> str:
+    mensajes = []
+
+    ruta_db: Path = RUTA_DB / NOMBRE_DB
+
+    try:
+        if ruta_db.exists() and ruta_db.is_file():
+            os.unlink(ruta_db)
+            mensajes.append("DB: Base de datos borrada correctamente.")
+        else:
+            mensajes.append("DB: Archivo de la base de datos no encontrado, se omite el borrado.")
+    
+    except Exception as e:
+        mensajes.append(f"DB: Error al intentar borrar la base de datos: {e}")
+        return "\n\n".join(mensajes) # Detiene la ejecución si falla el borrado de la DB
+
+    try:
+        if RUTA_ARCHIVOS.exists():
+            shutil.rmtree(RUTA_ARCHIVOS) 
+            mensajes.append("DIR: Contenido de la carpeta de entrada borrado.")
+            
+        RUTA_ARCHIVOS.mkdir(parents=True, exist_ok=False)
+        mensajes.append("DIR: Carpeta de entrada recreada y vacía.")
+
+    except Exception as e:
+        mensajes.append(f"DIR: Error al borrar/recrear la carpeta de entrada: {e}")
+        return "\n\n".join(mensajes)
+
+    try:
+        if not RUTA_COPIA_ARCHIVOS.exists():
+            mensajes.append("COPIA: La carpeta de origen de copia no existe. No se copió nada.")
+            return "\n\n".join(mensajes)
+            
+        archivos_copiados = 0
+        for item in RUTA_COPIA_ARCHIVOS.iterdir():
+            if item.is_file():
+                shutil.copy2(item, RUTA_ARCHIVOS / item.name)
+                archivos_copiados += 1
+        
+        mensajes.append(f"COPIA: Se han copiado {archivos_copiados} archivos de respaldo a la carpeta de entrada.")
+
+    except Exception as e:
+        mensajes.append(f"COPIA: Error durante el proceso de copia: {e}")
+
+    return "\n\n".join(mensajes)
+
+def crear_tabla_carga_ids() -> str:
+    try:
+        json_cargas_id: Path = RUTA_ARCHIVOS/NOMBRE_JSON_CARGAS_ID
+
+        with open(json_cargas_id, 'r', encoding='utf-8') as f:
             data_dict = json.load(f)
         
-        # 2. Convertir el diccionario a DataFrame
-        # El diccionario {clave: valor} se convierte en filas (clave, valor)
-        df_cargas = pd.DataFrame(list(data_dict.items()), columns=['mes', 'carga_id'])
+        df_cargas = pd.DataFrame(data=list(data_dict.items()), columns=['mes', 'carga_id'])
 
-        # 3. Conexión a la base de datos
-        conn = sqlite3.connect(db_path)
+        db :Path = RUTA_DB / NOMBRE_DB
+        conn = sqlite3.connect(db)
         
-        # 4. Escritura: Usamos if_exists='replace' para borrar y recrear la tabla
-        df_cargas.to_sql(TABLA_CARGAS_MAPEO, conn, if_exists='replace', index=False)
+        df_cargas.to_sql(TABLA_CARGAS_ID, conn, if_exists='replace', index=False)
         
         conn.close()
         
-        return (f"🎉 Éxito: La tabla '{TABLA_CARGAS_MAPEO}' ha sido "
+        return (f"La tabla '{NOMBRE_DB}:{TABLA_CARGAS_ID}' ha sido "
                 f"creada/reemplazada con {len(df_cargas)} registros de carga.")
 
     except FileNotFoundError:
-        return f"❌ Error: El archivo '{NOMBRE_ARCHIVO_JSON_IDS}' no fue encontrado en {json_path.parent}."
+        return (f"Error: El archivo json a cargar no fue encontrado en: "
+                f"'{CARPETA_ARCHIVOS}/{NOMBRE_JSON_CARGAS_ID}'.")
+    
     except json.JSONDecodeError:
-        return f"❌ Error: El archivo '{NOMBRE_ARCHIVO_JSON_IDS}' contiene JSON inválido."
+        return f"Error: El archivo '{CARPETA_ARCHIVOS}/{NOMBRE_JSON_CARGAS_ID}' contiene JSON inválido."
+    
     except sqlite3.Error as e:
-        return f"❌ Error de base de datos al crear la tabla '{TABLA_CARGAS_MAPEO}': {e}"
+        return f"Error de base de datos al crear la tabla '{NOMBRE_DB}:{TABLA_CARGAS_ID}': {e}"
+    
     except Exception as e:
-        return f"❌ Error inesperado: {e}"
+        return f"Error inesperado: {e}"
 
 
 def generar_json() -> tuple[str, str]:
@@ -124,7 +224,7 @@ def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
 
         db :Path = RUTA_DB / NOMBRE_DB
         conn = sqlite3.connect(db)
-        df.to_sql(TABLA_IMPORTACION, conn, if_exists='append', index=False)
+        df.to_sql(TABLA_DATOS_COVID, conn, if_exists='append', index=False)
         conn.close()
 
         ruta_cargados: Path = RUTA_ARCHIVOS / "cargados"
@@ -134,7 +234,7 @@ def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
         shutil.move(str(archivo_mes_path), str(ruta_destino))
         
         msg = (f"{filas_cargadas} filas válidas para la carga 'carga_id={carga_id}' "
-               f"añadidas a '{CARPETA_DB}/{TABLA_IMPORTACION}'.")
+               f"añadidas a '{CARPETA_DB}/{TABLA_DATOS_COVID}'.")
         if filas_omitidas > 0:
             msg += f"{filas_omitidas} filas fueron omitidas por fechas inválidas."
         return msg
@@ -156,7 +256,7 @@ def eliminar_carga_por_id(carga_id: str) -> str:
         cursor = conn.cursor()
 
         # Usamos una consulta parametrizada para prevenir inyección SQL
-        query = f"DELETE FROM {TABLA_IMPORTACION} WHERE carga_id = ?"
+        query = f"DELETE FROM {TABLA_DATOS_COVID} WHERE carga_id = ?"
         
         cursor.execute(query, (carga_id,))
         filas_eliminadas = cursor.rowcount # Obtiene el número de filas afectadas
@@ -179,7 +279,7 @@ def eliminar_carga_por_id(carga_id: str) -> str:
 def obtener_datos_completos() -> pd.DataFrame:
     try:
         conn = sqlite3.connect(RUTA_DB / NOMBRE_DB)
-        query = f"SELECT * FROM {TABLA_IMPORTACION}"
+        query = f"SELECT * FROM {TABLA_DATOS_COVID}"
 
         df = pd.read_sql(query, conn)
         conn.close()

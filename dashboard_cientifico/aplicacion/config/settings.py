@@ -26,15 +26,20 @@ RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/controlador/app_dash
 
 # --- CONFIGURACIÓN DB ---
 NOMBRE_DB: str = "datos_covid.sqlite"
-
-TABLA_IMPORTACION = 'datos_covid'
+TABLA_DATOS_COVID = 'datos_covid'
+TABLA_CARGAS_ID = 'cargas_id'
 
 # --- CONFIGURACIÓN DE ARCHIVOS ---
-NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid.csv"
+NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid05_original.csv"
 RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
+CARGA_ID_INICIAL='202105'
+
+
+RUTA_COPIA_ARCHIVOS = RUTA_PAQUETE_PRINCIPAL / "copia_archivos"
 
 NOMBRE_JSON_PEDIDO = 'datos_covid.json'
 NOMBRE_JSON_ELIMINADOS='datos_eliminados.json'
+NOMBRE_JSON_CARGAS_ID='carga_ids.json'
 
 # --- DIAS DE LA SEMANA ---
 DIAS_SEMANA = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
