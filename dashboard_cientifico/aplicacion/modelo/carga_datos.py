@@ -2,6 +2,7 @@ from pathlib import Path
 import shutil
 import pandas as pd
 import sqlite3
+import json
 from ..config.settings import (RUTA_DB,
                                NOMBRE_DB,
                                CARPETA_DB,
@@ -12,8 +13,93 @@ from ..config.settings import (RUTA_DB,
                                CARPETA_DESCARGAS,
                                RUTA_DESCARGAS,
                                TABLA_IMPORTACION,
-                               NOMBRE_JSON,
+                               NOMBRE_JSON_PEDIDO,
                                NOMBRE_JSON_ELIMINADOS)
+
+
+def crear_tabla_carga_ids(db_path: Path, json_path: Path) -> str:
+    try:
+        # 1. Leer el archivo JSON
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data_dict = json.load(f)
+        
+        # 2. Convertir el diccionario a DataFrame
+        # El diccionario {clave: valor} se convierte en filas (clave, valor)
+        df_cargas = pd.DataFrame(list(data_dict.items()), columns=['mes', 'carga_id'])
+
+        # 3. Conexión a la base de datos
+        conn = sqlite3.connect(db_path)
+        
+        # 4. Escritura: Usamos if_exists='replace' para borrar y recrear la tabla
+        df_cargas.to_sql(TABLA_CARGAS_MAPEO, conn, if_exists='replace', index=False)
+        
+        conn.close()
+        
+        return (f"🎉 Éxito: La tabla '{TABLA_CARGAS_MAPEO}' ha sido "
+                f"creada/reemplazada con {len(df_cargas)} registros de carga.")
+
+    except FileNotFoundError:
+        return f"❌ Error: El archivo '{NOMBRE_ARCHIVO_JSON_IDS}' no fue encontrado en {json_path.parent}."
+    except json.JSONDecodeError:
+        return f"❌ Error: El archivo '{NOMBRE_ARCHIVO_JSON_IDS}' contiene JSON inválido."
+    except sqlite3.Error as e:
+        return f"❌ Error de base de datos al crear la tabla '{TABLA_CARGAS_MAPEO}': {e}"
+    except Exception as e:
+        return f"❌ Error inesperado: {e}"
+
+
+def generar_json() -> tuple[str, str]:
+    datos_exportados_json: str = ""
+    datos_eliminados_json: str = ""
+
+    try:
+        df = obtener_datos_completos()
+        
+        if df.empty:
+            print("No hay datos en la base de datos para procesar.")
+            return datos_eliminados_json, datos_exportados_json
+
+        df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce') 
+        df_eliminados = df[df['date'].isnull()].copy()
+
+        if not df_eliminados.empty:
+            ruta_log: Path = RUTA_DESCARGAS / NOMBRE_JSON_ELIMINADOS
+            datos_eliminados = df_eliminados.to_json(orient='records', indent=4)
+            
+            with open(ruta_log, 'w', encoding='utf-8') as archivo_json:
+                archivo_json.write(datos_eliminados)
+                
+            datos_eliminados_json=(f"{len(df_eliminados)} filas con fechas inválidas exportadas a: "
+                                   f"{CARPETA_DESCARGAS}/{NOMBRE_JSON_ELIMINADOS}")
+
+        df.dropna(subset=['date'], inplace=True)
+
+        df['dia_semana'] = df['date'].dt.strftime('%A')
+
+        columnas_agrupacion = ['dia_semana', 'province']
+        columnas_suma: list = ['num_def', 'new_cases', 'num_hosp', 'num_uci']
+
+        df_agrupado = df.groupby(columnas_agrupacion)[columnas_suma].sum().reset_index()
+
+        datos_json = df_agrupado.to_json(orient='records', indent=4)
+
+        ruta_salida: Path = RUTA_DESCARGAS / NOMBRE_JSON_PEDIDO
+        
+        with open(ruta_salida, 'w', encoding='utf-8') as f:
+            f.write(datos_json)
+
+        datos_exportados_json=(f"{len(df_agrupado)} filas de datos agrupados por día/provincia y exportadas a: "
+                               f"'{CARPETA_DESCARGAS}/{NOMBRE_JSON_PEDIDO}'")
+
+        return datos_eliminados_json, datos_exportados_json
+    
+    except KeyError as e:
+        mensaje_error=(f"Error: Una columna necesaria no fue encontrada. Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
+        return mensaje_error, mensaje_error
+    
+    except Exception as e:
+        mensaje_error=(f"Error al generar el JSON: {e}")
+        return mensaje_error, mensaje_error
 
 
 def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
@@ -60,7 +146,6 @@ def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
         return f"Error durante la carga, transformación o escritura de datos: {e}"
 
 
-
 def eliminar_carga_por_id(carga_id: str) -> str:
     """
     Elimina todas las filas de la tabla de importación que coincidan con el carga_id especificado.
@@ -91,60 +176,6 @@ def eliminar_carga_por_id(carga_id: str) -> str:
         return f"❌ Error inesperado al intentar eliminar la carga '{carga_id}': {e}"
     
 
-def generar_json() -> 'tuple[str, str]':
-    datos_exportados_json: str = ""
-    datos_eliminados_json: str = ""
-
-    try:
-        df = obtener_datos_completos()
-        
-        if df.empty:
-            print("No hay datos en la base de datos para procesar.")
-            return datos_eliminados_json, datos_exportados_json
-
-        df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce') 
-        df_eliminados = df[df['date'].isnull()].copy()
-
-        if not df_eliminados.empty:
-            ruta_log: Path = RUTA_DESCARGAS / NOMBRE_JSON_ELIMINADOS
-            datos_eliminados = df_eliminados.to_json(orient='records', indent=4)
-            
-            with open(ruta_log, 'w', encoding='utf-8') as archivo_json:
-                archivo_json.write(datos_eliminados)
-                
-            datos_eliminados_json=(f"{len(df_eliminados)} filas con fechas inválidas exportadas a: "
-                                   f"{CARPETA_DESCARGAS}/{NOMBRE_JSON_ELIMINADOS}")
-
-        df.dropna(subset=['date'], inplace=True)
-
-        df['dia_semana'] = df['date'].dt.strftime('%A')
-
-        columnas_agrupacion = ['dia_semana', 'province']
-        columnas_suma: list = ['num_def', 'new_cases', 'num_hosp', 'num_uci']
-
-        df_agrupado = df.groupby(columnas_agrupacion)[columnas_suma].sum().reset_index()
-
-        datos_json = df_agrupado.to_json(orient='records', indent=4)
-
-        ruta_salida: Path = RUTA_DESCARGAS / NOMBRE_JSON
-        
-        with open(ruta_salida, 'w', encoding='utf-8') as f:
-            f.write(datos_json)
-
-        datos_exportados_json=(f"{len(df_agrupado)} filas de datos agrupados por día/provincia y exportadas a: "
-                               f"'{CARPETA_DESCARGAS}/{NOMBRE_JSON}'")
-
-        return datos_eliminados_json, datos_exportados_json
-    
-    except KeyError as e:
-        mensaje_error=(f"Error: Una columna necesaria no fue encontrada. Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
-        return mensaje_error, mensaje_error
-    
-    except Exception as e:
-        mensaje_error=(f"Error al generar el JSON: {e}")
-        return mensaje_error, mensaje_error
-
-
 def obtener_datos_completos() -> pd.DataFrame:
     try:
         conn = sqlite3.connect(RUTA_DB / NOMBRE_DB)
@@ -157,15 +188,16 @@ def obtener_datos_completos() -> pd.DataFrame:
     except sqlite3.Error as e:
         print(f"Error al consultar la base de datos: {e}")
         return pd.DataFrame()
-    
+
+
 def obtener_archivos_csv() -> list:
     if not RUTA_ARCHIVOS.exists():
         return []
     
     archivos_csv_encontrados = []
-    
+
     for archivo in RUTA_ARCHIVOS.iterdir():
-        if archivo.is_file() and archivo.suffix.lower() == '.csv':            
+        if archivo.is_file() and archivo.suffix.lower() == '.csv':
             archivos_csv_encontrados.append(archivo.name)
                 
     return archivos_csv_encontrados

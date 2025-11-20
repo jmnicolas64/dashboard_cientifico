@@ -1,0 +1,9 @@
+[theme]
+# Colores primarios
+primaryColor="#4F8BF9"       # Color principal (botones, etc.)
+backgroundColor="#FFFFFF"     # Fondo de la aplicación (fuera del sidebar)
+secondaryBackgroundColor="#F0F2F6" # Fondo de elementos interactivos (sidebar)
+textColor="#31333F"           # Color principal del texto
+
+# Fuentes
+font="sans serif"             # Puede ser "sans serif", "serif", o "monospace"

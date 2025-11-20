@@ -8,12 +8,21 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
 
 from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS
 
+CARGA_ID_POSIBLES={
+                "Mayo 2021": "202105","Junio 2021": "202106",
+                "Julio 2021": "202107","Agosto 2021": "202108",
+                "Septiembre 2021": "202109","Octubre 2021": "202110",
+                "Noviembre 2021": "202111","Diciembre 2021": "202112"
+                }
+
 CARGA_ID_POSIBLES=[
                 "Mayo 2021 -202105","Junio 2021 -202106",
                 "Julio 2021 -202107","Agosto 2021 -202108",
                 "Septiembre 2021 -202109","Octubre 2021 -202110",
                 "Noviembre 2021 -202111","Diciembre 2021 -202112"
                 ]
+
+
 
 configura_streamlit()
 

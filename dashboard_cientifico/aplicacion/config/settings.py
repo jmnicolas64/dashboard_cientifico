@@ -33,7 +33,7 @@ TABLA_IMPORTACION = 'datos_covid'
 NOMBRE_ARCHIVO_ENTRADA: str = "datos_covid.csv"
 RUTA_ARCHIVO_ENTRADA: Path = RUTA_ARCHIVOS / NOMBRE_ARCHIVO_ENTRADA
 
-NOMBRE_JSON = 'datos_covid.json'
+NOMBRE_JSON_PEDIDO = 'datos_covid.json'
 NOMBRE_JSON_ELIMINADOS='datos_eliminados.json'
 
 # --- DIAS DE LA SEMANA ---

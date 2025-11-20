@@ -20,3 +20,7 @@ def introduccion_general():
     </ol>    
     """,
     unsafe_allow_html=True)
+
+    st.success("success")
+    st.warning ("warning")
+    st.error("error")
