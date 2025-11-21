@@ -283,12 +283,24 @@ def obtener_datos_completos() -> pd.DataFrame:
 
         df = pd.read_sql(query, conn)
         conn.close()
-        return df
 
     except sqlite3.Error as e:
         print(f"Error al consultar la base de datos: {e}")
         return pd.DataFrame()
 
+    columnas_a_eliminar = [
+        'source_name', 
+        'source',
+        'comments'
+    ]
+    
+    df = df.drop(
+        columns=columnas_a_eliminar, 
+        axis=1, 
+        errors='ignore'
+    )
+    
+    return df
 
 def obtener_archivos_csv() -> list:
     if not RUTA_ARCHIVOS.exists():
