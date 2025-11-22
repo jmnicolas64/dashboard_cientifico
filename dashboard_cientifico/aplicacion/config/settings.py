@@ -6,7 +6,7 @@ from pathlib import Path
 
 RUTA_BASE: Path = Path(__file__).resolve().parent.parent.parent.parent
 
-CARPETA_APLICACION="dashboard_cientifico" # En esta seeción 1 sólo hay que cambiar este parámetro.
+CARPETA_APLICACION="dashboard_cientifico" # En esta sección 1 sólo hay que cambiar este parámetro.
 
 RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_APLICACION
 
@@ -18,7 +18,6 @@ RUTA_DESCARGAS: Path = RUTA_PAQUETE_PRINCIPAL / "descargas"
 CARPETA_DESCARGAS = f"{CARPETA_APLICACION}/descargas"
 RUTA_IMAGENES: Path = RUTA_PAQUETE_PRINCIPAL / "img"
 CARPETA_IMG = f"{CARPETA_APLICACION}/img"
-
 
 # =========================================================================
 # 2. Definición de constantes particulares (cambiar todas las variables)

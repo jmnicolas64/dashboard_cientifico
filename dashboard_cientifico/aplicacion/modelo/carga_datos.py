@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List
 import shutil
 import os
 import pandas as pd
@@ -19,7 +19,8 @@ from ..config.settings import (RUTA_DB,
                                TABLA_CARGAS_ID,
                                NOMBRE_JSON_PEDIDO,
                                NOMBRE_JSON_ELIMINADOS,
-                               NOMBRE_JSON_CARGAS_ID)
+                               NOMBRE_JSON_CARGAS_ID,
+                               )
 
 
 def verificar_db() -> Dict[str, Any]:
@@ -69,6 +70,7 @@ def verificar_db() -> Dict[str, Any]:
 
     return estado
 
+
 def reset_datos() -> str:
     mensajes = []
 
@@ -114,6 +116,7 @@ def reset_datos() -> str:
         mensajes.append(f"COPIA: Error durante el proceso de copia: {e}")
 
     return "\n\n".join(mensajes)
+
 
 def crear_tabla_carga_ids() -> str:
     try:
@@ -176,7 +179,7 @@ def generar_json() -> tuple[str, str]:
 
         df['dia_semana'] = df['date'].dt.strftime('%A')
 
-        columnas_agrupacion = ['dia_semana', 'province']
+        columnas_agrupacion = ['carga_id','dia_semana', 'province']
         columnas_suma: list = ['num_def', 'new_cases', 'num_hosp', 'num_uci']
 
         df_agrupado = df.groupby(columnas_agrupacion)[columnas_suma].sum().reset_index()
@@ -302,6 +305,7 @@ def obtener_datos_completos() -> pd.DataFrame:
     
     return df
 
+
 def obtener_archivos_csv() -> list:
     if not RUTA_ARCHIVOS.exists():
         return []
@@ -313,4 +317,36 @@ def obtener_archivos_csv() -> list:
             archivos_csv_encontrados.append(archivo.name)
                 
     return archivos_csv_encontrados
-    
+
+
+def obtener_cargas_pendientes(s_principal_cargas: pd.Series) -> List[str]:
+    db: Path=RUTA_DB / NOMBRE_DB
+    conn = sqlite3.connect(db)
+
+    df_cargas_id = pd.read_sql_query("SELECT * FROM cargas_id", conn)
+    conn.close()
+
+    if not s_principal_cargas.empty:
+        df_pendientes = df_cargas_id[~df_cargas_id['carga_id'].isin(s_principal_cargas)]
+    else:
+        df_pendientes = df_cargas_id
+
+    cargas_pendientes = [f"{row['mes']}" for index, row in df_pendientes.iterrows()]
+
+    return cargas_pendientes
+
+
+def dame_carga_id_mes(mes_seleccionado: str) ->str:
+    db: Path = RUTA_DB / NOMBRE_DB
+
+    conn = sqlite3.connect(db)
+    cursor = conn.cursor()
+
+    query = "SELECT carga_id FROM cargas_id WHERE mes = ?"
+
+    cursor.execute(query, (mes_seleccionado,))
+    resultado = cursor.fetchone()
+   
+    conn.close()
+
+    return str(resultado[0])

@@ -1,45 +1,43 @@
 import streamlit as st
 import pandas as pd
+import sqlite3
 from pathlib import Path
-# Asumimos que 'obtener_datos_db' es la función que modificaste antes
-from .tu_modulo_modelo import obtener_datos_db 
+from typing import List
 
-# Clave que usaremos para almacenar el DataFrame
-CLAVE_DATAFRAME = 'datos_principales' 
-RUTA_DB = Path('ruta/a/tu/db.db') 
+# ⚠️ Asumimos estas importaciones:
+# from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
+# from dashboard_cientifico.aplicacion.config.settings import RUTA_DB_COMPLETA # O la ruta que uses
 
-def inicializar_dataframe():
-    """Carga el DataFrame de la DB y lo almacena en st.session_state."""
+
+def obtener_cargas_pendientes(df_principal: str, ruta_db: Path) -> List[str]:   
+    if df_principal not in st.session_state or st.session_state[df_principal].empty:
+        df_principal_cargas = pd.DataFrame()
+    else:
+        df_principal = st.session_state[df_principal]
+        df_principal_cargas = df_principal['carga_id'].unique() 
+
+    try:
+        conn = sqlite3.connect(ruta_db)
+
+        df_cargas_id = pd.read_sql_query("SELECT * FROM cargas_id", conn)
+        conn.close()
+
+    except sqlite3.Error as e:
+        st.error(f"Error al leer la tabla de mapeo de cargas: {e}")
+        return []
+
+    if not df_principal_cargas.empty:
+        df_pendientes = df_cargas_id[~df_cargas_id['carga_id'].isin(df_principal_cargas)]
+    else:
+        df_pendientes = df_cargas_id
+
+    cargas_pendientes = [f"{row['mes']}" for index, row in df_pendientes.iterrows()]
     
-    # Solo cargar si la clave NO existe en el estado de sesión
-    if CLAVE_DATAFRAME not in st.session_state:
-        # Llama a la función que obtiene los datos
-        df = obtener_datos_db(RUTA_DB) 
-        
-        # Almacena el DataFrame en la sesión
-        st.session_state[CLAVE_DATAFRAME] = df
-        
-        # Opcional: Almacenar un indicador de que el DF está vacío o listo
-        if df.empty:
-            st.session_state['datos_cargados'] = False
-            # Puedes mostrar un mensaje de error aquí
-        else:
-            st.session_state['datos_cargados'] = True
+    return cargas_pendientes
 
-
-
-# -------------------------------------------------------------
-# LLAMADA AL INICIO DEL SCRIPT
-# -------------------------------------------------------------
-# Llama a esta función inmediatamente después de las importaciones
-inicializar_dataframe()
-
-
-# Accede al DataFrame en cualquier función de tu aplicación
-df_trabajo = st.session_state[CLAVE_DATAFRAME]
-
-if st.session_state['datos_cargados']:
-    # Crea un gráfico usando los datos persistentes
-    st.line_chart(df_trabajo['columna_interes'])
-else:
-    st.error("No se pudieron cargar los datos. Verifique la base de datos.")
+CARGA_ID_POSIBLES=[
+                "Mayo 2021 -202105","Junio 2021 -202106",
+                "Julio 2021 -202107","Agosto 2021 -202108",
+                "Septiembre 2021 -202109","Octubre 2021 -202110",
+                "Noviembre 2021 -202111","Diciembre 2021 -202112"
+                ]

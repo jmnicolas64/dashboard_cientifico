@@ -1,0 +1,1 @@
+python -m dashboard_cientifico.aplicacion.main
