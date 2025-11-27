@@ -10,9 +10,8 @@ from ..config.settings import (RUTA_DB,
                                CARPETA_DB,
                                RUTA_ARCHIVOS,
                                CARPETA_ARCHIVOS,
+                               CARPETA_CARGADOS,
                                RUTA_COPIA_ARCHIVOS,
-                               NOMBRE_ARCHIVO_ENTRADA,
-                               RUTA_ARCHIVO_ENTRADA,
                                CARPETA_DESCARGAS,
                                RUTA_DESCARGAS,
                                TABLA_DATOS_COVID,
@@ -116,7 +115,7 @@ def reset_datos() -> str:
         mensajes.append(f"COPIA: Error durante el proceso de copia: {e}")
 
     return "\n\n".join(mensajes)
-
+    
 
 def crear_tabla_carga_ids() -> str:
     try:
@@ -149,6 +148,59 @@ def crear_tabla_carga_ids() -> str:
     
     except Exception as e:
         return f"Error inesperado: {e}"
+
+
+def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
+    try:
+        if not archivo_mes_path.exists():
+             raise FileNotFoundError(f"Archivo {archivo_mes_path.name} no encontrado en la ruta.")
+
+        df = pd.read_csv(archivo_mes_path, sep=',', encoding='UTF-8')
+        df.columns = df.columns.str.strip()
+        
+        filas_originales = len(df)
+
+        df['carga_id'] = carga_id
+        df['mes'] = ""
+
+        df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d', errors='coerce') 
+        df.dropna(subset=['date'], inplace=True)
+        
+        filas_cargadas = len(df)
+        filas_omitidas = filas_originales - filas_cargadas
+
+        df['date'] = df['date'].dt.strftime('%d/%m/%Y') 
+
+        db :Path = RUTA_DB / NOMBRE_DB
+        conn = sqlite3.connect(db)
+        cursor=conn.cursor()
+
+        query = f"SELECT mes FROM {TABLA_CARGAS_ID} WHERE carga_id='{carga_id}'"
+        cursor.execute(query)
+        mes = cursor.fetchone()[0]
+        df['mes'] = mes
+
+        df.to_sql(TABLA_DATOS_COVID, conn, if_exists='append', index=False)
+
+        conn.close()
+
+        ruta_cargados: Path = RUTA_ARCHIVOS / "cargados"
+        ruta_cargados.mkdir(exist_ok=True)
+        nombre_nuevo = f"{archivo_mes_path.stem}_{carga_id}{archivo_mes_path.suffix}"
+        ruta_destino: Path = ruta_cargados / nombre_nuevo
+        shutil.move(str(archivo_mes_path), str(ruta_destino))
+        
+        msg = (f"{filas_cargadas} filas válidas para la carga 'carga_id={carga_id}' "
+               f"añadidas a '{CARPETA_DB}/{TABLA_DATOS_COVID}'.")
+        if filas_omitidas > 0:
+            msg += f"{filas_omitidas} filas fueron omitidas por fechas inválidas."
+        return msg
+
+    except FileNotFoundError as e:
+        return f"Error: {e}"
+    
+    except Exception as e:
+        return f"Error: durante la carga, transformación o escritura de datos: {e}"
 
 
 def generar_json() -> tuple[str, str]:
@@ -205,78 +257,50 @@ def generar_json() -> tuple[str, str]:
         return mensaje_error, mensaje_error
 
 
-def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
-    try:
-        if not archivo_mes_path.exists():
-             raise FileNotFoundError(f"Archivo {archivo_mes_path.name} no encontrado en la ruta.")
-
-        df = pd.read_csv(archivo_mes_path, sep=',', encoding='UTF-8')
-        df.columns = df.columns.str.strip()
-        
-        filas_originales = len(df)
-
-        df['carga_id'] = carga_id
-
-        df['date'] = pd.to_datetime(df['date'], format='%Y-%m-%d', errors='coerce') 
-        df.dropna(subset=['date'], inplace=True)
-        
-        filas_cargadas = len(df)
-        filas_omitidas = filas_originales - filas_cargadas
-
-        df['date'] = df['date'].dt.strftime('%d/%m/%Y') 
-
-        db :Path = RUTA_DB / NOMBRE_DB
-        conn = sqlite3.connect(db)
-        df.to_sql(TABLA_DATOS_COVID, conn, if_exists='append', index=False)
-        conn.close()
-
-        ruta_cargados: Path = RUTA_ARCHIVOS / "cargados"
-        ruta_cargados.mkdir(exist_ok=True)
-        nombre_nuevo = f"{archivo_mes_path.stem}_{carga_id}{archivo_mes_path.suffix}"
-        ruta_destino: Path = ruta_cargados / nombre_nuevo
-        shutil.move(str(archivo_mes_path), str(ruta_destino))
-        
-        msg = (f"{filas_cargadas} filas válidas para la carga 'carga_id={carga_id}' "
-               f"añadidas a '{CARPETA_DB}/{TABLA_DATOS_COVID}'.")
-        if filas_omitidas > 0:
-            msg += f"{filas_omitidas} filas fueron omitidas por fechas inválidas."
-        return msg
-
-    except FileNotFoundError as e:
-        return f"Error: {e}"
-    
-    except Exception as e:
-        return f"Error durante la carga, transformación o escritura de datos: {e}"
-
-
-def eliminar_carga_por_id(carga_id: str) -> str:
-    """
-    Elimina todas las filas de la tabla de importación que coincidan con el carga_id especificado.
-    """
+def eliminar_carga(carga_id: str) -> str:
+    conn=None
     try:
         db: Path = RUTA_DB / NOMBRE_DB
         conn = sqlite3.connect(db)
         cursor = conn.cursor()
 
-        # Usamos una consulta parametrizada para prevenir inyección SQL
         query = f"DELETE FROM {TABLA_DATOS_COVID} WHERE carga_id = ?"
         
         cursor.execute(query, (carga_id,))
-        filas_eliminadas = cursor.rowcount # Obtiene el número de filas afectadas
+        filas_eliminadas = cursor.rowcount
         
         conn.commit()
-        conn.close()
         
         if filas_eliminadas > 0:
-            return (f"🗑️ Eliminación exitosa: {filas_eliminadas} filas "
+            RUTA_CARGADOS: Path= RUTA_ARCHIVOS / CARPETA_CARGADOS
+            busca_str = f"*{carga_id}*"
+            archivos_encontrados = list(RUTA_CARGADOS.glob(busca_str))
+
+            if archivos_encontrados:
+                # Asumimos que solo hay un archivo por ID
+                archivo_a_mover = archivos_encontrados[0]
+                nombre_archivo=archivo_a_mover.name
+                quitar_del_nombre = f"_{carga_id}"
+                nombre_original = nombre_archivo.replace(quitar_del_nombre, '')
+
+                ruta_final = RUTA_ARCHIVOS / nombre_original
+                
+                shutil.move(str(archivo_a_mover), str(ruta_final))
+
+            return (f"Eliminación exitosa: {filas_eliminadas} filas "
                     f"asociadas al ID '{carga_id}' han sido borradas.")
         else:
-            return (f"ℹ️ Aviso: No se encontraron filas con el ID de carga '{carga_id}'.")
+            return (f"Aviso: No se encontraron filas con el ID de carga '{carga_id}'.")
             
     except sqlite3.Error as e:
-        return f"❌ Error de base de datos al eliminar la carga '{carga_id}': {e}"
+        return f"Error: de base de datos al eliminar la carga '{carga_id}': {e}"
+    
     except Exception as e:
-        return f"❌ Error inesperado al intentar eliminar la carga '{carga_id}': {e}"
+        return f"Error: inesperado al intentar eliminar la carga '{carga_id}': {e}"
+    
+    finally:
+        if conn:
+            conn.close()
     
 
 def obtener_datos_completos() -> pd.DataFrame:

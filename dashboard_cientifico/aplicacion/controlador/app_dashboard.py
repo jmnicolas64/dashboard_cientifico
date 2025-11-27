@@ -11,7 +11,11 @@ from dashboard_cientifico.aplicacion.config.settings import (RUTA_DB,
                                                              CLAVE_DATAFRAME)
 
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
-from dashboard_cientifico.aplicacion.vista.vista import introduccion_general,introduccion_inicial
+
+from dashboard_cientifico.aplicacion.vista.vista import (introduccion_general,
+                                                         introduccion_inicial,
+                                                         mostrar_mensajes_y_continuar,
+                                                         mostrar_mensaje_con_continuacion)
 
 from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 generar_json,
@@ -21,14 +25,41 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 crear_tabla_carga_ids,
                                                                 obtener_datos_completos,
                                                                 obtener_cargas_pendientes,
-                                                                dame_carga_id_mes)
+                                                                dame_carga_id_mes,
+                                                                eliminar_carga)
 
 from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS
 
-configura_streamlit()
-estado: dict = verificar_db()
 
-st.title("Dashboard Científico")
+""" Funciones """
+
+def _inicializacion_variables_state():
+    if 'menu_refresh_key' not in st.session_state:
+        st.session_state['menu_refresh_key'] = 0
+
+    #Quitar esta variable
+    if 'carga_completa' not in st.session_state:
+        st.session_state['carga_completa'] = False
+
+    if 'gestion_datos_abierto' not in st.session_state:
+        st.session_state['gestion_datos_abierto'] = False
+
+    if 'mensajes_carga_inicial' not in st.session_state:
+        st.session_state['mensajes_carga_inicial'] = ""
+    if 'carga_finalizada_y_lista' not in st.session_state:
+        st.session_state['carga_finalizada_y_lista'] = ""
+
+    if 'menu_num_filas' not in st.session_state:
+        st.session_state['menu_num_filas'] = ""
+    if 'menu_datos_eliminados' not in st.session_state:
+        st.session_state['menu_datos_eliminados'] = ""
+    if 'menu_datos_exportados' not in st.session_state:
+        st.session_state['menu_datos_exportados'] = ""
+
+    if 'mensaje_eliminacion' not in st.session_state:
+        st.session_state['mensaje_eliminacion'] = ""
+    if 'eliminacion_terminada' not in st.session_state:
+        st.session_state['eliminacion_terminada'] = ""
 
 
 def _inicializar_dataframe():
@@ -56,19 +87,19 @@ def _cargas_pendientes() -> List[str]:
     return cargas_pendientes
 
 
-def _menu_normal() -> tuple[str, str, str]:
-    num_filas: str = ""
-    datos_eliminados: str = ""
-    datos_exportados: str = ""
-    
+def _menu_normal() -> None:    
     with st.expander("Dashboard"):
         pagina=st.selectbox("Selecciona página", [
             "Introducción",
             "Configurar semana", 
             "Agrupar"
-            ])
+            ],
+            key=f"dashboard_select_{st.session_state['menu_refresh_key']}"
+            )
 
-    with st.expander("Gestión de Datos"):
+    with st.expander("Gestión de Datos", expanded=st.session_state['gestion_datos_abierto']):
+        st.session_state['gestion_datos_abierto'] = True
+
         st.info("Carga y actualización de los datos de la BD")
         with st.expander("Cargar Nuevo CSV"):
             archivos_disponibles = obtener_archivos_csv()
@@ -78,54 +109,87 @@ def _menu_normal() -> tuple[str, str, str]:
                 archivo_seleccionado = None
                 carga_id_seleccionado = None
                 st.warning(f"No se encontraron archivos CSV")
-                st.stop()
-
+                return
+            
             archivo_seleccionado = st.selectbox(
                 "Seleccione el archivo a cargar:",
-                archivos_disponibles
+                archivos_disponibles,
+                key=f"archivo_select_{st.session_state['menu_refresh_key']}"
             )
 
             archivo_seleccionado= Path(f"{RUTA_ARCHIVOS}/{archivo_seleccionado}")
 
             carga_id_seleccionado = st.selectbox(
                 "Seleccione el ID de Carga:",
-                carga_id_posibles
+                carga_id_posibles,
+                key=f"carga_id_select_{st.session_state['menu_refresh_key']}"
             )
 
+            # Cambiar a sacarlo del dataframe
             carga_id_mes=dame_carga_id_mes(carga_id_seleccionado)
 
-            if st.button("Cargar datos", type='primary'):
-                num_filas: str = cargar_datos(archivo_seleccionado,carga_id_mes)
 
-                datos_eliminados, datos_exportados = generar_json()   
+            if st.button("Cargar datos", type='primary', key="btn_carga_normal"):
+                st.session_state['menu_num_filas'] = cargar_datos(archivo_seleccionado,carga_id_mes)
+
+                st.session_state['menu_datos_eliminados'], st.session_state['menu_datos_exportados'] = generar_json()
+
+                st.session_state['gestion_datos_abierto'] = False
+                st.session_state['menu_refresh_key'] += 1
+                st.rerun()              
 
         with st.expander("Eliminar datos"):
-            st.info("Aquí se eliminan los datos del mes seleccionado")                    
+            st.info("Aquí se eliminan los datos del mes seleccionado")
 
+            meses_existentes = []
+            df_mes_carga = None
+
+            if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
+                df_principal = st.session_state[CLAVE_DATAFRAME]
+                df_mes_carga = df_principal[['mes', 'carga_id']].drop_duplicates()
+
+                meses_existentes = list(df_mes_carga['mes'].unique())
+            
+                mes_seleccionado = st.selectbox(
+                    "Seleccione el ID de Carga:",
+                    meses_existentes,
+                    key=f"mes_select_{st.session_state['menu_refresh_key']}"
+                )
+
+                carga_id_a_eliminar = df_mes_carga[df_mes_carga['mes'] == mes_seleccionado]['carga_id'].iloc[0]
+
+                if st.button("Eliminar mes", type='primary', key="btn_eliminar_mes"):
+                    
+                    mensage_elim: str = eliminar_carga(carga_id_a_eliminar)
+                    st.session_state['mensaje_eliminacion'] = mensage_elim
+                    
+                    del st.session_state[CLAVE_DATAFRAME]
+                    st.session_state['menu_refresh_key'] += 1
+                    st.rerun()
         
         with st.expander("Reset datos"):
             st.info("Esta opción vuelve la aplicación a la 'Carga inicial'")
 
-            if st.button("Reset...", type='primary'):
+            if st.button("Reset...", type='primary', ):
                 db: Path=RUTA_DB / NOMBRE_DB
                 os.unlink(db)
+                st.session_state['menu_refresh_key'] += 1
                 st.rerun()
 
-    return num_filas, datos_eliminados, datos_exportados
 
-def _menu_iniciar_datos() -> str:
+def _menu_iniciar_datos():
     mensajes_carga_inicial = []
 
     with st.expander("Carga inicial"):
-        if st.button("Cargar datos", type='primary'):
+        if st.button("Cargar datos", type='primary', key="btn_carga_inicial"):
             mensaje_reset = reset_datos()
             mensajes_carga_inicial.append(f"1.RESET: {mensaje_reset}")
-            
-            mensaje_cargar = cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL)
-            mensajes_carga_inicial.append(f"2.CARGA: {mensaje_cargar}")
 
             mensaje_ids = crear_tabla_carga_ids()
             mensajes_carga_inicial.append(f"3.CARGA_IDS: {mensaje_ids}")
+            
+            mensaje_cargar = cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL)
+            mensajes_carga_inicial.append(f"2.CARGA: {mensaje_cargar}")
 
             datos_eliminados_json, datos_exportados_json=generar_json()
             mensajes_carga_inicial.append(f"4.JSON Exportado: {datos_exportados_json}")
@@ -135,10 +199,24 @@ def _menu_iniciar_datos() -> str:
 
             _inicializar_dataframe()
 
-    return "\n\n".join(mensajes_carga_inicial)
+            st.session_state['mensajes_carga_inicial'] = "\n\n".join(mensajes_carga_inicial)
+            st.session_state['menu_refresh_key'] += 1
+            st.rerun()
+
+    return
 
 
-mensajes_total_carga, num_filas, datos_eliminados, datos_exportados = [None]*4
+""" Tareas iniciales """
+
+configura_streamlit()
+_inicializacion_variables_state()
+
+estado: dict = verificar_db()
+
+st.title("Dashboard Covid")
+
+
+""" Control de estado y tareas finales"""
 
 if estado['final']:
     _inicializar_dataframe()
@@ -146,26 +224,16 @@ if estado['final']:
 
     with st.sidebar:
         st.title("Menú")
-        num_filas, datos_eliminados, datos_exportados = _menu_normal()
-        
+        _menu_normal()       
 else:
     introduccion_inicial()
 
     with st.sidebar:
         st.title("Menú")
-        mensajes_total_carga = _menu_iniciar_datos()
+        _menu_iniciar_datos()
 
-if mensajes_total_carga:
-    st.info(mensajes_total_carga)
-    if st.button("Continuar...", type='primary'):
-        st.rerun()
+mostrar_mensaje_con_continuacion('mensajes_carga_inicial', 'carga_finalizada_y_lista')
 
-if num_filas:
-    st.success(num_filas)
+mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
 
-if datos_exportados:
-    st.success(datos_exportados)
-
-if datos_eliminados:
-    st.warning(datos_eliminados)
-
+mostrar_mensajes_y_continuar('menu_num_filas', 'menu_datos_eliminados', 'menu_datos_exportados')
