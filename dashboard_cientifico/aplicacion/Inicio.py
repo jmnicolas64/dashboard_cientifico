@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from dashboard_cientifico.aplicacion.config.settings import (RUTA_DB,
+                                                             RUTA_ARCHIVOS,
                                                              NOMBRE_DB,
                                                              RUTA_ARCHIVO_ENTRADA,
                                                              CARGA_ID_INICIAL,
@@ -28,7 +29,6 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 dame_carga_id_mes,
                                                                 eliminar_carga)
 
-from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS
 
 
 # Funciones
@@ -77,7 +77,6 @@ def _inicializar_dataframe():
         # mostrar un mensaje de error aquí
     else:
         pass
-
 
 
 def _menu_normal() -> None:
@@ -222,24 +221,25 @@ _inicializacion_variables_state()
 
 estado: dict = verificar_db()
 
-st.title("Dashboard Covid")
-
-
 # Control de estado y tareas finales
+with st.sidebar:
+    st.title("Menú")
+
+    if estado['final']:
+        _inicializar_dataframe()
+        _menu_normal()       
+    else:
+        _menu_iniciar_datos()
 
 if estado['final']:
-    _inicializar_dataframe()
+    # [NUEVO] Si la DB está lista, dibuja el contenido de Bienvenida
+    st.title("Bienvenido al Dashboard Científico")
     introduccion_general()
-
-    with st.sidebar:
-        st.title("Menú")
-        _menu_normal()       
+    st.info("Utiliza el menú lateral para gestionar la base de datos o navega a las otras páginas para ver los gráficos.")
+    
 else:
+    # [MANTENER] Si la DB no está lista, dibuja la introducción inicial
     introduccion_inicial()
-
-    with st.sidebar:
-        st.title("Menú")
-        _menu_iniciar_datos()
 
 mostrar_mensaje_con_continuacion('mensajes_carga_inicial', 'carga_finalizada_y_lista')
 

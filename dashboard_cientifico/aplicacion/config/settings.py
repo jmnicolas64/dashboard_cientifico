@@ -23,7 +23,7 @@ CARPETA_IMG = f"{CARPETA_APLICACION}/img"
 # 2. Definición de constantes particulares (cambiar todas las variables)
 # =========================================================================
 
-RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/controlador/app_dashboard.py'
+RUTA_STREAMLIT: Path = RUTA_PAQUETE_PRINCIPAL / 'aplicacion/Inicio.py'
 CLAVE_DATAFRAME = 'datos_principales'
 
 # --- CONFIGURACIÓN DB ---
