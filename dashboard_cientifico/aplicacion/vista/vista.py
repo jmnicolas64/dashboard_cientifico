@@ -2,28 +2,16 @@ import streamlit as st
 
 
 def introduccion_general():
+    st.subheader("Menú principal")
     st.markdown(
     """
-    El orden de ejecucion es el siguiente:
+    Selecciona una opción en el menú lateral:
     <ol>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Cargar excel original</span></li>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Configurar semana</span></li>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Agrupar</span></li>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Dashboard</span></li>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Gestión de datos</span></li>
     </ol>
-
-    <b>Antes de seleccionar la opción 'Cargar excel original' hay que asegurarse de lo siguiente:</b>
-    <ol>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">
-            El archivo excel original esta en la carpeta './archivos', se llama 'confemetal.xlsx' y la hoja a leer se llama 'confemetal'</span></li>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">
-            El archivo 'configuración.py' tiene la funcion 'semana_y_año()' bien configurada </span></li>
-    </ol>    
     """,
     unsafe_allow_html=True)
-
-    st.success("success")
-    st.warning ("warning")
-    st.error("error")
 
 
 def introduccion_inicial():
@@ -67,13 +55,12 @@ def mostrar_mensajes_y_continuar(clave_num, clave_del, clave_exp):
         mensaje_mostrado = True
         
     if mensaje_mostrado:
-        st.session_state[clave_num] = ""
-        st.session_state[clave_del] = ""
-        st.session_state[clave_exp] = ""
-        
-        # 4. Mostrar el botón continuar
-        if st.button("Continuar...", type='primary'):
-            st.session_state['gestion_datos_abierto'] = False
+        if st.button("Continuar...", type='primary', key="btn_continuar_gestion"):
+            st.session_state[clave_num] = ""
+            st.session_state[clave_del] = ""
+            st.session_state[clave_exp] = ""
+            
+            st.session_state['gestion_datos'] = False
             st.session_state['menu_refresh_key'] += 1
             st.rerun()
 
@@ -96,4 +83,7 @@ def mostrar_mensaje_con_continuacion(clave_mensaje: str, clave_terminada: str):
         if st.session_state.get(clave_terminada, False):
             st.session_state[clave_terminada] = False # Limpiamos la bandera de terminado
             st.session_state['menu_refresh_key'] += 1
+
+            st.session_state['eliminar_datos'] = False
+            st.session_state['reset_datos'] = False
             st.rerun()

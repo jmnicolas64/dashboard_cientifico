@@ -31,18 +31,23 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
 from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS
 
 
-""" Funciones """
+# Funciones
 
 def _inicializacion_variables_state():
+    if CLAVE_DATAFRAME not in st.session_state:
+            st.session_state[CLAVE_DATAFRAME] = None
+
     if 'menu_refresh_key' not in st.session_state:
         st.session_state['menu_refresh_key'] = 0
 
-    #Quitar esta variable
-    if 'carga_completa' not in st.session_state:
-        st.session_state['carga_completa'] = False
-
-    if 'gestion_datos_abierto' not in st.session_state:
-        st.session_state['gestion_datos_abierto'] = False
+    if 'gestion_datos' not in st.session_state:
+        st.session_state['gestion_datos'] = False
+    if 'cargar_nuevo_csv' not in st.session_state:
+        st.session_state['cargar_nuevo_csv'] = False
+    if 'eliminar_datos' not in st.session_state:
+        st.session_state['eliminar_datos'] = False
+    if 'reset_datos' not in st.session_state:
+        st.session_state['reset_datos'] = False               
 
     if 'mensajes_carga_inicial' not in st.session_state:
         st.session_state['mensajes_carga_inicial'] = ""
@@ -63,31 +68,21 @@ def _inicializacion_variables_state():
 
 
 def _inicializar_dataframe():
-    if CLAVE_DATAFRAME not in st.session_state:
-        df = obtener_datos_completos() 
-        
-        st.session_state[CLAVE_DATAFRAME] = df
-        
-        if df.empty:
-            st.session_state['datos_cargados'] = False
-            # mostrar un mensaje de error aquí
-        else:
-            st.session_state['datos_cargados'] = True
-
-
-def _cargas_pendientes() -> List[str]:
-    if CLAVE_DATAFRAME not in st.session_state or st.session_state[CLAVE_DATAFRAME].empty:
-        s_principal_cargas = pd.Series([], dtype='object')
+    df = obtener_datos_completos() 
+    
+    st.session_state[CLAVE_DATAFRAME] = df
+    
+    if df.empty:
+        pass
+        # mostrar un mensaje de error aquí
     else:
-        df_principal = st.session_state[CLAVE_DATAFRAME]
-        s_principal_cargas = pd.Series(df_principal['carga_id'].unique())
-
-    cargas_pendientes=obtener_cargas_pendientes(s_principal_cargas)
-
-    return cargas_pendientes
+        pass
 
 
-def _menu_normal() -> None:    
+
+def _menu_normal() -> None:
+    _inicializar_dataframe()
+
     with st.expander("Dashboard"):
         pagina=st.selectbox("Selecciona página", [
             "Introducción",
@@ -97,13 +92,22 @@ def _menu_normal() -> None:
             key=f"dashboard_select_{st.session_state['menu_refresh_key']}"
             )
 
-    with st.expander("Gestión de Datos", expanded=st.session_state['gestion_datos_abierto']):
-        st.session_state['gestion_datos_abierto'] = True
+    with st.expander("Gestión de datos", expanded=st.session_state['gestion_datos']):
+        st.session_state['gestion_datos'] = True
 
         st.info("Carga y actualización de los datos de la BD")
-        with st.expander("Cargar Nuevo CSV"):
+        with st.expander("Cargar Nuevo CSV", expanded=st.session_state['cargar_nuevo_csv']):
+            st.session_state['cargar_nuevo_csv'] = True
+
             archivos_disponibles = obtener_archivos_csv()
-            carga_id_posibles=_cargas_pendientes()
+
+            if CLAVE_DATAFRAME not in st.session_state or st.session_state[CLAVE_DATAFRAME].empty:
+                s_principal_cargas = pd.Series([], dtype='object')
+            else:
+                df_principal = st.session_state[CLAVE_DATAFRAME]
+                s_principal_cargas = pd.Series(df_principal['carga_id'].unique())
+
+            carga_id_posibles=obtener_cargas_pendientes(s_principal_cargas)
 
             if not archivos_disponibles:  
                 archivo_seleccionado = None
@@ -130,15 +134,19 @@ def _menu_normal() -> None:
 
 
             if st.button("Cargar datos", type='primary', key="btn_carga_normal"):
+
+
                 st.session_state['menu_num_filas'] = cargar_datos(archivo_seleccionado,carga_id_mes)
 
                 st.session_state['menu_datos_eliminados'], st.session_state['menu_datos_exportados'] = generar_json()
 
-                st.session_state['gestion_datos_abierto'] = False
+                st.session_state['gestion_datos'] = False
                 st.session_state['menu_refresh_key'] += 1
                 st.rerun()              
 
-        with st.expander("Eliminar datos"):
+        with st.expander("Eliminar datos", expanded=st.session_state['eliminar_datos']):
+            st.session_state['eliminar_datos'] = True
+
             st.info("Aquí se eliminan los datos del mes seleccionado")
 
             meses_existentes = []
@@ -159,7 +167,6 @@ def _menu_normal() -> None:
                 carga_id_a_eliminar = df_mes_carga[df_mes_carga['mes'] == mes_seleccionado]['carga_id'].iloc[0]
 
                 if st.button("Eliminar mes", type='primary', key="btn_eliminar_mes"):
-                    
                     mensage_elim: str = eliminar_carga(carga_id_a_eliminar)
                     st.session_state['mensaje_eliminacion'] = mensage_elim
                     
@@ -167,7 +174,9 @@ def _menu_normal() -> None:
                     st.session_state['menu_refresh_key'] += 1
                     st.rerun()
         
-        with st.expander("Reset datos"):
+        with st.expander("Reset datos", expanded=st.session_state['reset_datos']):
+            st.session_state['reset_datos'] = True
+
             st.info("Esta opción vuelve la aplicación a la 'Carga inicial'")
 
             if st.button("Reset...", type='primary', ):
@@ -206,7 +215,7 @@ def _menu_iniciar_datos():
     return
 
 
-""" Tareas iniciales """
+# Tareas iniciales
 
 configura_streamlit()
 _inicializacion_variables_state()
@@ -216,7 +225,7 @@ estado: dict = verificar_db()
 st.title("Dashboard Covid")
 
 
-""" Control de estado y tareas finales"""
+# Control de estado y tareas finales
 
 if estado['final']:
     _inicializar_dataframe()
