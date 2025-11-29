@@ -27,16 +27,29 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 obtener_datos_completos,
                                                                 obtener_cargas_pendientes,
                                                                 dame_carga_id_mes,
-                                                                eliminar_carga)
+                                                                eliminar_carga,
+                                                                inicializar_dataframe)
 
 
 
 
 def _menu_normal() -> None:
+    inicializar_dataframe()
     st.info("Carga y actualización de los datos de la BD")
-    with st.expander("Cargar Nuevo CSV", expanded=st.session_state['cargar_nuevo_csv']):
-        st.session_state['cargar_nuevo_csv'] = True
 
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        # Usamos f-strings para formatear el texto
+        st.write(f"**Cargar CSV:** `{st.session_state['cargar_nuevo_csv']}`")
+        
+    with col2:
+        st.write(f"**Eliminar Datos:** `{st.session_state['eliminar_datos']}`")
+
+    with col3:
+        st.write(f"**Reset Datos:** `{st.session_state['reset_datos']}`")
+
+    with st.expander("Cargar Nuevo CSV", expanded=st.session_state['cargar_nuevo_csv']):
         archivos_disponibles = obtener_archivos_csv()
 
         if CLAVE_DATAFRAME not in st.session_state or st.session_state[CLAVE_DATAFRAME].empty:
@@ -72,19 +85,13 @@ def _menu_normal() -> None:
 
 
         if st.button("Cargar datos", type='primary', key="btn_carga_normal"):
-
-
             st.session_state['menu_num_filas'] = cargar_datos(archivo_seleccionado,carga_id_mes)
-
             st.session_state['menu_datos_eliminados'], st.session_state['menu_datos_exportados'] = generar_json()
-
-            st.session_state['gestion_datos'] = False
             st.session_state['menu_refresh_key'] += 1
+            df = obtener_datos_completos()
             st.rerun()              
 
     with st.expander("Eliminar datos", expanded=st.session_state['eliminar_datos']):
-        st.session_state['eliminar_datos'] = True
-
         st.info("Aquí se eliminan los datos del mes seleccionado")
 
         meses_existentes = []
@@ -110,17 +117,17 @@ def _menu_normal() -> None:
                 
                 del st.session_state[CLAVE_DATAFRAME]
                 st.session_state['menu_refresh_key'] += 1
+                st.session_state['eliminar_datos'] = False
                 st.rerun()
     
     with st.expander("Reset datos", expanded=st.session_state['reset_datos']):
-        st.session_state['reset_datos'] = True
-
         st.info("Esta opción vuelve la aplicación a la 'Carga inicial'")
 
         if st.button("Reset...", type='primary', ):
             db: Path=RUTA_DB / NOMBRE_DB
             os.unlink(db)
             st.session_state['menu_refresh_key'] += 1
+            st.session_state['reset_datos'] = False
             st.rerun()
 
 
@@ -165,9 +172,8 @@ if estado['final']:
 else:
     _menu_iniciar_datos()
 
-with st.sidebar:
-    mostrar_mensaje_con_continuacion('mensajes_carga_inicial', 'carga_finalizada_y_lista')
+mostrar_mensaje_con_continuacion('mensajes_carga_inicial', 'carga_finalizada_y_lista')
 
-    mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
+mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
 
-    mostrar_mensajes_y_continuar('menu_num_filas', 'menu_datos_eliminados', 'menu_datos_exportados')
+mostrar_mensajes_y_continuar('menu_num_filas', 'menu_datos_eliminados', 'menu_datos_exportados')

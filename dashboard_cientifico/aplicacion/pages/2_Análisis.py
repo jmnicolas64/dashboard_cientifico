@@ -4,11 +4,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Asegúrate de que las rutas de importación son correctas
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
-configura_streamlit()
 
 def analisis_comparativo_boxplot(df: pd.DataFrame):
     """
@@ -94,6 +92,7 @@ def analisis_comparativo_boxplot(df: pd.DataFrame):
 # FLUJO PRINCIPAL DE 2_Análisis.py
 # =========================================================================
 
+configura_streamlit()
 st.title("🔬 Análisis Comparativo")
 
 if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:

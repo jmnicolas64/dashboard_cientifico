@@ -4,14 +4,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Asegúrate de que las rutas de importación son correctas
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
+
+
 # =========================================================================
 # FUNCIONES DE GRÁFICOS
 # =========================================================================
 
-configura_streamlit()
 
 def dashboard_evolucion_temporal(df: pd.DataFrame):
     """
@@ -95,6 +95,7 @@ def dashboard_estructura_geografica(df: pd.DataFrame):
 # FLUJO PRINCIPAL DE 1_Dashboard.py
 # =========================================================================
 
+configura_streamlit()
 st.title("📈 Dashboard")
 
 if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:

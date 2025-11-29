@@ -3,9 +3,11 @@ from typing import Dict, Any, List
 import shutil
 import os
 import pandas as pd
+import streamlit as st
 import sqlite3
 import json
-from ..config.settings import (RUTA_DB,
+from ..config.settings import (CLAVE_DATAFRAME,
+                               RUTA_DB,
                                NOMBRE_DB,
                                CARPETA_DB,
                                RUTA_ARCHIVOS,
@@ -20,6 +22,32 @@ from ..config.settings import (RUTA_DB,
                                NOMBRE_JSON_ELIMINADOS,
                                NOMBRE_JSON_CARGAS_ID,
                                )
+
+
+def inicializar_dataframe():
+    df = obtener_datos_completos() 
+    
+    st.session_state[CLAVE_DATAFRAME] = df
+    
+    if df.empty:
+        st.session_state[CLAVE_DATAFRAME] = pd.DataFrame() 
+        return
+
+    df['date'] = pd.to_datetime(df['date'], dayfirst=True)
+
+    df['daily_cases_avg7'] = df.groupby('province')['daily_cases'].transform(
+            lambda x: x.rolling(window=7, min_periods=1).mean()
+    )
+
+    df['daily_deaths_calculated'] = df.groupby('province')['deceased'].diff().fillna(0)
+
+    df['daily_deaths_avg7'] = df.groupby('province')['daily_deaths_calculated'].transform(
+        lambda x: x.rolling(window=7, min_periods=1).mean()
+    )
+    
+    df['cases_per_100k'] = (df['cases_accumulated'] / df['poblacion']) * 100000
+
+    st.session_state[CLAVE_DATAFRAME] = df
 
 
 def verificar_db() -> Dict[str, Any]:

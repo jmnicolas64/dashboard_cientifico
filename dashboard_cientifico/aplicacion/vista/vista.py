@@ -2,6 +2,7 @@ import streamlit as st
 
 
 def introduccion_general():
+    st.title("Bienvenido al Dashboard Científico")
     st.subheader("Menú principal")
     st.markdown(
     """
@@ -10,6 +11,7 @@ def introduccion_general():
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Dashboard</span></li>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Análisis</span></li>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Datos</span></li>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Gestión</span></li>
     </ul>
     """,
     unsafe_allow_html=True)
@@ -60,8 +62,6 @@ def mostrar_mensajes_y_continuar(clave_num, clave_del, clave_exp):
             st.session_state[clave_num] = ""
             st.session_state[clave_del] = ""
             st.session_state[clave_exp] = ""
-            
-            st.session_state['gestion_datos'] = False
             st.session_state['menu_refresh_key'] += 1
             st.rerun()
 
@@ -84,7 +84,4 @@ def mostrar_mensaje_con_continuacion(clave_mensaje: str, clave_terminada: str):
         if st.session_state.get(clave_terminada, False):
             st.session_state[clave_terminada] = False # Limpiamos la bandera de terminado
             st.session_state['menu_refresh_key'] += 1
-
-            st.session_state['eliminar_datos'] = False
-            st.session_state['reset_datos'] = False
             st.rerun()
