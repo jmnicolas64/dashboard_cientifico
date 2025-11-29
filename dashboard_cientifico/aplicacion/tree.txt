@@ -1,0 +1,59 @@
+Listado de rutas de carpetas para el volumen Windows
+El número de serie del volumen es AEC0-1269
+C:.
+¦   Inicio.py
+¦   main.py
+¦   pspm.py
+¦   tree.txt
+¦   __init__.py
+¦   
++---config
+¦   ¦   config_streamlit.py
+¦   ¦   settings.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           config_streamlit.cpython-312.pyc
+¦           settings.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---controlador
+¦   ¦   controlador.py
+¦   ¦   pspm.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---.streamlit
+¦   ¦       config.toml
+¦   ¦       
+¦   +---__pycache__
+¦           controlador.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---modelo
+¦   ¦   carga_datos.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           carga_datos.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---pages
+¦       1_Dashboard.py
+¦       2_Análisis.py
+¦       3_Datos.py
+¦       
++---vista
+¦   ¦   vista.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           vista.cpython-312.pyc
+¦           vista_graficos.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---__pycache__
+        main.cpython-312.pyc
+        main1.cpython-312.pyc
+        pspm.cpython-312.pyc
+        __init__.cpython-312.pyc
+        

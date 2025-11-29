@@ -6,10 +6,11 @@ def introduccion_general():
     st.markdown(
     """
     Selecciona una opción en el menú lateral:
-    <ol>
+    <ul>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Dashboard</span></li>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Gestión de datos</span></li>
-    </ol>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Análisis</span></li>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Datos</span></li>
+    </ul>
     """,
     unsafe_allow_html=True)
 
