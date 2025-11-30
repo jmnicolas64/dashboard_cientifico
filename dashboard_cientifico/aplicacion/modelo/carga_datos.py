@@ -116,7 +116,7 @@ def reset_datos() -> str:
 
     try:
         if RUTA_ARCHIVOS.exists():
-            shutil.rmtree(RUTA_ARCHIVOS) 
+            shutil.rmtree(RUTA_ARCHIVOS, ignore_errors=True) 
             mensajes.append("DIR: Contenido de la carpeta de entrada borrado.")
             
         RUTA_ARCHIVOS.mkdir(parents=True, exist_ok=False)
@@ -124,7 +124,7 @@ def reset_datos() -> str:
 
     except Exception as e:
         mensajes.append(f"DIR: Error al borrar/recrear la carpeta de entrada: {e}")
-        return "\n\n".join(mensajes)
+        #return "\n\n".join(mensajes)
 
     try:
         if not RUTA_COPIA_ARCHIVOS.exists():
@@ -178,7 +178,7 @@ def crear_tabla_carga_ids() -> str:
         return f"Error inesperado: {e}"
 
 
-def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
+def cargar_datos(archivo_mes_path: Path, carga_id: str, mes: str) -> str:
     try:
         if not archivo_mes_path.exists():
              raise FileNotFoundError(f"Archivo {archivo_mes_path.name} no encontrado en la ruta.")
@@ -218,7 +218,7 @@ def cargar_datos(archivo_mes_path: Path, carga_id: str) -> str:
         ruta_destino: Path = ruta_cargados / nombre_nuevo
         shutil.move(str(archivo_mes_path), str(ruta_destino))
         
-        msg = (f"{filas_cargadas} filas válidas para la carga 'carga_id={carga_id}' "
+        msg = (f"CARGA: {filas_cargadas} filas válidas del mes '{mes}' "
                f"añadidas a '{CARPETA_DB}/{TABLA_DATOS_COVID}'.")
         if filas_omitidas > 0:
             msg += f"{filas_omitidas} filas fueron omitidas por fechas inválidas."
@@ -285,7 +285,7 @@ def generar_json() -> tuple[str, str]:
         return mensaje_error, mensaje_error
 
 
-def eliminar_carga(carga_id: str) -> str:
+def eliminar_carga(carga_id: str, mes: str) -> str:
     conn=None
     try:
         db: Path = RUTA_DB / NOMBRE_DB
@@ -305,7 +305,6 @@ def eliminar_carga(carga_id: str) -> str:
             archivos_encontrados = list(RUTA_CARGADOS.glob(busca_str))
 
             if archivos_encontrados:
-                # Asumimos que solo hay un archivo por ID
                 archivo_a_mover = archivos_encontrados[0]
                 nombre_archivo=archivo_a_mover.name
                 quitar_del_nombre = f"_{carga_id}"
@@ -316,9 +315,9 @@ def eliminar_carga(carga_id: str) -> str:
                 shutil.move(str(archivo_a_mover), str(ruta_final))
 
             return (f"Eliminación exitosa: {filas_eliminadas} filas "
-                    f"asociadas al ID '{carga_id}' han sido borradas.")
+                    f"asociadas al mes '{mes}' han sido borradas.")
         else:
-            return (f"Aviso: No se encontraron filas con el ID de carga '{carga_id}'.")
+            return (f"Aviso: No se encontraron filas con el mes '{mes}'.")
             
     except sqlite3.Error as e:
         return f"Error: de base de datos al eliminar la carga '{carga_id}': {e}"
@@ -375,7 +374,7 @@ def obtener_cargas_pendientes(s_principal_cargas: pd.Series) -> List[str]:
     db: Path=RUTA_DB / NOMBRE_DB
     conn = sqlite3.connect(db)
 
-    df_cargas_id = pd.read_sql_query("SELECT * FROM cargas_id", conn)
+    df_cargas_id = pd.read_sql_query("SELECT * FROM cargas_id ORDER BY carga_id", conn)
     conn.close()
 
     if not s_principal_cargas.empty:

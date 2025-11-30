@@ -24,30 +24,18 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 verificar_db,
                                                                 reset_datos,
                                                                 crear_tabla_carga_ids,
-                                                                obtener_datos_completos,
                                                                 obtener_cargas_pendientes,
                                                                 dame_carga_id_mes,
                                                                 eliminar_carga,
                                                                 inicializar_dataframe)
 
 
-
-
 def _menu_normal() -> None:
     inicializar_dataframe()
     st.info("Carga y actualización de los datos de la BD")
 
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        # Usamos f-strings para formatear el texto
-        st.write(f"**Cargar CSV:** `{st.session_state['cargar_nuevo_csv']}`")
-        
-    with col2:
-        st.write(f"**Eliminar Datos:** `{st.session_state['eliminar_datos']}`")
-
-    with col3:
-        st.write(f"**Reset Datos:** `{st.session_state['reset_datos']}`")
+    mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
+    mostrar_mensajes_y_continuar('menu_num_filas', 'menu_datos_eliminados', 'menu_datos_exportados','gestion_terminada')
 
     with st.expander("Cargar Nuevo CSV", expanded=st.session_state['cargar_nuevo_csv']):
         archivos_disponibles = obtener_archivos_csv()
@@ -80,15 +68,15 @@ def _menu_normal() -> None:
             key=f"carga_id_select_{st.session_state['menu_refresh_key']}"
         )
 
-        # Cambiar a sacarlo del dataframe
-        carga_id_mes=dame_carga_id_mes(carga_id_seleccionado)
 
+        carga_id_mes=dame_carga_id_mes(carga_id_seleccionado)
+        carga_id_seleccionado=str(carga_id_seleccionado)
 
         if st.button("Cargar datos", type='primary', key="btn_carga_normal"):
-            st.session_state['menu_num_filas'] = cargar_datos(archivo_seleccionado,carga_id_mes)
+            st.session_state['menu_num_filas'] = cargar_datos(archivo_seleccionado,carga_id_mes, carga_id_seleccionado)
             st.session_state['menu_datos_eliminados'], st.session_state['menu_datos_exportados'] = generar_json()
+            del st.session_state[CLAVE_DATAFRAME]
             st.session_state['menu_refresh_key'] += 1
-            df = obtener_datos_completos()
             st.rerun()              
 
     with st.expander("Eliminar datos", expanded=st.session_state['eliminar_datos']):
@@ -100,19 +88,22 @@ def _menu_normal() -> None:
         if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
             df_principal = st.session_state[CLAVE_DATAFRAME]
             df_mes_carga = df_principal[['mes', 'carga_id']].drop_duplicates()
+            df_mes_carga.sort_values(by='carga_id', ascending=True, inplace=True)
 
             meses_existentes = list(df_mes_carga['mes'].unique())
-        
+            
             mes_seleccionado = st.selectbox(
                 "Seleccione el ID de Carga:",
                 meses_existentes,
-                key=f"mes_select_{st.session_state['menu_refresh_key']}"
+                key=f"mes_select_{st.session_state['menu_refresh_key']}", 
+                on_change=lambda: setattr(st.session_state, 'eliminar_datos', True) 
             )
 
-            carga_id_a_eliminar = df_mes_carga[df_mes_carga['mes'] == mes_seleccionado]['carga_id'].iloc[0]
+            carga_id_a_eliminar: str = df_mes_carga[df_mes_carga['mes'] == mes_seleccionado]['carga_id'].iloc[0]
+            mes_seleccionado = str(mes_seleccionado)
 
             if st.button("Eliminar mes", type='primary', key="btn_eliminar_mes"):
-                mensage_elim: str = eliminar_carga(carga_id_a_eliminar)
+                mensage_elim: str = eliminar_carga(carga_id_a_eliminar, mes_seleccionado)
                 st.session_state['mensaje_eliminacion'] = mensage_elim
                 
                 del st.session_state[CLAVE_DATAFRAME]
@@ -126,6 +117,7 @@ def _menu_normal() -> None:
         if st.button("Reset...", type='primary', ):
             db: Path=RUTA_DB / NOMBRE_DB
             os.unlink(db)
+            del st.session_state[CLAVE_DATAFRAME]
             st.session_state['menu_refresh_key'] += 1
             st.session_state['reset_datos'] = False
             st.rerun()
@@ -142,7 +134,7 @@ def _menu_iniciar_datos():
             mensaje_ids = crear_tabla_carga_ids()
             mensajes_carga_inicial.append(f"3.CARGA_IDS: {mensaje_ids}")
             
-            mensaje_cargar = cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL)
+            mensaje_cargar = cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL,"")
             mensajes_carga_inicial.append(f"2.CARGA: {mensaje_cargar}")
 
             datos_eliminados_json, datos_exportados_json=generar_json()
@@ -174,6 +166,4 @@ else:
 
 mostrar_mensaje_con_continuacion('mensajes_carga_inicial', 'carga_finalizada_y_lista')
 
-mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
 
-mostrar_mensajes_y_continuar('menu_num_filas', 'menu_datos_eliminados', 'menu_datos_exportados')

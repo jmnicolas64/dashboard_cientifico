@@ -13,11 +13,9 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (verificar_db,
 
 
 
-# Funciones
-
 def _inicializacion_variables_state():
     if CLAVE_DATAFRAME not in st.session_state:
-            st.session_state[CLAVE_DATAFRAME] = None
+        st.session_state[CLAVE_DATAFRAME] = None
 
     if 'menu_refresh_key' not in st.session_state:
         st.session_state['menu_refresh_key'] = 0
@@ -40,25 +38,22 @@ def _inicializacion_variables_state():
         st.session_state['menu_datos_eliminados'] = ""
     if 'menu_datos_exportados' not in st.session_state:
         st.session_state['menu_datos_exportados'] = ""
+    if 'gestion_terminada' not in st.session_state:
+        st.session_state['gestion_terminada'] = False
 
     if 'mensaje_eliminacion' not in st.session_state:
         st.session_state['mensaje_eliminacion'] = ""
     if 'eliminacion_terminada' not in st.session_state:
-        st.session_state['eliminacion_terminada'] = ""
+        st.session_state['eliminacion_terminada'] = False
 
-inicializar_dataframe()
+if __name__ == '__main__':
+    configura_streamlit()
+    _inicializacion_variables_state()
 
+    estado: dict = verificar_db()
 
-
-# Tareas iniciales
-
-configura_streamlit()
-_inicializacion_variables_state()
-
-estado: dict = verificar_db()
-
-if estado['final']:
-    inicializar_dataframe()
-    introduccion_general()
-else:
-    introduccion_inicial()
+    if estado['final']:
+        inicializar_dataframe()
+        introduccion_general()
+    else:
+        introduccion_inicial()

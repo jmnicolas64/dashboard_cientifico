@@ -39,11 +39,11 @@ def introduccion_inicial():
     unsafe_allow_html=True)
 
 
-def mostrar_mensajes_y_continuar(clave_num, clave_del, clave_exp):
+def mostrar_mensajes_y_continuar(clave_num, clave_del, clave_exp, clave_terminada: str):
     
-    num_f = st.session_state[clave_num]
-    datos_d = st.session_state[clave_del]
-    datos_e = st.session_state[clave_exp]
+    num_f = st.session_state.get(clave_num, "")
+    datos_d = st.session_state.get(clave_del, "")
+    datos_e = st.session_state.get(clave_exp, "")
     
     mensaje_mostrado = False
     
@@ -58,10 +58,12 @@ def mostrar_mensajes_y_continuar(clave_num, clave_del, clave_exp):
         mensaje_mostrado = True
         
     if mensaje_mostrado:
-        if st.button("Continuar...", type='primary', key="btn_continuar_gestion"):
-            st.session_state[clave_num] = ""
-            st.session_state[clave_del] = ""
-            st.session_state[clave_exp] = ""
+        st.session_state[clave_num] = ""
+        st.session_state[clave_del] = ""
+        st.session_state[clave_exp] = ""
+
+        if st.session_state.get(clave_terminada, False):
+            st.session_state[clave_terminada] = False
             st.session_state['menu_refresh_key'] += 1
             st.rerun()
 
