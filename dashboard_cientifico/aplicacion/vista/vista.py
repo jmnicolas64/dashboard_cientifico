@@ -141,14 +141,14 @@ def dibujar_grafica_queso_provincia(df_provincia_total: pd.DataFrame, metrica: s
         template='plotly_white'
     )
 
-    fig.update_layout(
-        height=650, 
+    fig.update_layout( 
+        height=580,
         margin=dict(t=50, b=50, l=10, r=10) # Reducir márgenes externos para más espacio
     )
 
-    fig.update_traces(textinfo='none')
+    #fig.update_traces(textinfo='none')
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, config={'displayModeBar': False})
     
     # Mostrar máximo y mínimo (Requisito de Ejercicio 3)
     # Se añade formato de miles (:,) para los valores

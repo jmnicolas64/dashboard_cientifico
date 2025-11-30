@@ -401,3 +401,11 @@ def dame_carga_id_mes(mes_seleccionado: str) ->str:
     conn.close()
 
     return str(resultado[0])
+
+
+def obtener_meses_disponibles(df: pd.DataFrame) -> list[str]:
+    df_mes_carga = df[['mes', 'carga_id']].drop_duplicates()
+    df_mes_carga = df_mes_carga.sort_values(by='carga_id', ascending=True)
+    meses_ordenados = df_mes_carga['mes'].unique().tolist()
+
+    return meses_ordenados

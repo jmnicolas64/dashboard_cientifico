@@ -13,10 +13,9 @@ from dashboard_cientifico.aplicacion.config.settings import (RUTA_DB,
 
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
-from dashboard_cientifico.aplicacion.vista.vista import (introduccion_general,
-                                                         introduccion_inicial,
-                                                         mostrar_mensajes_y_continuar,
-                                                         mostrar_mensaje_con_continuacion)
+from dashboard_cientifico.aplicacion.vista.vista import (mostrar_mensajes_y_continuar,
+                                                         mostrar_mensaje_con_continuacion,
+                                                         lista_meses_cargados)
 
 from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
                                                                 generar_json,
@@ -31,7 +30,6 @@ from dashboard_cientifico.aplicacion.modelo.carga_datos import (cargar_datos,
 
 
 def _menu_normal() -> None:
-    inicializar_dataframe()
     st.info("Carga y actualización de los datos de la BD")
 
     mostrar_mensaje_con_continuacion('mensaje_eliminacion', 'eliminacion_terminada')
@@ -159,6 +157,9 @@ st.title("Dashboard Covid")
 st.header("Gestión de datos")
 
 if estado['final']:
+    inicializar_dataframe()
+    df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
+    lista_meses_cargados(df)
     _menu_normal()       
 else:
     _menu_iniciar_datos()

@@ -1,15 +1,16 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
 from dashboard_cientifico.aplicacion.vista.vista import (introduccion_general,
-                                                         introduccion_inicial)
+                                                         introduccion_inicial,
+                                                         lista_meses_cargados)
 
 from dashboard_cientifico.aplicacion.modelo.carga_datos import (verificar_db,
-                                                                obtener_datos_completos,
-                                                                inicializar_dataframe)
+                                                                inicializar_dataframe,
+                                                                obtener_meses_disponibles)
 
 
 
@@ -54,6 +55,8 @@ if __name__ == '__main__':
 
     if estado['final']:
         inicializar_dataframe()
+        df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
+        lista_meses_cargados(df)        
         introduccion_general()
     else:
         introduccion_inicial()
