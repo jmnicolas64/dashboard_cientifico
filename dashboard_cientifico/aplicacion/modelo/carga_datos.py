@@ -239,7 +239,7 @@ def generar_json() -> tuple[str, str]:
         df = obtener_datos_completos()
         
         if df.empty:
-            print("No hay datos en la base de datos para procesar.")
+            st.warning("No hay datos en la base de datos para procesar.")
             return datos_eliminados_json, datos_exportados_json
 
         df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce') 
@@ -339,7 +339,7 @@ def obtener_datos_completos() -> pd.DataFrame:
         conn.close()
 
     except sqlite3.Error as e:
-        print(f"Error al consultar la base de datos: {e}")
+        st.error(f"Error al consultar la base de datos: {e}")
         return pd.DataFrame()
 
     columnas_a_eliminar = [

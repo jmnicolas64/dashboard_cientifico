@@ -52,7 +52,6 @@ def _menu_normal() -> None:
             archivo_seleccionado = None
             carga_id_seleccionado = None
             st.warning(f"No se encontraron archivos CSV")
-            return
         
         archivo_seleccionado = st.selectbox(
             "Seleccione el archivo a cargar:",
@@ -88,7 +87,7 @@ def _menu_normal() -> None:
         if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
             df_principal = st.session_state[CLAVE_DATAFRAME]
             df_mes_carga = df_principal[['mes', 'carga_id']].drop_duplicates()
-            df_mes_carga.sort_values(by='carga_id', ascending=True, inplace=True)
+            df_mes_carga.sort_values(by='carga_id', ascending=False, inplace=True)
 
             meses_existentes = list(df_mes_carga['mes'].unique())
             

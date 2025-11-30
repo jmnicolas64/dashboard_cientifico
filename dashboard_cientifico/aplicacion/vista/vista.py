@@ -74,7 +74,7 @@ def mostrar_mensaje_con_continuacion(clave_mensaje: str, clave_terminada: str):
     if mensaje:
         if "Aviso:" in mensaje:
             st.warning(mensaje)
-        elif "Error" in mensaje:
+        elif "Error:" in mensaje:
             st.error(mensaje)
         else:
             st.success(mensaje)
