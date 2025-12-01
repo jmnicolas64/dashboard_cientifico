@@ -2,141 +2,112 @@
 
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
 from dashboard_cientifico.aplicacion.vista.vista import (lista_meses_cargados,
-                                                         dibujar_grafica_acumulados_dia,
-                                                         dibujar_grafica_queso_provincia)
+                                                         grafica_acumulados_dia,
+                                                         grafica_queso_provincia)
 
-from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_evolucion_nacional,
-                                                                       obtener_ia14_por_ccaa,
-                                                                       obtener_acumulados_por_dia_semana,
+from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_acumulados_por_dia_semana,
                                                                        obtener_totales_por_provincia,
                                                                        obtener_max_min_provincia)
 
 
-# Definición de Métricas para el Menú
-METRICAS_EJERCICIOS = {
-    "Defunciones": 'num_def', 
-    "Casos (Nuevos)": 'new_cases', 
-    "Hospitalizados": 'num_hosp', 
-    "UCI": 'num_uci'
-}
+def ejecutar_ejercicios(titulo: str, metrica: str, df: pd.DataFrame, meses_cargados: dict):
+    st.subheader(titulo)
+    st.markdown("##### Gráfico 1: Acumulado por Día de la Semana (Ejercicio 2)")
 
-# =========================================================================
-# FUNCIONES DE VISTA (Dibujo)
-# =========================================================================
+    opciones_mes = list(meses_cargados.values())
+    indice_final_defecto = len(opciones_mes) - 1
 
-def dashboard_evolucion_temporal(df_nacional: pd.DataFrame):
-    # Ya no hace falta la preparación de datos aquí, solo el dibujo
+    col1, col2 = st.columns(2)
+    with col1:
+        mes_inicial=st.selectbox(
+            label='Mes inicial',
+            options=opciones_mes,
+            index=0,
+            key=f'mes_inicial_{metrica}'
+            )
+        
+    with col2:
+        mes_final=st.selectbox(
+            label='Mes final',
+            options=opciones_mes,
+            index=indice_final_defecto,
+            key=f'mes_final_{metrica}'
+            )
+
+    carga_inicial=None
+    carga_final=None
+    cargas_a_filtrar: list = []
+
+    for carga_id, mes in meses_cargados.items():
+        if mes_inicial== mes:
+            carga_inicial=carga_id
+        if mes_final== mes:
+            carga_final=carga_id
+
+    if carga_inicial is None or carga_final is None:
+            cargas_a_filtrar = []
+            st.warning(f"Error: No se pudieron encontrar los IDs de carga para los meses.")     
+    elif carga_inicial > carga_final:
+        st.error("El **'Mes inicial'** debe ser anterior o igual al **'Mes final'**.")
+        cargas_a_filtrar = []
+    else:
+        cargas_a_filtrar = [clave for clave in meses_cargados.keys() if carga_inicial <= clave <= carga_final]
+
+    df_dia = obtener_acumulados_por_dia_semana(df, metrica, cargas_a_filtrar)
+    grafica_acumulados_dia(titulo, df_dia, metrica)
     
-    # 1. Creación del Gráfico (Plotly Express)
-    fig = px.line(
-        df_nacional, 
-        x='date', 
-        y='daily_cases_avg7', 
-        title='Casos Diarios Nacionales Suavizados (Media Móvil 7 Días)',
-        labels={'date': 'Fecha', 'daily_cases_avg7': 'Casos (Media Móvil)'},
-        template='plotly_white',
-        line_shape='spline'
-    )
-    # ... (Añadir scatter y update_layout como antes) ...
+    st.markdown("---")
     
-    st.plotly_chart(fig, width='stretch')
+    st.markdown("##### Gráfico 2: Distribución por Provincia y Análisis Máx/Mín (Ejercicio 3)")
 
+    df_provincia_total = obtener_totales_por_provincia(df, metrica, cargas_a_filtrar)  
+    max_min_data = obtener_max_min_provincia(df_provincia_total, metrica)
 
-def dashboard_estructura_geografica(df_ccaa: pd.DataFrame, ultimo_dia_str: str):
-    # 1. Mostrar el DataFrame de agregación como prueba
-    with st.expander(f"Ver DataFrame Agregado por CCAA (Último Día: **{ultimo_dia_str}**):"):
-        st.dataframe(df_ccaa, width='stretch')
-
-    # 2. Creación del Gráfico (Plotly Express - Barras)
-    fig = px.bar(
-        df_ccaa,
-        x='ccaa',
-        y='ia14_max',
-        title=f"IA14 por Comunidad Autónoma",
-        labels={'ccaa': 'Comunidad Autónoma', 'ia14_max': 'IA14 (Casos/100k hab.)'},
-        color='ia14_max',
-        color_continuous_scale=px.colors.sequential.Reds
-    )
-    # ... (update_xaxes como antes) ...
-    st.plotly_chart(fig, width='stretch')
-
-
-def ejecutar_ejercicios_2_y_3(df: pd.DataFrame):
-    st.subheader("Menú de Visualización (Ejercicios 2 y 3)")
-    st.markdown("Utilice el menú para simular la selección de gráficos y mostrar el análisis de Máximos y Mínimos.")
+    configuracion_columnas = {"province": st.column_config.Column("Provincia"),
+                              metrica: st.column_config.Column("Total", width="small"),
+                              "porcentaje": st.column_config.ProgressColumn(
+                                  " % del Total",
+                                  format="%.2f %%",
+                                  min_value=0,
+                                  max_value=100
+                                  )
+                            }
     
-    opciones_menu = ["Seleccione una métrica"] + list(METRICAS_EJERCICIOS.keys())
-    
-    opcion_seleccionada = st.selectbox(
-        "¿Qué gráfica quieres visualizar?",
-        options=opciones_menu,
-        key="menu_ejercicios_dashboard"
-    )
+    columnas_a_mostrar = ['province', metrica, 'porcentaje']
 
-    if opcion_seleccionada in METRICAS_EJERCICIOS:
-        metrica = METRICAS_EJERCICIOS[opcion_seleccionada]
-        
-        # --- EJERCICIO 2: GRÁFICAS DE BARRAS (Acumulados por Día) ---
-        st.markdown("### Gráfico 1: Acumulado por Día de la Semana (Ejercicio 2)")
-        
-        # 1. Llamada al Servicio (Modelo)
-        df_dia = obtener_acumulados_por_dia_semana(df, metrica)
-        
-        # 2. Llamada a la Vista
-        dibujar_grafica_acumulados_dia(df_dia, metrica)
-        
-        st.markdown("---")
-        
-        # --- EJERCICIO 3: GRÁFICAS DE QUESO (Distribución Provincial + Máx/Mín) ---
-        st.markdown("### Gráfico 2: Distribución por Provincia y Análisis Máx/Mín (Ejercicio 3)")
-        
-        # 1. Obtener Totales Provinciales (Servicio)
-        df_provincia_total = obtener_totales_por_provincia(df, metrica)
-        
-        # 2. Obtener Máximo y Mínimo (Servicio)
-        max_min_data = obtener_max_min_provincia(df_provincia_total, metrica)
-        
-        # 3. Dibujar Gráfico de Queso y mostrar texto (Vista)
-        dibujar_grafica_queso_provincia(df_provincia_total, metrica, max_min_data)
+    with st.expander("Datos del gráfico (columnas ordenables)", expanded=False):
+        st.dataframe(
+                df_provincia_total[columnas_a_mostrar],
+                hide_index=True,
+                column_config=configuracion_columnas
+            )    
 
-# =========================================================================
-# FLUJO PRINCIPAL (Controlador)
-# =========================================================================
+    grafica_queso_provincia(titulo, df_provincia_total, metrica, max_min_data)
+
 
 configura_streamlit()
-st.title("📈 Dashboard")
+st.title("📊 Dashboard")
 
 if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
-    lista_meses_cargados(df)
-    # ... (Reset index y markdown) ...
+    meses_cargados: dict = lista_meses_cargados(df)
 
-    # Crear pestañas
-    tab1, tab2, tab3 = st.tabs(["Ejercicios del Proyecto", "Evolución Temporal Nacional", "Análisis Geográfico (IA14)"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Defunciones", "Casos", "Hospitalizados", "UCI"])
 
     with tab1:
-        ejecutar_ejercicios_2_y_3(df) # 🚨 Llamada al nuevo controlador
+        ejecutar_ejercicios('Defunciones','num_def', df, meses_cargados)
 
     with tab2:
-        st.subheader("Evolución Nacional de Casos Confirmados (Media Móvil 7 Días)")
-        st.markdown("_(Visualizando **`daily_cases_avg7`**, calculado con `groupby().transform().rolling().mean()`)_")
-        
-        # 🚨 LLAMADA AL SERVICIO: Obtiene los datos preparados
-        df_nacional = obtener_evolucion_nacional(df)
-        dashboard_evolucion_temporal(df_nacional)
-    
-    with tab3:
-        st.subheader("Distribución de la Tasa de Incidencia Acumulada a 14 Días (IA14)")
-        st.markdown("_(Visualizando el resultado de la agregación **`groupby().agg('max')`** para la IA14 por CCAA)_")
-        
-        # 🚨 LLAMADA AL SERVICIO: Obtiene los datos y la fecha
-        df_ccaa, ultimo_dia_str = obtener_ia14_por_ccaa(df)
-        dashboard_estructura_geografica(df_ccaa, ultimo_dia_str)
+        ejecutar_ejercicios('Casos','new_cases', df, meses_cargados)
 
+    with tab3:
+        ejecutar_ejercicios('Hospitalizados','num_hosp', df, meses_cargados)
+
+    with tab4:
+        ejecutar_ejercicios('UCI','num_uci', df, meses_cargados)                
 else:
     st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Inicio'.")

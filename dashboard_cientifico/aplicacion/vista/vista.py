@@ -1,11 +1,34 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from typing import Dict
+from typing import Dict, List
 from dashboard_cientifico.aplicacion.modelo.carga_datos import obtener_meses_disponibles
 
 def introduccion_general():
     st.title("Bienvenido al Dashboard Científico")
+    
+    with st.expander("C o m e n t a r i o s", expanded=False, width='stretch'):
+        st.markdown("""
+                
+                ### Contexto del Desarrollo
+                
+                Este dashboard científico fue creado como parte de un proyecto educativo, centrándose en la **arquitectura MVC (Modelo-Vista-Controlador)** para mantener la separación de responsabilidades:
+                
+                * **Modelo:** Lógica de datos (Pandas, SQLite).
+                * **Vista:** Funciones de dibujo (Plotly, Streamlit).
+                * **Controlador:** Flujo principal de las páginas.
+                
+                
+
+        [Image of a software architecture diagram showing MVC]
+
+                
+                **Fuentes de Datos:** Los datos provienen del Ministerio de Sanidad, Consumo y Bienestar Social de España, con un enfoque en la segunda mitad del año 2021.
+                
+                *Recordatorio: Utiliza la sección 'Gestión' para cargar o restablecer los datos.*
+                
+                """, unsafe_allow_html=False)
+
     st.subheader("Menú principal")
     st.markdown(
     """
@@ -92,70 +115,69 @@ def mostrar_mensaje_con_continuacion(clave_mensaje: str, clave_terminada: str):
             st.rerun()
 
 
-def lista_meses_cargados(df: pd.DataFrame):
-    st.sidebar.markdown("#### Meses Cargados")
-    meses_disponibles = obtener_meses_disponibles(df)
-    if meses_disponibles and "Error" in meses_disponibles[0]:
-        st.sidebar.error(meses_disponibles[0])
-        return
+def lista_meses_cargados(df: pd.DataFrame) -> Dict:
+    st.sidebar.markdown("#### Datos disponibles")
+    meses_disponibles: Dict = obtener_meses_disponibles(df)
+    if meses_disponibles and "Error" in meses_disponibles.get(1, ''):
+        st.sidebar.error(meses_disponibles.get(1))
+    
+    
             
-    lista_formateada = "\n".join([f"- {mes}" for mes in meses_disponibles])
+    lista_formateada = "\n".join([f"- {mes}" for mes in meses_disponibles.values()])
     
     # 3. Dibujar la lista en la barra lateral usando st.markdown
     st.sidebar.markdown(lista_formateada)
+
+    return meses_disponibles
     
-# dashboard_cientifico/aplicacion/vista/vista.py (Añadir estas funciones)
 
-# --------------------------------------------------------------------------
-# EJERCICIO 2: Gráfica de Barras (Acumulado por Día de la Semana)
-# --------------------------------------------------------------------------
-
-def dibujar_grafica_acumulados_dia(df_dia: pd.DataFrame, metrica: str):
-    titulo_metrica = metrica.replace('_', ' ').title()
-
+def grafica_acumulados_dia(titulo: str, df_dia: pd.DataFrame, metrica: str):
     fig = px.bar(
         df_dia,
-        x='day_of_week',
+        x='dia_semana',
         y=metrica,
-        title=f"Total Acumulado de {titulo_metrica} por Día de la Semana",
-        labels={'day_of_week': 'Día de la Semana', metrica: f'Total Acumulado ({titulo_metrica})'},
+        title=f"Total Acumulado de {titulo} por Día de la Semana",
+        labels={'dia_semana': 'Día de la Semana ', metrica: f'Total Acumulado ({titulo}) '},
         color=metrica,
         color_continuous_scale=px.colors.sequential.Teal,
         template='plotly_white'
     )
     st.plotly_chart(fig, width='stretch')
 
-# --------------------------------------------------------------------------
-# EJERCICIO 3: Gráfica de Queso (Distribución por Provincia + Máx/Mín)
-# --------------------------------------------------------------------------
 
-def dibujar_grafica_queso_provincia(df_provincia_total: pd.DataFrame, metrica: str, max_min_data: Dict):
-    titulo_metrica = metrica.replace('_', ' ').title()
-
+def grafica_queso_provincia(titulo: str, df_provincia_total: pd.DataFrame, metrica: str, max_min_data: Dict):
     fig = px.pie(
         df_provincia_total,
         values=metrica,
         names='province',
-        title=f"Distribución Total de {titulo_metrica} por Provincia",
-        hole=0.3, # Gráfica de "donut"
+        title=(f"Distribución Total de {titulo} por Provincia"),
+        hole=0.3,
         template='plotly_white'
     )
 
     fig.update_layout( 
-        height=580,
-        margin=dict(t=50, b=50, l=10, r=10) # Reducir márgenes externos para más espacio
+        height=500,
+        margin=dict(t=50, b=50, l=10, r=10)
     )
 
-    #fig.update_traces(textinfo='none')
+    fig.update_traces(
+        textinfo='none',
+        hoverinfo='skip',
+        hovertemplate=(
+            "<b>Provincia:</b> %{label}<br>" +
+            "<b>Total:</b> %{value:,.0f} Uds.<br>" +
+            "<b>Porcentaje:</b> %{percent}<extra></extra>"
+            )
+        )
 
     st.plotly_chart(fig, config={'displayModeBar': False})
     
-    # Mostrar máximo y mínimo (Requisito de Ejercicio 3)
-    # Se añade formato de miles (:,) para los valores
     st.markdown(f"""
     <div style="background-color: #ECF0F1; padding: 15px; border-radius: 5px; margin-top: 10px;">
-    **Resultados del Análisis de {titulo_metrica}:**<br><br>
-    * **Provincia con MÁXIMO:** **{max_min_data['max_provincia']}** (Total: {max_min_data['max_valor']:,})<br>
-    * **Provincia con MÍNIMO:** **{max_min_data['min_provincia']}** (Total: {max_min_data['min_valor']:,})<br>
+        <strong>Resultados del Análisis de {titulo}:</strong>
+        <ul>
+            <li>Provincia con valor MÁXIMO: {max_min_data['max_provincia']} (Total: {max_min_data['max_valor']:,})</li>
+            <li>Provincia con valor MÍNIMO: {max_min_data['min_provincia']} (Total: {max_min_data['min_valor']:,})</li>
+        </ul>
     </div>
     """, unsafe_allow_html=True)

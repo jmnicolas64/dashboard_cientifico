@@ -19,19 +19,24 @@ def configura_logo_estilos():
         page_icon=f"{RUTA_IMAGENES}/logo.jpg",
         layout="wide",
         initial_sidebar_state="expanded"
-)    
+        )
+    
     st.logo(f"{RUTA_IMAGENES}/logo.jpg",size="large")
     
     st.markdown("""
                 <style>
                     /* 1. Estilo para el Contenedor Principal (Bloqueado) */
                     .block-container {
-                        padding-top: 1rem;
-                        padding-bottom: 0rem;
+                        padding-top: 1.5rem;
+                        padding-bottom: 1.5rem;
                         padding-left: 5rem;
                         padding-right: 5rem;
                     }
-
+                
+                    [data-testid="stSidebar"] {
+                        background-color: white !important; /* Fondo blanco */
+                    }
+                
                     /* --------------------------------------------------------------------------------------- */
                     /* 2. Estilo para todos los enlaces de la navegación lateral (TEXTO y TAMAÑO)               */
                     /* Se usa !important y un selector más específico para anular la regla interna de Streamlit */
@@ -44,7 +49,7 @@ def configura_logo_estilos():
                     
                     /* Selector para aplicar tamaño al texto interno del enlace (Asegura la anulación) */
                     [data-testid="stSidebarNav"] li > a * {
-                        font-size: 2.15em !important; /* <--- USAR !important AQUÍ */
+                        font-size: 1em !important; /* <--- USAR !important AQUÍ */
                     }
 
                     /* 3. Estilo para el enlace seleccionado (página activa) */

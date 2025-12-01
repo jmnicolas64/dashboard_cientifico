@@ -1,5 +1,13 @@
+import json
+from pathlib import Path
 import pandas as pd
-from typing import Dict, List
+from typing import Dict, Union, Any, Tuple
+from dashboard_cientifico.aplicacion.config.settings import (RUTA_DESCARGAS,
+                                                             NOMBRE_CSV_DESCARGAS)
+
+
+ORDEN_DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+ResultType = Tuple[Union[Dict[str, Any], None], Union[str, None]]
 
 def obtener_evolucion_nacional(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -28,7 +36,6 @@ def obtener_ia14_por_ccaa(df: pd.DataFrame) -> tuple[pd.DataFrame, str]:
     
     return df_ccaa, ultimo_dia.strftime('%Y-%m-%d')
 
-# dashboard_cientifico/aplicacion/modelo/analisis_service.py
 
 def obtener_datos_agrupados(df: pd.DataFrame, columna_agrupacion: str) -> pd.DataFrame:
     """
@@ -39,74 +46,62 @@ def obtener_datos_agrupados(df: pd.DataFrame, columna_agrupacion: str) -> pd.Dat
     return df_agrupado
 
 
-def obtener_datos_filtrados(df: pd.DataFrame, columna: str, valor: str) -> pd.DataFrame:
-    """
-    Función de servicio para aplicar un filtro simple a los datos.
-    """
-    # Lógica de Pandas pura:
+def obtener_datos_filtrados(df: pd.DataFrame, columna: str, valor: str, columnas_ordenadas: list) -> pd.DataFrame:
     df_filtrado = df[df[columna] == valor].copy()
+    columnas_existentes = [col for col in columnas_ordenadas if col in df_filtrado.columns]
+    df_filtrado = df_filtrado[columnas_existentes]
+
     return df_filtrado
 
-# Aquí irían todas las funciones que manipulen datos con Pandas (Model)
 
-# dashboard_cientifico/aplicacion/modelo/datos_service.py
-
-
-def preparar_datos_csv(df: pd.DataFrame) -> str:
-    """
-    Prepara el DataFrame para su descarga, convirtiéndolo a una cadena CSV.
-    """
-    # Lógica de Pandas pura: to_csv es la forma más limpia de hacer esto
-    return df.to_csv(index=False, sep=';').encode('utf-8') # type: ignore
-
-
-# dashboard_cientifico/aplicacion/modelo/funciones_graficos.py (Añadir estas funciones)
-# Definición de la ordenación para los días de la semana
-DAY_ORDER_ES = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
-
-# --------------------------------------------------------------------------
-# Lógica para Ejercicio 2 (Agrupación por Día)
-# --------------------------------------------------------------------------
-
-def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
-    """
-    [PURA - Modelo] Agrupa los datos por día de la semana y calcula el total acumulado 
-    para la métrica seleccionada (Ejercicio 2).
-    """
+def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str, cargas_a_filtrar: list) -> pd.DataFrame:
     if 'date' not in df.columns:
         raise ValueError("Columna 'date' no encontrada. Asegúrate de la pre-carga.")
-        
-    # Calcular el día de la semana (asumiendo que df['date'] es datetime)
-    df['day_of_week'] = df['date'].dt.day_name(locale='es_ES.utf8') # Usa el locale español
 
-    # Agrupar y sumar
-    df_dia = df.groupby('day_of_week')[metrica].sum().reset_index()
-    
-    # Asegurar el orden de los días de la semana
-    df_dia['day_of_week'] = pd.Categorical(df_dia['day_of_week'], categories=DAY_ORDER_ES, ordered=True)
-    df_dia = df_dia.sort_values('day_of_week')
+    df['dia_semana'] = df['date'].dt.day_name(locale='es_ES.utf8')
+
+    df_dia = (
+        df[df['carga_id'].isin(cargas_a_filtrar)]
+              .groupby('dia_semana')[metrica]
+              .sum()
+              .reset_index()
+              )
+
+    df_dia['dia_semana'] = pd.Categorical(df_dia['dia_semana'], categories=ORDEN_DIAS, ordered=True)
+    df_dia = df_dia.sort_values('dia_semana')
     
     return df_dia
 
-# --------------------------------------------------------------------------
-# Lógica para Ejercicio 3 (Agrupación por Provincia y Máx/Mín)
-# --------------------------------------------------------------------------
 
-def obtener_totales_por_provincia(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
-    """
-    [PURA - Modelo] Agrupa los datos por provincia y calcula el total acumulado para la métrica.
-    """
+def obtener_totales_por_provincia(df: pd.DataFrame, metrica: str, cargas_a_filtrar: list) -> pd.DataFrame:
     if 'province' not in df.columns:
         raise ValueError("Columna 'province' no encontrada.")
         
-    df_provincia_total = df.groupby('province')[metrica].sum().reset_index()
+    df_provincia_total = (
+        df[df['carga_id'].isin(cargas_a_filtrar)]
+        .groupby('province')[metrica]
+        .sum()
+        .reset_index()
+        )
+    
+    total_metrica = df_provincia_total[metrica].sum()
+
+    df_provincia_total['porcentaje'] = (
+        df_provincia_total[metrica] / total_metrica
+    ) * 100
+    
     return df_provincia_total
 
 
 def obtener_max_min_provincia(df_provincia_total: pd.DataFrame, metrica: str) -> Dict:
-    """
-    [PURA - Modelo] Calcula la provincia con el máximo y mínimo valor de la métrica.
-    """
+    if df_provincia_total.empty:
+        return {
+            'max_provincia': 'N/D',
+            'max_valor': 0,
+            'min_provincia': 'N/D',
+            'min_valor': 0
+        }
+    
     max_row = df_provincia_total.loc[df_provincia_total[metrica].idxmax()]
     min_row = df_provincia_total.loc[df_provincia_total[metrica].idxmin()]
     
@@ -116,3 +111,38 @@ def obtener_max_min_provincia(df_provincia_total: pd.DataFrame, metrica: str) ->
         'min_provincia': min_row['province'],
         'min_valor': min_row[metrica]
     }
+
+
+def cargar_json(ruta: Path) -> ResultType:   
+    if not ruta.is_file():
+        error = f"Archivo no encontrado: {ruta.name}"
+        return None, error
+
+    try:
+        with open(ruta, 'r', encoding='utf-8') as f:
+            contenido_json = f.read()
+            
+        datos_json = json.loads(contenido_json)
+        return datos_json, None
+        
+    except json.JSONDecodeError:
+        error = "Error de formato JSON: El archivo contiene datos inválidos."
+        return None, error
+        
+    except Exception as e:
+        error = f"Error al leer el archivo: {e}"
+        return None, error
+
+
+def preparar_datos_csv(df: pd.DataFrame) -> str:
+    return df.to_csv(index=False, sep=';').encode('utf-8') # type: ignore
+
+
+def guardar_datos_csv(df: pd.DataFrame):
+    RUTA_DESCARGAS.mkdir(parents=True, exist_ok=True)
+
+    ruta_completa = RUTA_DESCARGAS / NOMBRE_CSV_DESCARGAS
+    
+    df.to_csv(ruta_completa, index=False, encoding='utf-8')
+    
+    return ruta_completa

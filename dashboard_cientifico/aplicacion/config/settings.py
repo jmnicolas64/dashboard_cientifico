@@ -43,3 +43,5 @@ RUTA_COPIA_ARCHIVOS = RUTA_PAQUETE_PRINCIPAL / "copia_archivos"
 NOMBRE_JSON_PEDIDO = 'datos_covid.json'
 NOMBRE_JSON_ELIMINADOS='datos_eliminados.json'
 NOMBRE_JSON_CARGAS_ID='carga_ids.json'
+
+NOMBRE_CSV_DESCARGAS='datos_exportados.csv'

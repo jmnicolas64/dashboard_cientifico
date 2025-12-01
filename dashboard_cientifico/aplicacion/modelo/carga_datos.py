@@ -259,7 +259,7 @@ def generar_json() -> tuple[str, str]:
 
         df['dia_semana'] = df['date'].dt.strftime('%A')
 
-        columnas_agrupacion = ['carga_id','dia_semana', 'province']
+        columnas_agrupacion = ['carga_id', 'mes','dia_semana', 'province']
         columnas_suma: list = ['num_def', 'new_cases', 'num_hosp', 'num_uci']
 
         df_agrupado = df.groupby(columnas_agrupacion)[columnas_suma].sum().reset_index()
@@ -403,9 +403,9 @@ def dame_carga_id_mes(mes_seleccionado: str) ->str:
     return str(resultado[0])
 
 
-def obtener_meses_disponibles(df: pd.DataFrame) -> list[str]:
+def obtener_meses_disponibles(df: pd.DataFrame) -> Dict:
     df_mes_carga = df[['mes', 'carga_id']].drop_duplicates()
     df_mes_carga = df_mes_carga.sort_values(by='carga_id', ascending=True)
-    meses_ordenados = df_mes_carga['mes'].unique().tolist()
+    meses_ordenados = df_mes_carga.set_index('carga_id')['mes'].to_dict()
 
     return meses_ordenados
