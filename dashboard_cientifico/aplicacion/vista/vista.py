@@ -229,3 +229,77 @@ def grafico_evolucion_mensual(df_evolucion: pd.DataFrame, metrica: str, titulo: 
     )
 
     st.plotly_chart(fig, width='stretch')
+
+
+def grafico_distribucion(df_original: pd.DataFrame, metrica_clave: str, metrica_nombre_legible: str):
+    """
+        [VISTA] Dibuja un Gráfico de Caja donde cada caja representa la distribución de
+        los valores DIARIOS dentro de cada mes de la serie temporal.
+        """
+    df_plot = df_original.copy()
+    
+    # 1. Crear una columna para etiquetar los meses (ej. "Ene 2021")
+    # Es crucial que la columna 'date' sea de tipo datetime antes de esto
+    df_plot['Mes-Año'] = df_plot['date'].dt.strftime('%b %Y') # type: ignore
+
+    # 2. Ordenar las categorías del eje X cronológicamente
+    # Plotly necesita la lista de categorías ordenadas para que no las ordene alfabéticamente
+    orden_meses = df_plot.sort_values(by='date')['Mes-Año'].unique().tolist()
+    
+    limite_superior_y = df_plot[metrica_clave].quantile(0.95)
+    limite_superior_y = int(limite_superior_y * 1.1) # Añadimos un 10% de margen y lo convertimos a entero
+    if limite_superior_y == 0:
+        limite_superior_y = df_plot[metrica_clave].max() # Si el 95% es cero, usamos el máximo
+
+    fig = px.violin(
+        df_plot,
+        x='Mes-Año', # El eje X es el Mes-Año (categoría)
+        y=metrica_clave, # El eje Y es el valor DIARIO de la métrica
+        color='Mes-Año',
+        title=f'Distribución Diaria de {metrica_nombre_legible} por Mes',
+        height=550,
+        labels={metrica_clave: metrica_nombre_legible, 'Mes-Año': 'Mes'},
+        category_orders={'Mes-Año': orden_meses}, # Asegura el orden cronológico
+        box=True, # Muestra el box plot y la mediana dentro del violín
+        points='all' # Desactivamos la visualización de todos los puntos para la densidad, es más limpio        
+    )
+    
+    fig.update_layout(
+        xaxis_title="Mes", 
+        yaxis_title=metrica_nombre_legible,
+        title_x=0.5
+    )
+    
+    fig.update_yaxes(
+            range=[0, limite_superior_y], 
+            title=metrica_nombre_legible
+        )
+
+
+    fig.update_xaxes(tickangle=45)
+
+    st.plotly_chart(fig, width='stretch')
+
+
+# En tu módulo de la Vista (ej. vista/vista.py)
+
+def grafico_correlacion(matriz_corr: pd.DataFrame, metricas_nombres: dict):
+    """
+    [VISTA] Dibuja un Mapa de Calor de la matriz de correlación.
+    """
+    # Usar los nombres legibles de las métricas en la matriz
+    matriz_corr = matriz_corr.rename(columns=metricas_nombres, index=metricas_nombres)
+    
+    fig = px.imshow(
+        matriz_corr,
+        text_auto=".2f", # type: ignore 
+        color_continuous_scale=px.colors.diverging.RdBu, # Escala de color Rojo-Azul
+        color_continuous_midpoint=0, # El punto medio (correlación 0) es blanco
+        title="Correlación Mensual de Métricas de la Pandemia",
+        aspect="equal"
+    )
+    
+    fig.update_xaxes(side="top") # Etiquetas del eje X en la parte superior
+    
+    st.plotly_chart(fig, width='stretch')
+

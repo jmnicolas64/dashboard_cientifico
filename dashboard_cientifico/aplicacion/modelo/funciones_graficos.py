@@ -161,3 +161,19 @@ def obtener_evolucion_mensual(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
     df_evolucion['date'] = df_evolucion['date'].dt.to_timestamp()
     
     return df_evolucion
+
+
+def obtener_matriz_correlacion_mensual(df: pd.DataFrame, metricas: list) -> pd.DataFrame:
+    """
+    Agrupa el DF por mes y calcula la matriz de correlación de Pearson entre las métricas.
+    """
+    # 1. Agrupar por mes y sumar todas las métricas relevantes
+    df_mensual = (
+        df.groupby(df['date'].dt.to_period('M'))[metricas] # type: ignore
+        .sum()
+    )
+    
+    # 2. Calcular la matriz de correlación
+    matriz_corr = df_mensual.corr(method='pearson')
+    
+    return matriz_corr
