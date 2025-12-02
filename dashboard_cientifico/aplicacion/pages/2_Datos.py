@@ -19,13 +19,14 @@ from dashboard_cientifico.aplicacion.vista.vista import lista_meses_cargados
 
 
 configura_streamlit()
-st.title("🗄️ Visualización de Datos")
+st.header("Visualización de Datos")
 
 if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
     lista_meses_cargados(df)
 
-    with st.expander("JSON generado (ejercicio 1)", expanded=False):
+    st.subheader("JSON generado (ejercicio 1)")
+    with st.expander("Ver JSON", expanded=False):
         datos, error = cargar_json(RUTA_DESCARGAS / NOMBRE_JSON_PEDIDO)
 
         if error:

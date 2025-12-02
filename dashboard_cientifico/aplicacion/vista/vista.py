@@ -281,8 +281,6 @@ def grafico_distribucion(df_original: pd.DataFrame, metrica_clave: str, metrica_
     st.plotly_chart(fig, width='stretch')
 
 
-# En tu módulo de la Vista (ej. vista/vista.py)
-
 def grafico_correlacion(matriz_corr: pd.DataFrame, metricas_nombres: dict):
     """
     [VISTA] Dibuja un Mapa de Calor de la matriz de correlación.

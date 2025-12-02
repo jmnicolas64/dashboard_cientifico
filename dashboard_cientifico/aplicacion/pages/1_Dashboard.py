@@ -90,7 +90,7 @@ def ejecutar_ejercicios(titulo: str, metrica: str, df: pd.DataFrame, meses_carga
 
 
 configura_streamlit()
-st.title("📊 Dashboard")
+st.header("Dashboard")
 
 if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
