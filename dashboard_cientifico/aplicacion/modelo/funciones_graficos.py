@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import pandas as pd
-from typing import Dict, Union, Any, Tuple
+from typing import Dict, Union, Any, Tuple, List
 from dashboard_cientifico.aplicacion.config.settings import (RUTA_DESCARGAS,
                                                              NOMBRE_CSV_DESCARGAS)
 
@@ -58,7 +58,7 @@ def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str, cargas_a_f
     if 'date' not in df.columns:
         raise ValueError("Columna 'date' no encontrada. Asegúrate de la pre-carga.")
 
-    df['dia_semana'] = df['date'].dt.day_name(locale='es_ES.utf8')
+    df['dia_semana'] = df['date'].dt.day_name(locale='es_ES.utf8') # type: ignore
 
     df_dia = (
         df[df['carga_id'].isin(cargas_a_filtrar)]
@@ -146,3 +146,18 @@ def guardar_datos_csv(df: pd.DataFrame):
     df.to_csv(ruta_completa, index=False, encoding='utf-8')
     
     return ruta_completa
+
+
+def obtener_evolucion_mensual(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
+    if not pd.api.types.is_datetime64_any_dtype(df['date']):
+        df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y')
+        
+    df_evolucion = (
+        df.groupby(df['date'].dt.to_period('M'))[metrica] # type: ignore
+        .sum()
+        .reset_index()
+    ) 
+    
+    df_evolucion['date'] = df_evolucion['date'].dt.to_timestamp()
+    
+    return df_evolucion

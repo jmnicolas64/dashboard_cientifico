@@ -4,6 +4,7 @@ import plotly.express as px
 from typing import Dict, List
 from dashboard_cientifico.aplicacion.modelo.carga_datos import obtener_meses_disponibles
 
+
 def introduccion_general():
     st.title("Bienvenido al Dashboard Científico")
     
@@ -181,3 +182,50 @@ def grafica_queso_provincia(titulo: str, df_provincia_total: pd.DataFrame, metri
         </ul>
     </div>
     """, unsafe_allow_html=True)
+
+
+def grafico_evolucion_mensual(df_evolucion: pd.DataFrame, metrica: str, titulo: str):
+    titulo_grafico=f"Evolución Mensual de {titulo}"
+    fig = px.line(
+        df_evolucion,
+        x="date",
+        y=metrica,
+        title=titulo_grafico,
+        height=500
+    )
+    
+    fig.update_layout(
+        xaxis_title="Mes", 
+        yaxis_title=titulo,
+        title_x=0.5
+    )
+
+    ultima_fecha = df_evolucion['date'].max()
+    rango_x_fin = ultima_fecha + pd.DateOffset(days=10)
+    primera_fecha = df_evolucion['date'].min()
+
+    fig.update_xaxes(
+            range=[primera_fecha, rango_x_fin],
+            showticklabels=True, 
+            tickangle=45,
+            dtick="M1", 
+            tickformat="%b %Y" 
+        )
+    
+    min_val = df_evolucion[metrica].min()
+    max_val = df_evolucion[metrica].max()
+
+    margen = (max_val - min_val)
+    margen = margen * 0.05 if margen > 0 else max_val * 0.1
+
+    y_range_min = max(0, min_val - margen)
+    y_range_max = max_val + margen
+
+    fig.update_yaxes(
+        range=[y_range_min, y_range_max],
+        zeroline=True, 
+        zerolinewidth=1, 
+        zerolinecolor='lightgray'
+    )
+
+    st.plotly_chart(fig, width='stretch')
