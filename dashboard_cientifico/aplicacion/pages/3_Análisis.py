@@ -78,7 +78,7 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
                                                     col_key: tab_title
                                                     }, inplace=True)
 
-                    with st.expander("Datos del gráfico", expanded=False):
+                    with st.expander("Datos del gráfico", expanded=True):
                         st.dataframe(df_presentacion, width='stretch')
 
                 except Exception as e:
@@ -101,8 +101,8 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
 
                     grafico_distribucion(df_filtrado, col_key, tab_title)
                     
-                    st.markdown("**Estadísticas Descriptivas (Totales Mensuales):**")
-                    st.dataframe(df_evolucion[col_key].describe().round(2), width='stretch')
+                    with st.expander("Estadísticas Descriptivas (Totales Mensuales", expanded=True):
+                        st.dataframe(df_evolucion[col_key].describe().round(2), width='stretch')
                     
                 except Exception as e:
                     st.error(f"No hay datos para generar el análisis de distribución para {tab_title}.")
@@ -115,6 +115,7 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
         
         try:
             matriz_corr = obtener_matriz_correlacion_mensual(df_filtrado, metricas_claves)
+            matriz_corr.rename(columns=METRICAS_ANALISIS, index=METRICAS_ANALISIS, inplace=True)
             grafico_correlacion(matriz_corr, METRICAS_ANALISIS)
 
             with st.expander("Datos de la Matriz de Correlación", expanded=True):

@@ -185,6 +185,13 @@ def grafica_queso_provincia(titulo: str, df_provincia_total: pd.DataFrame, metri
 
 
 def grafico_evolucion_mensual(df_evolucion: pd.DataFrame, metrica: str, titulo: str):
+    MAPA_COLORES_METRICAS = {
+        'Defunciones': 'darkblue',
+        'Casos': 'red',
+        'Hospitalizados': 'orange',
+        'Ingresos UCI': 'purple'
+    }
+
     titulo_grafico=f"Evolución Mensual de {titulo}"
     fig = px.line(
         df_evolucion,
@@ -232,36 +239,29 @@ def grafico_evolucion_mensual(df_evolucion: pd.DataFrame, metrica: str, titulo: 
 
 
 def grafico_distribucion(df_original: pd.DataFrame, metrica_clave: str, metrica_nombre_legible: str):
-    """
-        [VISTA] Dibuja un Gráfico de Caja donde cada caja representa la distribución de
-        los valores DIARIOS dentro de cada mes de la serie temporal.
-        """
-    df_plot = df_original.copy()
-    
-    # 1. Crear una columna para etiquetar los meses (ej. "Ene 2021")
-    # Es crucial que la columna 'date' sea de tipo datetime antes de esto
-    df_plot['Mes-Año'] = df_plot['date'].dt.strftime('%b %Y') # type: ignore
 
-    # 2. Ordenar las categorías del eje X cronológicamente
-    # Plotly necesita la lista de categorías ordenadas para que no las ordene alfabéticamente
-    orden_meses = df_plot.sort_values(by='date')['Mes-Año'].unique().tolist()
+    df_distribucion = df_original.copy()
     
-    limite_superior_y = df_plot[metrica_clave].quantile(0.95)
-    limite_superior_y = int(limite_superior_y * 1.1) # Añadimos un 10% de margen y lo convertimos a entero
+    df_distribucion['Mes-Año'] = df_distribucion['date'].dt.strftime('%b %Y') # type: ignore
+
+    orden_meses = df_distribucion.sort_values(by='date')['Mes-Año'].unique().tolist()
+    
+    limite_superior_y = df_distribucion[metrica_clave].quantile(0.95)
+    limite_superior_y = int(limite_superior_y * 1.1) 
     if limite_superior_y == 0:
-        limite_superior_y = df_plot[metrica_clave].max() # Si el 95% es cero, usamos el máximo
+        limite_superior_y = df_distribucion[metrica_clave].max()
 
     fig = px.violin(
-        df_plot,
-        x='Mes-Año', # El eje X es el Mes-Año (categoría)
-        y=metrica_clave, # El eje Y es el valor DIARIO de la métrica
+        df_distribucion,
+        x='Mes-Año', 
+        y=metrica_clave, 
         color='Mes-Año',
-        title=f'Distribución Diaria de {metrica_nombre_legible} por Mes',
+        title=f'Distribución Mensual de {metrica_nombre_legible}',
         height=550,
         labels={metrica_clave: metrica_nombre_legible, 'Mes-Año': 'Mes'},
-        category_orders={'Mes-Año': orden_meses}, # Asegura el orden cronológico
-        box=True, # Muestra el box plot y la mediana dentro del violín
-        points='all' # Desactivamos la visualización de todos los puntos para la densidad, es más limpio        
+        category_orders={'Mes-Año': orden_meses}, 
+        box=True, 
+        points='all' 
     )
     
     fig.update_layout(
