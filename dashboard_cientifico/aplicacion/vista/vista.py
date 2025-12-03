@@ -1,34 +1,34 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 from typing import Dict, List
+from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS, NOMBRE_COMENTARIOS
 from dashboard_cientifico.aplicacion.modelo.carga_datos import obtener_meses_disponibles
 
 
 def introduccion_general():
-    st.title("Bienvenido al Dashboard Científico")
+    def _renderizar_markdown(ruta_archivo_md: str, titulo: str):
+        try:
+            if not os.path.exists(ruta_archivo_md):
+                st.error(f"Error: El archivo de comentarios no existe en la ruta especificada: {ruta_archivo_md}")
+                return
+
+            with st.expander(f"📚 {titulo}: descripción del proyecto", expanded=False): 
+                with open(ruta_archivo_md, "r", encoding="utf-8") as f:
+                    markdown_content = f.read()
+                
+                st.markdown(markdown_content)
+
+        except Exception as e:
+            st.error(f"Ocurrió un error al cargar los comentarios: {e}")
+
+    st.header("Bienvenido al Dashboard Científico")
     
-    with st.expander("C o m e n t a r i o s", expanded=False, width='stretch'):
-        st.markdown("""
-                
-                ### Contexto del Desarrollo
-                
-                Este dashboard científico fue creado como parte de un proyecto educativo, centrándose en la **arquitectura MVC (Modelo-Vista-Controlador)** para mantener la separación de responsabilidades:
-                
-                * **Modelo:** Lógica de datos (Pandas, SQLite).
-                * **Vista:** Funciones de dibujo (Plotly, Streamlit).
-                * **Controlador:** Flujo principal de las páginas.
-                
-                
-
-        [Image of a software architecture diagram showing MVC]
-
-                
-                **Fuentes de Datos:** Los datos provienen del Ministerio de Sanidad, Consumo y Bienestar Social de España, con un enfoque en la segunda mitad del año 2021.
-                
-                *Recordatorio: Utiliza la sección 'Gestión' para cargar o restablecer los datos.*
-                
-                """, unsafe_allow_html=False)
+    #st.info("IMPORTANTE: en los comentarios está la descripción del proyecto")
+    
+    ruta=str(RUTA_ARCHIVOS / NOMBRE_COMENTARIOS)
+    _renderizar_markdown(ruta, "C o m e n t a r i o s")
 
     st.subheader("Menú principal")
     st.markdown(
@@ -36,10 +36,11 @@ def introduccion_general():
     Selecciona una opción en el menú lateral:
     <ul>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Dashboard</span></li>
-        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Análisis</span></li>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Datos</span></li>
+        <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Análisis</span></li>
         <li><span style="font-family: 'Calibri', sans-serif; font-size: 1.1em;">Gestión</span></li>
     </ul>
+    El menú lateral se puede colapsar pulsando sobre '<<' y expandir pulsando sobre '>>'
     """,
     unsafe_allow_html=True)
 
@@ -57,7 +58,7 @@ def introduccion_inicial():
     </ul>
 
     <div style="font-size: 1.2em; color: #333333; margin-top: 15px; margin-bottom: 15px;">
-        <b>Seleccionar en el menú lateral 'Carga inicial' y pulsar el botón 'Cargar datos'</b>
+        <b>Seleccionar en el menú lateral 'Gestión'->'Carga inicial' y pulsar el botón 'Cargar datos'</b>
     </div>
 
     <p>Aparecera a continuación la información del proceso</p>
@@ -299,5 +300,30 @@ def grafico_correlacion(matriz_corr: pd.DataFrame, metricas_nombres: dict):
     
     fig.update_xaxes(side="top") # Etiquetas del eje X en la parte superior
     
+    st.plotly_chart(fig, width='stretch')
+
+
+def grafico_coropletico(df_ccaa: pd.DataFrame, geojson_data: dict, metrica_legible: str):
+    fig = px.choropleth(
+        df_ccaa, 
+        geojson=geojson_data, 
+        locations='ccaa', 
+        featureidkey='properties.ccaa',
+        color='Total_Metrica',
+        color_continuous_scale="Viridis",
+        scope="europe",
+        title=f"Total de {metrica_legible} por Comunidad Autónoma",
+        labels={'Total_Metrica': metrica_legible},
+        height=800
+    )
+    
+    fig.update_geos(
+        fitbounds="locations", 
+        visible=False,
+        showland=True,
+        landcolor="lightgray"
+    )
+    
+    fig.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
     st.plotly_chart(fig, width='stretch')
 

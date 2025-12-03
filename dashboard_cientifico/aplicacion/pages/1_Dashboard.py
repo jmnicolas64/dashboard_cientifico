@@ -91,8 +91,10 @@ def ejecutar_ejercicios(titulo: str, metrica: str, df: pd.DataFrame, meses_carga
 
 configura_streamlit()
 st.header("Dashboard")
+if (CLAVE_DATAFRAME in st.session_state and 
+    st.session_state[CLAVE_DATAFRAME] is not None 
+    and not st.session_state[CLAVE_DATAFRAME].empty):
 
-if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
     meses_cargados: dict = lista_meses_cargados(df)
 
@@ -110,4 +112,4 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
     with tab4:
         ejecutar_ejercicios('UCI','num_uci', df, meses_cargados)                
 else:
-    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Inicio'.")
+    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Gestión'.")

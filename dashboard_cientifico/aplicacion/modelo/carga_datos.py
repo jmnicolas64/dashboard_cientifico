@@ -73,11 +73,18 @@ def verificar_db() -> Dict[str, Any]:
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
         tablas_existentes = [row[0] for row in cursor.fetchall()]
 
+        sql_query = f"SELECT COUNT(*) FROM {TABLA_DATOS_COVID}"
+        cursor.execute(sql_query)
+        num_filas = cursor.fetchone()[0]
+
         conn.close()
         
         if TABLA_DATOS_COVID in tablas_existentes:
             estado["datos_covid_existe"] = True
         
+        if num_filas==0:
+            estado["datos_covid_existe"] = False
+
         if TABLA_CARGAS_ID in tablas_existentes:
             estado["cargas_id_existe"] = True
 
@@ -197,7 +204,7 @@ def cargar_datos(archivo_mes_path: Path, carga_id: str, mes: str) -> str:
         filas_cargadas = len(df)
         filas_omitidas = filas_originales - filas_cargadas
 
-        df['date'] = df['date'].dt.strftime('%d/%m/%Y') 
+        df['date'] = df['date'].dt.strftime('%d/%m/%Y')  # type: ignore
 
         db :Path = RUTA_DB / NOMBRE_DB
         conn = sqlite3.connect(db)
@@ -257,7 +264,7 @@ def generar_json() -> tuple[str, str]:
 
         df.dropna(subset=['date'], inplace=True)
 
-        df['dia_semana'] = df['date'].dt.strftime('%A')
+        df['dia_semana'] = df['date'].dt.strftime('%A') # type: ignore
 
         columnas_agrupacion = ['carga_id', 'mes','dia_semana', 'province']
         columnas_suma: list = ['num_def', 'new_cases', 'num_hosp', 'num_uci']
@@ -311,8 +318,9 @@ def eliminar_carga(carga_id: str, mes: str) -> str:
                 nombre_original = nombre_archivo.replace(quitar_del_nombre, '')
 
                 ruta_final = RUTA_ARCHIVOS / nombre_original
-                
                 shutil.move(str(archivo_a_mover), str(ruta_final))
+
+                generar_json()
 
             return (f"Eliminación exitosa: {filas_eliminadas} filas "
                     f"asociadas al mes '{mes}' han sido borradas.")

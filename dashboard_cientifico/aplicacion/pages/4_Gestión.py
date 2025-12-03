@@ -113,11 +113,26 @@ def _menu_normal() -> None:
 
         if st.button("Reset...", type='primary', ):
             db: Path=RUTA_DB / NOMBRE_DB
-            os.unlink(db)
-            del st.session_state[CLAVE_DATAFRAME]
-            st.session_state['menu_refresh_key'] += 1
-            st.session_state['reset_datos'] = False
-            st.rerun()
+            try:
+                    if os.path.exists(db):
+                        os.unlink(db)
+
+                    if CLAVE_DATAFRAME in st.session_state:
+                        del st.session_state[CLAVE_DATAFRAME]
+                        
+                    st.session_state['menu_refresh_key'] += 1
+                    st.session_state['reset_datos'] = False
+
+                    st.rerun()
+
+            except PermissionError:
+                st.error(f"Error de Permiso: No se pudo eliminar '{NOMBRE_DB}'. Asegúrate de que no esté siendo utilizada por otra aplicación o conexión.")
+                
+            except FileNotFoundError:
+                st.warning(f"El archivo '{NOMBRE_DB}' no se encontró durante el intento de eliminación.")
+
+            except Exception as e:
+                st.error(f"Ocurrió un error inesperado al resetear el sistema: {e}")
 
 
 def _menu_iniciar_datos():
@@ -129,10 +144,10 @@ def _menu_iniciar_datos():
             mensajes_carga_inicial.append(f"1.RESET: {mensaje_reset}")
 
             mensaje_ids = crear_tabla_carga_ids()
-            mensajes_carga_inicial.append(f"3.CARGA_IDS: {mensaje_ids}")
+            mensajes_carga_inicial.append(f"2.CARGA_IDS: {mensaje_ids}")
             
             mensaje_cargar = cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL,"")
-            mensajes_carga_inicial.append(f"2.CARGA: {mensaje_cargar}")
+            mensajes_carga_inicial.append(f"3. {mensaje_cargar}")
 
             datos_eliminados_json, datos_exportados_json=generar_json()
             mensajes_carga_inicial.append(f"4.JSON Exportado: {datos_exportados_json}")

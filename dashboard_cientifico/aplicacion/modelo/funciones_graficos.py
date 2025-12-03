@@ -3,7 +3,9 @@ from pathlib import Path
 import pandas as pd
 from typing import Dict, Union, Any, Tuple, List
 from dashboard_cientifico.aplicacion.config.settings import (RUTA_DESCARGAS,
-                                                             NOMBRE_CSV_DESCARGAS)
+                                                             NOMBRE_CSV_DESCARGAS,
+                                                             RUTA_ARCHIVOS,
+                                                             NOMBRE_GEOJSON)
 
 
 ORDEN_DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
@@ -177,3 +179,27 @@ def obtener_matriz_correlacion_mensual(df: pd.DataFrame, metricas: list) -> pd.D
     matriz_corr = df_mensual.corr(method='pearson')
     
     return matriz_corr
+
+
+def cargar_geojson() -> dict:
+    ruta: Path = RUTA_ARCHIVOS / NOMBRE_GEOJSON
+    try:
+        with open(ruta, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Error: No se encontró el archivo GeoJSON en la ruta {ruta}. Asegúrate de que esté en el directorio correcto.")
+
+def obtener_datos_geograficos(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
+    """
+    [MODELO] Agrega los datos por Comunidad Autónoma (CCAA) para el análisis geográfico,
+    sumando el total de la métrica en todo el período filtrado.
+    """
+    # Se asume que la columna de CCAA se llama 'ccaa'
+    if 'ccaa' not in df.columns:
+        raise ValueError("El DataFrame no contiene la columna 'ccaa' necesaria para el análisis geográfico.")
+        
+    # Agregación Geográfica: Sumar la métrica seleccionada por CCAA
+    df_ccaa = df.groupby('ccaa')[metrica].sum().reset_index()
+    df_ccaa.rename(columns={metrica: 'Total_Metrica'}, inplace=True)
+    return df_ccaa
+

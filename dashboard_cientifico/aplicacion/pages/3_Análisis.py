@@ -5,12 +5,15 @@ from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
 from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_evolucion_mensual,
-                                                                       obtener_matriz_correlacion_mensual)
+                                                                       obtener_matriz_correlacion_mensual,
+                                                                       obtener_datos_geograficos,
+                                                                       cargar_geojson)
 
 from dashboard_cientifico.aplicacion.vista.vista import (lista_meses_cargados,
                                                          grafico_evolucion_mensual,
                                                          grafico_distribucion,
-                                                         grafico_correlacion)
+                                                         grafico_correlacion,
+                                                         grafico_coropletico)
 
 METRICAS_ANALISIS = {
     "num_def": "Defunciones",
@@ -23,7 +26,10 @@ METRICAS_ANALISIS = {
 configura_streamlit()
 st.header("Análisis Detallado de Datos")
 
-if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
+if (CLAVE_DATAFRAME in st.session_state and 
+    st.session_state[CLAVE_DATAFRAME] is not None 
+    and not st.session_state[CLAVE_DATAFRAME].empty):
+
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
     lista_meses_cargados(df)
     
@@ -97,15 +103,56 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
                 try:
                     st.subheader(f'Distribución de {tab_title}')
 
-                    df_evolucion = obtener_evolucion_mensual(df_filtrado, col_key)
+                    df_stats_mensuales = df_filtrado.copy()
+                    df_stats_mensuales['Mes-Año'] = df_stats_mensuales['date'].dt.strftime('%b %Y') # type: ignore
+
+                    df_stats = (
+                        df_stats_mensuales
+                        .groupby('Mes-Año')[col_key]
+                        .describe()
+                        .T
+                        .round(2)
+                    )
+                    orden_meses = df_stats_mensuales.sort_values(by='date')['Mes-Año'].unique().tolist()
+                    df_stats = df_stats[orden_meses]
 
                     grafico_distribucion(df_filtrado, col_key, tab_title)
                     
-                    with st.expander("Estadísticas Descriptivas (Totales Mensuales", expanded=True):
-                        st.dataframe(df_evolucion[col_key].describe().round(2), width='stretch')
+                    with st.expander("Estadísticas Descriptivas (Totales Mensuales)", expanded=True):
+                        st.dataframe(df_stats, width='stretch')
                     
                 except Exception as e:
                     st.error(f"No hay datos para generar el análisis de distribución para {tab_title}.")
+
+    with tab3:
+        st.subheader("Análisis Geográfico")
+        st.info("Muestra el total de la métrica seleccionada por Comunidad Autónoma para el período filtrado.")
+        
+        metricas = METRICAS_ANALISIS
+        opcion_seleccionada = st.selectbox(
+            "Selecciona la métrica a visualizar:", 
+            options=list(metricas.keys()), 
+            format_func=lambda x: metricas[x], 
+            key='select_metrica_geo'
+        )
+        
+        col_key = opcion_seleccionada
+        tab_title = metricas[col_key]
+
+        try:
+            df_ccaa = obtener_datos_geograficos(df_filtrado, col_key)
+            geojson_data = cargar_geojson()
+            
+            grafico_coropletico(df_ccaa, geojson_data, tab_title)
+            
+            with st.expander(f"Datos Agregados de {tab_title} por CCAA", expanded=True):
+                df_ccaa.rename(columns={'ccaa': 'Comunidad Autónoma', 'Total_Metrica': tab_title}, inplace=True)
+                st.dataframe(df_ccaa, width='stretch')
+
+        except Exception as e:
+            st.error(f"Error al generar el análisis geográfico: {e}")
+
+
 
     with tab4:
         st.subheader("Análisis de Correlación Mensual")
@@ -124,4 +171,4 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
         except Exception as e:
             st.error(f"No fue posible calcular la matriz de correlación. Error: {e}")
 else:
-    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Inicio'.")
+    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Gestión'.")

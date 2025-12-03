@@ -21,7 +21,10 @@ from dashboard_cientifico.aplicacion.vista.vista import lista_meses_cargados
 configura_streamlit()
 st.header("Visualización de Datos")
 
-if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME].empty:
+if (CLAVE_DATAFRAME in st.session_state and 
+    st.session_state[CLAVE_DATAFRAME] is not None 
+    and not st.session_state[CLAVE_DATAFRAME].empty):
+
     df: pd.DataFrame = st.session_state[CLAVE_DATAFRAME]
     lista_meses_cargados(df)
 
@@ -73,4 +76,4 @@ if CLAVE_DATAFRAME in st.session_state and not st.session_state[CLAVE_DATAFRAME]
         st.success(f"Datos exportados con éxito en la ruta: {CARPETA_DESCARGAS}/{NOMBRE_CSV_DESCARGAS}")
     
 else:
-    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado.")
+    st.warning("Datos no disponibles. Por favor, asegúrate de que la Carga Inicial se ha completado en la página 'Gestión'.")
