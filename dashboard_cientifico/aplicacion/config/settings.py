@@ -4,11 +4,9 @@ from pathlib import Path
 # 1. Definición de constantes generales (cambiar sólo la variable indicada)
 # =========================================================================
 
-RUTA_BASE: Path = Path(__file__).resolve().parent.parent.parent.parent
+RUTA_PAQUETE_PRINCIPAL: Path = Path(__file__).resolve().parent.parent.parent
 
 CARPETA_APLICACION="dashboard_cientifico" # En esta sección 1 sólo hay que cambiar este parámetro.
-
-RUTA_PAQUETE_PRINCIPAL: Path = RUTA_BASE / CARPETA_APLICACION
 
 RUTA_ARCHIVOS: Path = RUTA_PAQUETE_PRINCIPAL / "archivos"
 CARPETA_ARCHIVOS = f"{CARPETA_APLICACION}/archivos"
@@ -38,7 +36,7 @@ CARGA_ID_INICIAL='202105'
 CARPETA_CARGADOS='cargados'
 
 
-RUTA_COPIA_ARCHIVOS = RUTA_PAQUETE_PRINCIPAL / "copia_archivos"
+RUTA_COPIA_ARCHIVOS = RUTA_PAQUETE_PRINCIPAL / "repositorio_archivos"
 
 NOMBRE_JSON_PEDIDO = 'datos_covid.json'
 NOMBRE_JSON_ELIMINADOS='datos_eliminados.json'

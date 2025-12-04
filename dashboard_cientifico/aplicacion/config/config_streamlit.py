@@ -1,7 +1,7 @@
 import locale
 import streamlit as st
 
-from ..config.settings import RUTA_IMAGENES
+from dashboard_cientifico.aplicacion.config.settings import RUTA_IMAGENES
 
 def configura_locale():
     try:

@@ -152,8 +152,6 @@ if (CLAVE_DATAFRAME in st.session_state and
         except Exception as e:
             st.error(f"Error al generar el análisis geográfico: {e}")
 
-
-
     with tab4:
         st.subheader("Análisis de Correlación Mensual")
         st.info("Muestra la correlación de Pearson entre los totales mensuales de las métricas.")

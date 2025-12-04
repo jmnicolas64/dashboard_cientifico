@@ -2,7 +2,7 @@ import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from typing import Dict, List
+from typing import Dict
 from dashboard_cientifico.aplicacion.config.settings import RUTA_ARCHIVOS, NOMBRE_COMENTARIOS
 from dashboard_cientifico.aplicacion.modelo.carga_datos import obtener_meses_disponibles
 
@@ -25,7 +25,7 @@ def introduccion_general():
 
     st.header("Bienvenido al Dashboard Científico")
     
-    #st.info("IMPORTANTE: en los comentarios está la descripción del proyecto")
+    st.info("IMPORTANTE: en los comentarios está la descripción del proyecto")
     
     ruta=str(RUTA_ARCHIVOS / NOMBRE_COMENTARIOS)
     _renderizar_markdown(ruta, "C o m e n t a r i o s")
@@ -108,11 +108,9 @@ def mostrar_mensaje_con_continuacion(clave_mensaje: str, clave_terminada: str):
             st.success(mensaje)
         
         st.session_state[clave_mensaje] = "" 
-        
-        # 3. Lógica de Rerun (Control de Flujo)
-        # Esto reemplaza el botón "Continuar..."
+
         if st.session_state.get(clave_terminada, False):
-            st.session_state[clave_terminada] = False # Limpiamos la bandera de terminado
+            st.session_state[clave_terminada] = False 
             st.session_state['menu_refresh_key'] += 1
             st.rerun()
 
@@ -122,12 +120,9 @@ def lista_meses_cargados(df: pd.DataFrame) -> Dict:
     meses_disponibles: Dict = obtener_meses_disponibles(df)
     if meses_disponibles and "Error" in meses_disponibles.get(1, ''):
         st.sidebar.error(meses_disponibles.get(1))
-    
-    
             
     lista_formateada = "\n".join([f"- {mes}" for mes in meses_disponibles.values()])
     
-    # 3. Dibujar la lista en la barra lateral usando st.markdown
     st.sidebar.markdown(lista_formateada)
 
     return meses_disponibles
@@ -283,22 +278,18 @@ def grafico_distribucion(df_original: pd.DataFrame, metrica_clave: str, metrica_
 
 
 def grafico_correlacion(matriz_corr: pd.DataFrame, metricas_nombres: dict):
-    """
-    [VISTA] Dibuja un Mapa de Calor de la matriz de correlación.
-    """
-    # Usar los nombres legibles de las métricas en la matriz
     matriz_corr = matriz_corr.rename(columns=metricas_nombres, index=metricas_nombres)
     
     fig = px.imshow(
         matriz_corr,
         text_auto=".2f", # type: ignore 
-        color_continuous_scale=px.colors.diverging.RdBu, # Escala de color Rojo-Azul
-        color_continuous_midpoint=0, # El punto medio (correlación 0) es blanco
+        color_continuous_scale=px.colors.diverging.RdBu, 
+        color_continuous_midpoint=0,
         title="Correlación Mensual de Métricas de la Pandemia",
         aspect="equal"
     )
     
-    fig.update_xaxes(side="top") # Etiquetas del eje X en la parte superior
+    fig.update_xaxes(side="top") 
     
     st.plotly_chart(fig, width='stretch')
 

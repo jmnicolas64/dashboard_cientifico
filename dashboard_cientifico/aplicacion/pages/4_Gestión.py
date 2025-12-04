@@ -155,8 +155,6 @@ def _menu_iniciar_datos():
             if datos_eliminados_json:
                 mensajes_carga_inicial.append(f"5.JSON Eliminado: {datos_eliminados_json}")
 
-            #_inicializar_dataframe()
-
             st.session_state['mensajes_carga_inicial'] = "\n\n".join(mensajes_carga_inicial)
             st.session_state['menu_refresh_key'] += 1
             st.rerun()

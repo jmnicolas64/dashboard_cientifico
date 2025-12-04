@@ -71,7 +71,6 @@ if (CLAVE_DATAFRAME in st.session_state and
     datos_exportables = preparar_datos_csv(df_filtrado)
 
     if st.button("Exportar Datos en CSV"):
-        # Esta función se ejecuta en el servidor (backend)
         ruta = guardar_datos_csv(df_filtrado)
         st.success(f"Datos exportados con éxito en la ruta: {CARPETA_DESCARGAS}/{NOMBRE_CSV_DESCARGAS}")
     

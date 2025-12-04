@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+
+
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
 
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
@@ -9,8 +11,7 @@ from dashboard_cientifico.aplicacion.vista.vista import (introduccion_general,
                                                          lista_meses_cargados)
 
 from dashboard_cientifico.aplicacion.modelo.carga_datos import (verificar_db,
-                                                                inicializar_dataframe,
-                                                                obtener_meses_disponibles)
+                                                                inicializar_dataframe)
 
 
 

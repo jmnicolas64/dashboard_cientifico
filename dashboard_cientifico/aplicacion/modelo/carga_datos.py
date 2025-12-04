@@ -6,46 +6,33 @@ import pandas as pd
 import streamlit as st
 import sqlite3
 import json
-from ..config.settings import (CLAVE_DATAFRAME,
-                               RUTA_DB,
-                               NOMBRE_DB,
-                               CARPETA_DB,
-                               RUTA_ARCHIVOS,
-                               CARPETA_ARCHIVOS,
-                               CARPETA_CARGADOS,
-                               RUTA_COPIA_ARCHIVOS,
-                               CARPETA_DESCARGAS,
-                               RUTA_DESCARGAS,
-                               TABLA_DATOS_COVID,
-                               TABLA_CARGAS_ID,
-                               NOMBRE_JSON_PEDIDO,
-                               NOMBRE_JSON_ELIMINADOS,
-                               NOMBRE_JSON_CARGAS_ID,
-                               )
+from dashboard_cientifico.aplicacion.config.settings import (CLAVE_DATAFRAME,
+                                                            RUTA_DB,
+                                                            NOMBRE_DB,
+                                                            CARPETA_DB,
+                                                            RUTA_ARCHIVOS,
+                                                            CARPETA_ARCHIVOS,
+                                                            CARPETA_CARGADOS,
+                                                            RUTA_COPIA_ARCHIVOS,
+                                                            CARPETA_DESCARGAS,
+                                                            RUTA_DESCARGAS,
+                                                            TABLA_DATOS_COVID,
+                                                            TABLA_CARGAS_ID,
+                                                            NOMBRE_JSON_PEDIDO,
+                                                            NOMBRE_JSON_ELIMINADOS,
+                                                            NOMBRE_JSON_CARGAS_ID,
+                                                            )
+
 
 
 def inicializar_dataframe():
     df = obtener_datos_completos() 
-    
-    st.session_state[CLAVE_DATAFRAME] = df
-    
+       
     if df.empty:
         st.session_state[CLAVE_DATAFRAME] = pd.DataFrame() 
         return
 
     df['date'] = pd.to_datetime(df['date'], dayfirst=True)
-
-    df['daily_cases_avg7'] = df.groupby('province')['daily_cases'].transform(
-            lambda x: x.rolling(window=7, min_periods=1).mean()
-    )
-
-    df['daily_deaths_calculated'] = df.groupby('province')['deceased'].diff().fillna(0)
-
-    df['daily_deaths_avg7'] = df.groupby('province')['daily_deaths_calculated'].transform(
-        lambda x: x.rolling(window=7, min_periods=1).mean()
-    )
-    
-    df['cases_per_100k'] = (df['cases_accumulated'] / df['poblacion']) * 100000
 
     st.session_state[CLAVE_DATAFRAME] = df
 
@@ -119,21 +106,21 @@ def reset_datos() -> str:
     
     except Exception as e:
         mensajes.append(f"DB: Error al intentar borrar la base de datos: {e}")
-        return "\n\n".join(mensajes) # Detiene la ejecución si falla el borrado de la DB
+        return "\n\n".join(mensajes)
 
     try:
         if RUTA_ARCHIVOS.exists():
             shutil.rmtree(RUTA_ARCHIVOS, ignore_errors=True) 
             mensajes.append("DIR: Contenido de la carpeta de entrada borrado.")
             
-        RUTA_ARCHIVOS.mkdir(parents=True, exist_ok=False)
+        RUTA_ARCHIVOS.mkdir(parents=True, exist_ok=True)
         mensajes.append("DIR: Carpeta de entrada recreada y vacía.")
 
     except Exception as e:
         mensajes.append(f"DIR: Error al borrar/recrear la carpeta de entrada: {e}")
-        #return "\n\n".join(mensajes)
 
     try:
+        mensajes.append(f"DEBUG: Buscando archivos de copia en: {RUTA_COPIA_ARCHIVOS.resolve()}")
         if not RUTA_COPIA_ARCHIVOS.exists():
             mensajes.append("COPIA: La carpeta de origen de copia no existe. No se copió nada.")
             return "\n\n".join(mensajes)
@@ -284,7 +271,8 @@ def generar_json() -> tuple[str, str]:
         return datos_eliminados_json, datos_exportados_json
     
     except KeyError as e:
-        mensaje_error=(f"Error: Una columna necesaria no fue encontrada. Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
+        mensaje_error=(f"Error: Una columna necesaria no fue encontrada. "
+                       f"Verifica que las columnas 'date', 'province', {columnas_suma} existan. Detalle: {e}") # type: ignore
         return mensaje_error, mensaje_error
     
     except Exception as e:

@@ -1,5 +1,3 @@
-# C:\...\aplicacion\pages\1_Dashboard.py (MODIFICADO)
-
 import streamlit as st
 import pandas as pd
 from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
@@ -91,6 +89,7 @@ def ejecutar_ejercicios(titulo: str, metrica: str, df: pd.DataFrame, meses_carga
 
 configura_streamlit()
 st.header("Dashboard")
+
 if (CLAVE_DATAFRAME in st.session_state and 
     st.session_state[CLAVE_DATAFRAME] is not None 
     and not st.session_state[CLAVE_DATAFRAME].empty):

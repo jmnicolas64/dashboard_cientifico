@@ -11,42 +11,6 @@ from dashboard_cientifico.aplicacion.config.settings import (RUTA_DESCARGAS,
 ORDEN_DIAS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
 ResultType = Tuple[Union[Dict[str, Any], None], Union[str, None]]
 
-def obtener_evolucion_nacional(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Prepara los datos para la evolución temporal nacional.
-    """
-    # Lógica de Pandas pura (groupby, sum, reset_index)
-    df_nacional = df.groupby('date')[['daily_cases', 'daily_cases_avg7']].sum().reset_index()
-    return df_nacional
-
-
-def obtener_ia14_por_ccaa(df: pd.DataFrame) -> tuple[pd.DataFrame, str]:
-    """
-    Prepara los datos para la distribución geográfica de IA14.
-    """
-    # 1. Encontrar el último día
-    ultimo_dia = df['date'].max()
-    df_ultimo_dia = df[df['date'] == ultimo_dia]
-    
-    # 2. Agregación Geográfica
-    df_ccaa = df_ultimo_dia.groupby('ccaa').agg(
-        ia14_max=('ia14', 'max')
-    ).reset_index()
-
-    # 3. Ordenar
-    df_ccaa = df_ccaa.sort_values(by='ia14_max', ascending=False)
-    
-    return df_ccaa, ultimo_dia.strftime('%Y-%m-%d')
-
-
-def obtener_datos_agrupados(df: pd.DataFrame, columna_agrupacion: str) -> pd.DataFrame:
-    """
-    Función de servicio para agrupar y calcular estadísticas (ej. media, suma).
-    """
-    # Lógica de Pandas pura:
-    df_agrupado = df.groupby(columna_agrupacion)['columna_numerica'].agg(['sum', 'mean']).reset_index()
-    return df_agrupado
-
 
 def obtener_datos_filtrados(df: pd.DataFrame, columna: str, valor: str, columnas_ordenadas: list) -> pd.DataFrame:
     df_filtrado = df[df[columna] == valor].copy()
@@ -188,6 +152,7 @@ def cargar_geojson() -> dict:
             return json.load(f)
     except FileNotFoundError:
         raise FileNotFoundError(f"Error: No se encontró el archivo GeoJSON en la ruta {ruta}. Asegúrate de que esté en el directorio correcto.")
+
 
 def obtener_datos_geograficos(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
     """

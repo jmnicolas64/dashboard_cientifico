@@ -1,11 +1,16 @@
 """
 Ejecución: python -m dashboard_cientifico.aplicacion.main
 
-Base de Datos es la Fuente de Verdad. Se genera json para exportacion de datos
 """
-
+from pathlib import Path
 import subprocess
 import os
+
+RUTA_PAQUETE = Path(__file__).resolve().parent.parent
+RUTA_PROYECTO_FINAL = RUTA_PAQUETE.parent
+env = os.environ.copy()
+env['PYTHONPATH'] = str(RUTA_PROYECTO_FINAL)
+
 from dashboard_cientifico.aplicacion.config.settings import RUTA_STREAMLIT
 
 
@@ -17,7 +22,7 @@ def iniciar_dashboard_streamlit():
     print("\nIniciando Streamlit Dashboard...")
 
     try:
-        subprocess.run(["streamlit", "run", RUTA_STREAMLIT], check=True)
+        subprocess.run(["streamlit", "run", RUTA_STREAMLIT], check=True, env=env)
         
     except FileNotFoundError:
         print("\nError: El comando 'streamlit' no se encontró.")
@@ -28,3 +33,4 @@ def iniciar_dashboard_streamlit():
 
 if __name__ == "__main__":
     iniciar_dashboard_streamlit()
+
