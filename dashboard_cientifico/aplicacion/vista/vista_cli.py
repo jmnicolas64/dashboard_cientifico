@@ -1,5 +1,6 @@
 # dashboard_cientifico/aplicacion/vistas/vista_cli.py
-
+import matplotlib
+matplotlib.use('TkAgg')
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -35,7 +36,9 @@ def grafica_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
         x='dia_semana', 
         y=metrica, 
         data=df_dia, 
-        palette='viridis', 
+        palette='viridis',
+        hue='dia_semana',
+        legend=False,
         hue_order=df_dia['dia_semana'].tolist()
     )
     

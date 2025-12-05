@@ -338,6 +338,10 @@ def obtener_datos_completos() -> pd.DataFrame:
         st.error(f"Error al consultar la base de datos: {e}")
         return pd.DataFrame()
 
+    if not df.empty and 'date' in df.columns:
+        df['date'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce') 
+        df.dropna(subset=['date'], inplace=True)
+
     columnas_a_eliminar = [
         'source_name', 
         'source',

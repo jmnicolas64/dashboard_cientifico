@@ -45,21 +45,17 @@ def controlador_cli():
         
         if opcion == '1':
             print("Preparando datos y mostrando Gráfico Acumulado Diario...")
-            # 1. Llamar al Modelo para obtener los datos
-            df_acumulado = obtener_acumulados_por_dia_semana(df_completo, metrica="num_def", cargas_a_filtrar=['1', '2', '3']) # Necesitas definir qué cargas filtrar
-            
-            # 2. Llamar a la Vista CLI para dibujar el gráfico
-            vista_cli.grafica_acumulados_dia_cli("Casos", df_acumulado, "casos_acumulados")
+ 
+            df_acumulado = obtener_acumulados_por_dia_semana(df_completo, metrica="num_def", cargas_a_filtrar=['202105'])
+
+            vista_cli.grafica_acumulados_dia_cli("Casos", df_acumulado, "num_def")
             
         elif opcion == '2':
             print("Preparando datos y mostrando Gráfico Tarta por Provincia...")
-            # 1. Llamar al Modelo para obtener los datos
-            df_provincia = obtener_totales_por_provincia(df_completo, metrica="new_cases", cargas_a_filtrar=['1', '2', '3'])
+
+            df_provincia = obtener_totales_por_provincia(df_completo, metrica="new_cases", cargas_a_filtrar=['202105'])
             
-            # 2. Llamar a la Vista CLI para dibujar el gráfico
-            # El controlador se encarga de llamar a la función del Modelo que calcula max/min
-            # ... y pasarlos a la vista si es necesario
-            vista_cli.grafica_queso_provincia_cli("Hospitalizados", df_provincia, "Hospitalizados_total") 
+            vista_cli.grafica_queso_provincia_cli("Hospitalizados", df_provincia, "new_cases") 
             
         elif opcion == '0':
             print("Saliendo de la aplicación. ¡Hasta pronto!")
