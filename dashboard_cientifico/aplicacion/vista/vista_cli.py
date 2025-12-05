@@ -20,7 +20,7 @@ def mostrar_mensaje_resumen(titulo: str, max_min_data: Dict):
     print("="*50 + "\n")
 
 
-def grafica_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
+def grafico_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
     """
     Genera y muestra un gráfico de barras (Seaborn) de acumulados por día
     para la versión CLI.
@@ -55,7 +55,7 @@ def grafica_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
     plt.show()
 
 
-def grafica_queso_provincia_cli(titulo: str, df_provincia_total: pd.DataFrame, metrica: str):
+def grafico_queso_provincia_cli(titulo: str, df_provincia_total: pd.DataFrame, metrica: str):
     """
     Genera y muestra un gráfico de tarta (Matplotlib) de distribución por provincia
     y muestra el resumen de max/min en la terminal.

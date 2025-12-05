@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from dashboard_cientifico.aplicacion.config.settings import CLAVE_DATAFRAME
+from dashboard_cientifico.aplicacion.config.settings import (CLAVE_DATAFRAME,
+                                                             METRICAS_ANALISIS)
+
 from dashboard_cientifico.aplicacion.config.config_streamlit import configura_streamlit
 
 from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_evolucion_mensual,
@@ -14,13 +16,6 @@ from dashboard_cientifico.aplicacion.vista.vista import (lista_meses_cargados,
                                                          grafico_distribucion,
                                                          grafico_correlacion,
                                                          grafico_coropletico)
-
-METRICAS_ANALISIS = {
-    "num_def": "Defunciones",
-    "new_cases": "Casos",
-    "num_hosp": "Hospitalizados",
-    "num_uci": "UCI"
-}
 
 
 configura_streamlit()

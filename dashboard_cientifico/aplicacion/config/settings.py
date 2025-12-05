@@ -45,3 +45,10 @@ NOMBRE_JSON_CARGAS_ID='carga_ids.json'
 NOMBRE_CSV_DESCARGAS='datos_exportados.csv'
 NOMBRE_GEOJSON = 'comunidades_autonomas.geojson'
 NOMBRE_COMENTARIOS='proyecto_final.md'
+
+METRICAS_ANALISIS = {
+    "num_def": "Defunciones",
+    "new_cases": "Casos",
+    "num_hosp": "Hospitalizados",
+    "num_uci": "UCI"
+}
