@@ -5,8 +5,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import Dict
-
 from dashboard_cientifico.aplicacion.modelo.funciones_graficos import obtener_max_min_provincia
+from dashboard_cientifico.aplicacion.config.settings import (RUTA_ARCHIVOS,
+                                                             NOMBRE_COMENTARIOS)
 
 plt.style.use('seaborn-v0_8-whitegrid')
 
@@ -71,3 +72,20 @@ def grafico_queso_provincia_cli(titulo: str, df_provincia_total: pd.DataFrame, m
     plt.axis('equal') # Asegura que el gráfico es un círculo
 
     plt.show()
+
+
+def mostrar_archivo_md_cli() -> str:
+    ruta_archivo=RUTA_ARCHIVOS / NOMBRE_COMENTARIOS
+    try:
+        if not ruta_archivo.exists():
+            print(f"ERROR: Archivo no encontrado en: {ruta_archivo}")
+            input("\nPresione ENTER para volver al menú...")
+            return ""
+
+        with open(ruta_archivo, 'r', encoding='utf-8') as f:
+            contenido = f.read()
+
+        return(contenido)
+
+    except Exception as e:
+        return(f"ERROR al leer el archivo Markdown: {e}")

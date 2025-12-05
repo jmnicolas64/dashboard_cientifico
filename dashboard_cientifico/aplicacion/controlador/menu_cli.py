@@ -1,22 +1,33 @@
-from typing import Dict, List
+import sys
+from typing import Dict
 import matplotlib.pyplot as plt
 
 from dashboard_cientifico.aplicacion.modelo.carga_datos import (reset_datos, 
-                                                                obtener_datos_completos)
-                                                                # ... otras funciones que necesites del Modelo
+                                                                obtener_datos_completos,
+                                                                verificar_db,
+                                                                crear_tabla_carga_ids,
+                                                                cargar_datos,
+                                                                generar_json,
+                                                                )
+                                                                
 
 from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_acumulados_por_dia_semana,
                                                                        obtener_totales_por_provincia)
 
 from dashboard_cientifico.aplicacion.vista.vista_cli import (grafico_acumulados_dia_cli,
-                                                             grafico_queso_provincia_cli)
+                                                             grafico_queso_provincia_cli,
+                                                             mostrar_archivo_md_cli)
 
 from dashboard_cientifico.aplicacion.vista.vista_menu import (TEXTO_OPCIONES,
                                                               mostrar_menu,
                                                               mostrar_despedida,
-                                                              solicitar_opcion)
+                                                              solicitar_opcion,
+                                                              mostrar_mensaje)
 
-from dashboard_cientifico.aplicacion.config.settings import METRICAS_ANALISIS
+from dashboard_cientifico.aplicacion.config.settings import (METRICAS_ANALISIS,
+                                                             RUTA_ARCHIVO_ENTRADA,
+                                                             CARGA_ID_INICIAL)
+
 from dashboard_cientifico.aplicacion.modelo.utiles import (limpiar_pantalla,
                                                            cabecera,
                                                            pie)
@@ -55,19 +66,27 @@ def seleccionar_metrica(opcion: str, titulo: str) -> str:
             return '0'
 
             
-def controlador_cli():    
-    #try:
-        #reset_datos()
-        #print("Base de datos cargada e inicializada correctamente.")
-    #except Exception as e:
-        #print(f"ERROR: No se pudo inicializar la base de datos: {e}")
-        #return # Termina si la inicialización falla
+def controlador_cli():
+
+    estado: dict = verificar_db()
+
+    if not estado['final']:
+        reset_datos()
+        crear_tabla_carga_ids()      
+        cargar_datos(RUTA_ARCHIVO_ENTRADA, CARGA_ID_INICIAL,"")
+        generar_json()
+        
+        mensaje: str=(f"Datos inicializados\n"
+                        f"El archivo JSON está disponible en la carpeta 'descargas'")
+        
+        limpiar_pantalla()
+        mostrar_mensaje(mensaje)
+        pie()
 
     df_completo = obtener_datos_completos()
     if df_completo.empty:
-        print("ERROR: No se pudieron cargar los datos de la base de datos.")
-        # Manejo de error...
-        # ...
+        print("ERROR CRITICO: No se pudieron cargar los datos de la base de datos.")
+        sys.exit
 
     while True:
         limpiar_pantalla()
@@ -97,6 +116,11 @@ def controlador_cli():
                     
                     grafico_queso_provincia_cli(titulo_metrica, df_provincia, metrica=metrica_columna) 
                     pie()
+        elif opcion_principal=='3':
+            mensaje=mostrar_archivo_md_cli()
+            limpiar_pantalla()
+            mostrar_mensaje(mensaje)
+            pie()
 
         elif opcion_principal == '0':
             limpiar_pantalla()

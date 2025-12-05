@@ -21,13 +21,15 @@ def obtener_datos_filtrados(df: pd.DataFrame, columna: str, valor: str, columnas
 
 
 def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str, cargas_a_filtrar: list) -> pd.DataFrame:
-    if 'date' not in df.columns:
+    df_copia = df.copy()
+
+    if 'date' not in df_copia.columns:
         raise ValueError("Columna 'date' no encontrada. Asegúrate de la pre-carga.")
 
-    df['dia_semana'] = df['date'].dt.day_name(locale='es_ES.utf8') # type: ignore
+    df_copia['dia_semana'] = df_copia['date'].dt.day_name(locale='es_ES.utf8') # type: ignore
 
     df_dia = (
-        df[df['carga_id'].isin(cargas_a_filtrar)]
+        df_copia[df_copia['carga_id'].isin(cargas_a_filtrar)]
               .groupby('dia_semana')[metrica]
               .sum()
               .reset_index()
@@ -40,11 +42,13 @@ def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str, cargas_a_f
 
 
 def obtener_totales_por_provincia(df: pd.DataFrame, metrica: str, cargas_a_filtrar: list) -> pd.DataFrame:
-    if 'province' not in df.columns:
+    df_copia = df.copy()
+    
+    if 'province' not in df_copia.columns:
         raise ValueError("Columna 'province' no encontrada.")
         
     df_provincia_total = (
-        df[df['carga_id'].isin(cargas_a_filtrar)]
+        df_copia[df_copia['carga_id'].isin(cargas_a_filtrar)]
         .groupby('province')[metrica]
         .sum()
         .reset_index()
@@ -115,11 +119,13 @@ def guardar_datos_csv(df: pd.DataFrame):
 
 
 def obtener_evolucion_mensual(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
-    if not pd.api.types.is_datetime64_any_dtype(df['date']):
-        df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y')
+    df_copia = df.copy()
+
+    if not pd.api.types.is_datetime64_any_dtype(df_copia['date']):
+        df_copia['date'] = pd.to_datetime(df_copia['date'], format='%d-%m-%Y')
         
     df_evolucion = (
-        df.groupby(df['date'].dt.to_period('M'))[metrica] # type: ignore
+        df_copia.groupby(df_copia['date'].dt.to_period('M'))[metrica] # type: ignore
         .sum()
         .reset_index()
     ) 
@@ -130,16 +136,11 @@ def obtener_evolucion_mensual(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
 
 
 def obtener_matriz_correlacion_mensual(df: pd.DataFrame, metricas: list) -> pd.DataFrame:
-    """
-    Agrupa el DF por mes y calcula la matriz de correlación de Pearson entre las métricas.
-    """
-    # 1. Agrupar por mes y sumar todas las métricas relevantes
     df_mensual = (
         df.groupby(df['date'].dt.to_period('M'))[metricas] # type: ignore
         .sum()
     )
-    
-    # 2. Calcular la matriz de correlación
+
     matriz_corr = df_mensual.corr(method='pearson')
     
     return matriz_corr
@@ -155,15 +156,9 @@ def cargar_geojson() -> dict:
 
 
 def obtener_datos_geograficos(df: pd.DataFrame, metrica: str) -> pd.DataFrame:
-    """
-    [MODELO] Agrega los datos por Comunidad Autónoma (CCAA) para el análisis geográfico,
-    sumando el total de la métrica en todo el período filtrado.
-    """
-    # Se asume que la columna de CCAA se llama 'ccaa'
     if 'ccaa' not in df.columns:
         raise ValueError("El DataFrame no contiene la columna 'ccaa' necesaria para el análisis geográfico.")
         
-    # Agregación Geográfica: Sumar la métrica seleccionada por CCAA
     df_ccaa = df.groupby('ccaa')[metrica].sum().reset_index()
     df_ccaa.rename(columns={metrica: 'Total_Metrica'}, inplace=True)
     return df_ccaa

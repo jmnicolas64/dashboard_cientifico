@@ -2,2607 +2,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Albacete",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":10,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Alicante\/Alacant",
-        "num_def":0,
-        "new_cases":70,
-        "num_hosp":5,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Almer\u00eda",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":21,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Araba\/\u00c1lava",
-        "num_def":0,
-        "new_cases":154,
-        "num_hosp":2,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Asturias",
-        "num_def":3,
-        "new_cases":174,
-        "num_hosp":23,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Badajoz",
-        "num_def":1,
-        "new_cases":102,
-        "num_hosp":11,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Balears, Illes",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Barcelona",
-        "num_def":9,
-        "new_cases":0,
-        "num_hosp":102,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Bizkaia",
-        "num_def":8,
-        "new_cases":848,
-        "num_hosp":24,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Burgos",
-        "num_def":4,
-        "new_cases":180,
-        "num_hosp":14,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Cantabria",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":20,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":1,
-        "new_cases":43,
-        "num_hosp":7,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Ceuta",
-        "num_def":0,
-        "new_cases":3,
-        "num_hosp":1,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Ciudad Real",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":13,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Coru\u00f1a, A",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Cuenca",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"C\u00e1ceres",
-        "num_def":1,
-        "new_cases":63,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"C\u00e1diz",
-        "num_def":6,
-        "new_cases":0,
-        "num_hosp":18,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"C\u00f3rdoba",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":36,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Gipuzkoa",
-        "num_def":2,
-        "new_cases":612,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Girona",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Granada",
-        "num_def":8,
-        "new_cases":0,
-        "num_hosp":69,
-        "num_uci":11
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Guadalajara",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Huelva",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Huesca",
-        "num_def":0,
-        "new_cases":39,
-        "num_hosp":10,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Ja\u00e9n",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":32,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Le\u00f3n",
-        "num_def":1,
-        "new_cases":106,
-        "num_hosp":19,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Lleida",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Lugo",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Madrid",
-        "num_def":41,
-        "new_cases":0,
-        "num_hosp":365,
-        "num_uci":40
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Melilla",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":8,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Murcia",
-        "num_def":4,
-        "new_cases":81,
-        "num_hosp":21,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"M\u00e1laga",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":38,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Navarra",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":21,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Ourense",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":10,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Palencia",
-        "num_def":3,
-        "new_cases":55,
-        "num_hosp":7,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Palmas, Las",
-        "num_def":2,
-        "new_cases":223,
-        "num_hosp":11,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Pontevedra",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":17,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Rioja, La",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":17,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Salamanca",
-        "num_def":0,
-        "new_cases":75,
-        "num_hosp":7,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":4,
-        "new_cases":293,
-        "num_hosp":17,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Segovia",
-        "num_def":1,
-        "new_cases":60,
-        "num_hosp":8,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Sevilla",
-        "num_def":12,
-        "new_cases":0,
-        "num_hosp":76,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Soria",
-        "num_def":1,
-        "new_cases":24,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Tarragona",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":12,
-        "num_hosp":3,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Toledo",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":28,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":1,
-        "new_cases":120,
-        "num_hosp":11,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Valladolid",
-        "num_def":4,
-        "new_cases":162,
-        "num_hosp":23,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Zamora",
-        "num_def":0,
-        "new_cases":25,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"Zaragoza",
-        "num_def":8,
-        "new_cases":367,
-        "num_hosp":57,
-        "num_uci":9
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"domingo",
-        "province":"\u00c1vila",
-        "num_def":1,
-        "new_cases":47,
-        "num_hosp":6,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Albacete",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Alicante\/Alacant",
-        "num_def":0,
-        "new_cases":217,
-        "num_hosp":10,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Almer\u00eda",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":14,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Araba\/\u00c1lava",
-        "num_def":3,
-        "new_cases":174,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Asturias",
-        "num_def":1,
-        "new_cases":238,
-        "num_hosp":30,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Badajoz",
-        "num_def":0,
-        "new_cases":199,
-        "num_hosp":14,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Balears, Illes",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Barcelona",
-        "num_def":8,
-        "new_cases":0,
-        "num_hosp":83,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Bizkaia",
-        "num_def":11,
-        "new_cases":970,
-        "num_hosp":31,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Burgos",
-        "num_def":2,
-        "new_cases":266,
-        "num_hosp":15,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Cantabria",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":24,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":0,
-        "new_cases":111,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Ceuta",
-        "num_def":0,
-        "new_cases":4,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Ciudad Real",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Coru\u00f1a, A",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Cuenca",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"C\u00e1ceres",
-        "num_def":0,
-        "new_cases":67,
-        "num_hosp":5,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"C\u00e1diz",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"C\u00f3rdoba",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":14,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Gipuzkoa",
-        "num_def":10,
-        "new_cases":604,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Girona",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Granada",
-        "num_def":7,
-        "new_cases":0,
-        "num_hosp":63,
-        "num_uci":12
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Guadalajara",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Huelva",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Huesca",
-        "num_def":1,
-        "new_cases":124,
-        "num_hosp":7,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Ja\u00e9n",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":44,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Le\u00f3n",
-        "num_def":0,
-        "new_cases":183,
-        "num_hosp":16,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Lleida",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Lugo",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Madrid",
-        "num_def":32,
-        "new_cases":0,
-        "num_hosp":370,
-        "num_uci":34
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Melilla",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Murcia",
-        "num_def":0,
-        "new_cases":353,
-        "num_hosp":27,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"M\u00e1laga",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":34,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Navarra",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":29,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Ourense",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Palencia",
-        "num_def":1,
-        "new_cases":75,
-        "num_hosp":13,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Palmas, Las",
-        "num_def":3,
-        "new_cases":226,
-        "num_hosp":16,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Pontevedra",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":21,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Rioja, La",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":20,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Salamanca",
-        "num_def":0,
-        "new_cases":97,
-        "num_hosp":9,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":1,
-        "new_cases":289,
-        "num_hosp":14,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Segovia",
-        "num_def":0,
-        "new_cases":76,
-        "num_hosp":8,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Sevilla",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":95,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Soria",
-        "num_def":0,
-        "new_cases":31,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Tarragona",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":29,
-        "num_hosp":3,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Toledo",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":24,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":3,
-        "new_cases":353,
-        "num_hosp":21,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Valladolid",
-        "num_def":4,
-        "new_cases":209,
-        "num_hosp":12,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Zamora",
-        "num_def":1,
-        "new_cases":48,
-        "num_hosp":4,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"Zaragoza",
-        "num_def":9,
-        "new_cases":722,
-        "num_hosp":69,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"jueves",
-        "province":"\u00c1vila",
-        "num_def":0,
-        "new_cases":40,
-        "num_hosp":1,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Albacete",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Alicante\/Alacant",
-        "num_def":1,
-        "new_cases":330,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Almer\u00eda",
-        "num_def":11,
-        "new_cases":0,
-        "num_hosp":21,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Araba\/\u00c1lava",
-        "num_def":2,
-        "new_cases":147,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Asturias",
-        "num_def":4,
-        "new_cases":284,
-        "num_hosp":34,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Badajoz",
-        "num_def":0,
-        "new_cases":244,
-        "num_hosp":11,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Balears, Illes",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":17,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Barcelona",
-        "num_def":12,
-        "new_cases":0,
-        "num_hosp":132,
-        "num_uci":14
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Bizkaia",
-        "num_def":14,
-        "new_cases":1091,
-        "num_hosp":42,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Burgos",
-        "num_def":2,
-        "new_cases":142,
-        "num_hosp":25,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Cantabria",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":34,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":0,
-        "new_cases":96,
-        "num_hosp":11,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Ceuta",
-        "num_def":3,
-        "new_cases":8,
-        "num_hosp":3,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Ciudad Real",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":11,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Coru\u00f1a, A",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":29,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Cuenca",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":8,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"C\u00e1ceres",
-        "num_def":1,
-        "new_cases":87,
-        "num_hosp":7,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"C\u00e1diz",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":25,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"C\u00f3rdoba",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":30,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Gipuzkoa",
-        "num_def":7,
-        "new_cases":822,
-        "num_hosp":2,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Girona",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Granada",
-        "num_def":11,
-        "new_cases":0,
-        "num_hosp":87,
-        "num_uci":12
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Guadalajara",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":2,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Huelva",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":36,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Huesca",
-        "num_def":2,
-        "new_cases":117,
-        "num_hosp":4,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Ja\u00e9n",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":39,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Le\u00f3n",
-        "num_def":2,
-        "new_cases":80,
-        "num_hosp":18,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Lleida",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Lugo",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Madrid",
-        "num_def":47,
-        "new_cases":0,
-        "num_hosp":461,
-        "num_uci":48
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Melilla",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Murcia",
-        "num_def":1,
-        "new_cases":434,
-        "num_hosp":30,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"M\u00e1laga",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":49,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Navarra",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":21,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Ourense",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":10,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Palencia",
-        "num_def":1,
-        "new_cases":65,
-        "num_hosp":12,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Palmas, Las",
-        "num_def":1,
-        "new_cases":224,
-        "num_hosp":12,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Pontevedra",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":33,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Rioja, La",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":20,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Salamanca",
-        "num_def":0,
-        "new_cases":45,
-        "num_hosp":14,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":1,
-        "new_cases":309,
-        "num_hosp":21,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Segovia",
-        "num_def":0,
-        "new_cases":47,
-        "num_hosp":10,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Sevilla",
-        "num_def":11,
-        "new_cases":0,
-        "num_hosp":107,
-        "num_uci":10
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Soria",
-        "num_def":0,
-        "new_cases":26,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Tarragona",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":39,
-        "num_hosp":2,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Toledo",
-        "num_def":10,
-        "new_cases":0,
-        "num_hosp":32,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":1,
-        "new_cases":380,
-        "num_hosp":19,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Valladolid",
-        "num_def":4,
-        "new_cases":118,
-        "num_hosp":29,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Zamora",
-        "num_def":4,
-        "new_cases":20,
-        "num_hosp":8,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"Zaragoza",
-        "num_def":2,
-        "new_cases":569,
-        "num_hosp":91,
-        "num_uci":12
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"lunes",
-        "province":"\u00c1vila",
-        "num_def":1,
-        "new_cases":44,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Albacete",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":8,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Alicante\/Alacant",
-        "num_def":0,
-        "new_cases":136,
-        "num_hosp":10,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Almer\u00eda",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":29,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Araba\/\u00c1lava",
-        "num_def":2,
-        "new_cases":150,
-        "num_hosp":0,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Asturias",
-        "num_def":0,
-        "new_cases":208,
-        "num_hosp":23,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Badajoz",
-        "num_def":2,
-        "new_cases":203,
-        "num_hosp":8,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Balears, Illes",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Barcelona",
-        "num_def":19,
-        "new_cases":0,
-        "num_hosp":96,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Bizkaia",
-        "num_def":14,
-        "new_cases":1113,
-        "num_hosp":49,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Burgos",
-        "num_def":2,
-        "new_cases":268,
-        "num_hosp":20,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Cantabria",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":27,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":0,
-        "new_cases":104,
-        "num_hosp":9,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Ceuta",
-        "num_def":0,
-        "new_cases":6,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Ciudad Real",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":13,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Coru\u00f1a, A",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Cuenca",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"C\u00e1ceres",
-        "num_def":2,
-        "new_cases":114,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"C\u00e1diz",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":28,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"C\u00f3rdoba",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":25,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Gipuzkoa",
-        "num_def":5,
-        "new_cases":619,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Girona",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Granada",
-        "num_def":7,
-        "new_cases":0,
-        "num_hosp":75,
-        "num_uci":11
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Guadalajara",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Huelva",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Huesca",
-        "num_def":0,
-        "new_cases":135,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Ja\u00e9n",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":34,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Le\u00f3n",
-        "num_def":0,
-        "new_cases":211,
-        "num_hosp":12,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Lleida",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Lugo",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Madrid",
-        "num_def":40,
-        "new_cases":0,
-        "num_hosp":454,
-        "num_uci":43
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Melilla",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Murcia",
-        "num_def":3,
-        "new_cases":336,
-        "num_hosp":26,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"M\u00e1laga",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":40,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Navarra",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":24,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Ourense",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Palencia",
-        "num_def":1,
-        "new_cases":56,
-        "num_hosp":9,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Palmas, Las",
-        "num_def":2,
-        "new_cases":279,
-        "num_hosp":15,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Pontevedra",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":33,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Rioja, La",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Salamanca",
-        "num_def":1,
-        "new_cases":106,
-        "num_hosp":13,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":4,
-        "new_cases":256,
-        "num_hosp":23,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Segovia",
-        "num_def":0,
-        "new_cases":90,
-        "num_hosp":8,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Sevilla",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":82,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Soria",
-        "num_def":2,
-        "new_cases":28,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Tarragona",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":8,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":34,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Toledo",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":4,
-        "new_cases":242,
-        "num_hosp":23,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Valladolid",
-        "num_def":2,
-        "new_cases":217,
-        "num_hosp":19,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Zamora",
-        "num_def":1,
-        "new_cases":48,
-        "num_hosp":7,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"Zaragoza",
-        "num_def":9,
-        "new_cases":858,
-        "num_hosp":66,
-        "num_uci":11
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"martes",
-        "province":"\u00c1vila",
-        "num_def":0,
-        "new_cases":61,
-        "num_hosp":3,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Albacete",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":9,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Alicante\/Alacant",
-        "num_def":2,
-        "new_cases":184,
-        "num_hosp":6,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Almer\u00eda",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":15,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Araba\/\u00c1lava",
-        "num_def":4,
-        "new_cases":159,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Asturias",
-        "num_def":4,
-        "new_cases":222,
-        "num_hosp":27,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Badajoz",
-        "num_def":0,
-        "new_cases":189,
-        "num_hosp":7,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Balears, Illes",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Barcelona",
-        "num_def":13,
-        "new_cases":0,
-        "num_hosp":90,
-        "num_uci":11
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Bizkaia",
-        "num_def":13,
-        "new_cases":1056,
-        "num_hosp":32,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Burgos",
-        "num_def":2,
-        "new_cases":245,
-        "num_hosp":27,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Cantabria",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":27,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":1,
-        "new_cases":99,
-        "num_hosp":6,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Ceuta",
-        "num_def":2,
-        "new_cases":6,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Ciudad Real",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":7,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Coru\u00f1a, A",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Cuenca",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":2,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"C\u00e1ceres",
-        "num_def":2,
-        "new_cases":60,
-        "num_hosp":1,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"C\u00e1diz",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"C\u00f3rdoba",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Gipuzkoa",
-        "num_def":5,
-        "new_cases":607,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Girona",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Granada",
-        "num_def":14,
-        "new_cases":0,
-        "num_hosp":60,
-        "num_uci":15
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Guadalajara",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Huelva",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":28,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Huesca",
-        "num_def":0,
-        "new_cases":105,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Ja\u00e9n",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":47,
-        "num_uci":6
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Le\u00f3n",
-        "num_def":1,
-        "new_cases":228,
-        "num_hosp":16,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Lleida",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Lugo",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Madrid",
-        "num_def":30,
-        "new_cases":0,
-        "num_hosp":383,
-        "num_uci":47
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Melilla",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":8,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Murcia",
-        "num_def":0,
-        "new_cases":318,
-        "num_hosp":33,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"M\u00e1laga",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":45,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Navarra",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":13,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Ourense",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Palencia",
-        "num_def":2,
-        "new_cases":74,
-        "num_hosp":12,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Palmas, Las",
-        "num_def":3,
-        "new_cases":246,
-        "num_hosp":18,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Pontevedra",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Rioja, La",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":15,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Salamanca",
-        "num_def":0,
-        "new_cases":95,
-        "num_hosp":8,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":3,
-        "new_cases":389,
-        "num_hosp":16,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Segovia",
-        "num_def":0,
-        "new_cases":72,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Sevilla",
-        "num_def":10,
-        "new_cases":0,
-        "num_hosp":116,
-        "num_uci":18
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Soria",
-        "num_def":0,
-        "new_cases":24,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Tarragona",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":37,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Toledo",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":22,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":2,
-        "new_cases":329,
-        "num_hosp":23,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Valladolid",
-        "num_def":2,
-        "new_cases":240,
-        "num_hosp":28,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Zamora",
-        "num_def":0,
-        "new_cases":57,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"Zaragoza",
-        "num_def":14,
-        "new_cases":816,
-        "num_hosp":63,
-        "num_uci":8
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"mi\u00e9rcoles",
-        "province":"\u00c1vila",
-        "num_def":2,
-        "new_cases":64,
-        "num_hosp":9,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
+        "dia_semana":"Friday",
         "province":"Albacete",
         "num_def":0,
         "new_cases":0,
@@ -2612,527 +12,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Alicante\/Alacant",
-        "num_def":0,
-        "new_cases":162,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Almer\u00eda",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Araba\/\u00c1lava",
-        "num_def":2,
-        "new_cases":203,
-        "num_hosp":6,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Asturias",
-        "num_def":4,
-        "new_cases":292,
-        "num_hosp":27,
-        "num_uci":5
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Badajoz",
-        "num_def":2,
-        "new_cases":152,
-        "num_hosp":15,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Balears, Illes",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":13,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Barcelona",
-        "num_def":10,
-        "new_cases":0,
-        "num_hosp":91,
-        "num_uci":16
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Bizkaia",
-        "num_def":17,
-        "new_cases":1024,
-        "num_hosp":48,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Burgos",
-        "num_def":1,
-        "new_cases":316,
-        "num_hosp":20,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Cantabria",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":31,
-        "num_uci":11
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Castell\u00f3n\/Castell\u00f3",
-        "num_def":3,
-        "new_cases":73,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Ceuta",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Ciudad Real",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":9,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Coru\u00f1a, A",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Cuenca",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"C\u00e1ceres",
-        "num_def":0,
-        "new_cases":94,
-        "num_hosp":3,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"C\u00e1diz",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":30,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"C\u00f3rdoba",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":24,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Gipuzkoa",
-        "num_def":7,
-        "new_cases":627,
-        "num_hosp":0,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Girona",
-        "num_def":5,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Granada",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":79,
-        "num_uci":13
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Guadalajara",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Huelva",
-        "num_def":1,
-        "new_cases":0,
-        "num_hosp":20,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Huesca",
-        "num_def":2,
-        "new_cases":90,
-        "num_hosp":9,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Ja\u00e9n",
-        "num_def":4,
-        "new_cases":0,
-        "num_hosp":25,
-        "num_uci":7
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Le\u00f3n",
-        "num_def":1,
-        "new_cases":250,
-        "num_hosp":11,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Lleida",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":3,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Lugo",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Madrid",
-        "num_def":32,
-        "new_cases":0,
-        "num_hosp":354,
-        "num_uci":37
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Melilla",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Murcia",
-        "num_def":1,
-        "new_cases":217,
-        "num_hosp":23,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"M\u00e1laga",
-        "num_def":2,
-        "new_cases":0,
-        "num_hosp":47,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Navarra",
-        "num_def":8,
-        "new_cases":0,
-        "num_hosp":15,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Ourense",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":3
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Palencia",
-        "num_def":1,
-        "new_cases":120,
-        "num_hosp":4,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Palmas, Las",
-        "num_def":0,
-        "new_cases":202,
-        "num_hosp":26,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Pontevedra",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":20,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Rioja, La",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":16,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Salamanca",
-        "num_def":1,
-        "new_cases":152,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Santa Cruz de Tenerife",
-        "num_def":1,
-        "new_cases":287,
-        "num_hosp":24,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Segovia",
-        "num_def":1,
-        "new_cases":104,
-        "num_hosp":6,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Sevilla",
-        "num_def":9,
-        "new_cases":0,
-        "num_hosp":92,
-        "num_uci":12
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Soria",
-        "num_def":2,
-        "new_cases":33,
-        "num_hosp":1,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Tarragona",
-        "num_def":3,
-        "new_cases":0,
-        "num_hosp":5,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Teruel",
-        "num_def":0,
-        "new_cases":8,
-        "num_hosp":2,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Toledo",
-        "num_def":7,
-        "new_cases":0,
-        "num_hosp":23,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Valencia\/Val\u00e8ncia",
-        "num_def":1,
-        "new_cases":198,
-        "num_hosp":20,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Valladolid",
-        "num_def":0,
-        "new_cases":352,
-        "num_hosp":23,
-        "num_uci":2
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Zamora",
-        "num_def":1,
-        "new_cases":95,
-        "num_hosp":7,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"Zaragoza",
-        "num_def":12,
-        "new_cases":656,
-        "num_hosp":54,
-        "num_uci":4
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"s\u00e1bado",
-        "province":"\u00c1vila",
-        "num_def":0,
-        "new_cases":62,
-        "num_hosp":3,
-        "num_uci":0
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"viernes",
-        "province":"Albacete",
-        "num_def":0,
-        "new_cases":0,
-        "num_hosp":6,
-        "num_uci":1
-    },
-    {
-        "carga_id":"202105",
-        "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Alicante\/Alacant",
         "num_def":2,
         "new_cases":256,
@@ -3142,7 +22,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Almer\u00eda",
         "num_def":2,
         "new_cases":0,
@@ -3152,7 +32,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Araba\/\u00c1lava",
         "num_def":2,
         "new_cases":161,
@@ -3162,7 +42,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Asturias",
         "num_def":3,
         "new_cases":237,
@@ -3172,7 +52,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Badajoz",
         "num_def":0,
         "new_cases":178,
@@ -3182,7 +62,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Balears, Illes",
         "num_def":1,
         "new_cases":0,
@@ -3192,7 +72,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Barcelona",
         "num_def":8,
         "new_cases":0,
@@ -3202,7 +82,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Bizkaia",
         "num_def":12,
         "new_cases":945,
@@ -3212,7 +92,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Burgos",
         "num_def":1,
         "new_cases":277,
@@ -3222,7 +102,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Cantabria",
         "num_def":3,
         "new_cases":0,
@@ -3232,7 +112,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Castell\u00f3n\/Castell\u00f3",
         "num_def":0,
         "new_cases":102,
@@ -3242,7 +122,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Ceuta",
         "num_def":0,
         "new_cases":0,
@@ -3252,7 +132,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Ciudad Real",
         "num_def":1,
         "new_cases":0,
@@ -3262,7 +142,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Coru\u00f1a, A",
         "num_def":2,
         "new_cases":0,
@@ -3272,7 +152,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Cuenca",
         "num_def":0,
         "new_cases":0,
@@ -3282,7 +162,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"C\u00e1ceres",
         "num_def":0,
         "new_cases":100,
@@ -3292,7 +172,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"C\u00e1diz",
         "num_def":5,
         "new_cases":0,
@@ -3302,7 +182,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"C\u00f3rdoba",
         "num_def":1,
         "new_cases":0,
@@ -3312,7 +192,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Gipuzkoa",
         "num_def":13,
         "new_cases":616,
@@ -3322,7 +202,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Girona",
         "num_def":2,
         "new_cases":0,
@@ -3332,7 +212,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Granada",
         "num_def":8,
         "new_cases":0,
@@ -3342,7 +222,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Guadalajara",
         "num_def":1,
         "new_cases":0,
@@ -3352,7 +232,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Huelva",
         "num_def":2,
         "new_cases":0,
@@ -3362,7 +242,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Huesca",
         "num_def":0,
         "new_cases":116,
@@ -3372,7 +252,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Ja\u00e9n",
         "num_def":1,
         "new_cases":0,
@@ -3382,7 +262,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Le\u00f3n",
         "num_def":1,
         "new_cases":249,
@@ -3392,7 +272,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Lleida",
         "num_def":0,
         "new_cases":0,
@@ -3402,7 +282,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Lugo",
         "num_def":0,
         "new_cases":0,
@@ -3412,7 +292,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Madrid",
         "num_def":37,
         "new_cases":0,
@@ -3422,7 +302,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Melilla",
         "num_def":0,
         "new_cases":0,
@@ -3432,7 +312,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Murcia",
         "num_def":1,
         "new_cases":286,
@@ -3442,7 +322,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"M\u00e1laga",
         "num_def":3,
         "new_cases":0,
@@ -3452,7 +332,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Navarra",
         "num_def":1,
         "new_cases":0,
@@ -3462,7 +342,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Ourense",
         "num_def":0,
         "new_cases":0,
@@ -3472,7 +352,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Palencia",
         "num_def":1,
         "new_cases":92,
@@ -3482,7 +362,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Palmas, Las",
         "num_def":3,
         "new_cases":222,
@@ -3492,7 +372,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Pontevedra",
         "num_def":1,
         "new_cases":0,
@@ -3502,7 +382,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Rioja, La",
         "num_def":1,
         "new_cases":0,
@@ -3512,7 +392,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Salamanca",
         "num_def":2,
         "new_cases":91,
@@ -3522,7 +402,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Santa Cruz de Tenerife",
         "num_def":1,
         "new_cases":261,
@@ -3532,7 +412,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Segovia",
         "num_def":1,
         "new_cases":73,
@@ -3542,7 +422,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Sevilla",
         "num_def":7,
         "new_cases":0,
@@ -3552,7 +432,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Soria",
         "num_def":1,
         "new_cases":35,
@@ -3562,7 +442,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Tarragona",
         "num_def":3,
         "new_cases":0,
@@ -3572,7 +452,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Teruel",
         "num_def":0,
         "new_cases":27,
@@ -3582,7 +462,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Toledo",
         "num_def":3,
         "new_cases":0,
@@ -3592,7 +472,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Valencia\/Val\u00e8ncia",
         "num_def":1,
         "new_cases":291,
@@ -3602,7 +482,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Valladolid",
         "num_def":3,
         "new_cases":215,
@@ -3612,7 +492,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Zamora",
         "num_def":1,
         "new_cases":59,
@@ -3622,7 +502,7 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"Zaragoza",
         "num_def":7,
         "new_cases":696,
@@ -3632,11 +512,3131 @@
     {
         "carga_id":"202105",
         "mes":"Mayo 2021",
-        "dia_semana":"viernes",
+        "dia_semana":"Friday",
         "province":"\u00c1vila",
         "num_def":0,
         "new_cases":59,
         "num_hosp":4,
         "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Albacete",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Alicante\/Alacant",
+        "num_def":1,
+        "new_cases":330,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Almer\u00eda",
+        "num_def":11,
+        "new_cases":0,
+        "num_hosp":21,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":2,
+        "new_cases":147,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Asturias",
+        "num_def":4,
+        "new_cases":284,
+        "num_hosp":34,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Badajoz",
+        "num_def":0,
+        "new_cases":244,
+        "num_hosp":11,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Balears, Illes",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":17,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Barcelona",
+        "num_def":12,
+        "new_cases":0,
+        "num_hosp":132,
+        "num_uci":14
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Bizkaia",
+        "num_def":14,
+        "new_cases":1091,
+        "num_hosp":42,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Burgos",
+        "num_def":2,
+        "new_cases":142,
+        "num_hosp":25,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Cantabria",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":34,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":0,
+        "new_cases":96,
+        "num_hosp":11,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Ceuta",
+        "num_def":3,
+        "new_cases":8,
+        "num_hosp":3,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Ciudad Real",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":11,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Coru\u00f1a, A",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":29,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Cuenca",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":8,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"C\u00e1ceres",
+        "num_def":1,
+        "new_cases":87,
+        "num_hosp":7,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"C\u00e1diz",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":25,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"C\u00f3rdoba",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":30,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Gipuzkoa",
+        "num_def":7,
+        "new_cases":822,
+        "num_hosp":2,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Girona",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Granada",
+        "num_def":11,
+        "new_cases":0,
+        "num_hosp":87,
+        "num_uci":12
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Guadalajara",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":2,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Huelva",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":36,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Huesca",
+        "num_def":2,
+        "new_cases":117,
+        "num_hosp":4,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Ja\u00e9n",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":39,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Le\u00f3n",
+        "num_def":2,
+        "new_cases":80,
+        "num_hosp":18,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Lleida",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Lugo",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Madrid",
+        "num_def":47,
+        "new_cases":0,
+        "num_hosp":461,
+        "num_uci":48
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Melilla",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Murcia",
+        "num_def":1,
+        "new_cases":434,
+        "num_hosp":30,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"M\u00e1laga",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":49,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Navarra",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":21,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Ourense",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":10,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Palencia",
+        "num_def":1,
+        "new_cases":65,
+        "num_hosp":12,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Palmas, Las",
+        "num_def":1,
+        "new_cases":224,
+        "num_hosp":12,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Pontevedra",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":33,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Rioja, La",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":20,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Salamanca",
+        "num_def":0,
+        "new_cases":45,
+        "num_hosp":14,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":1,
+        "new_cases":309,
+        "num_hosp":21,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Segovia",
+        "num_def":0,
+        "new_cases":47,
+        "num_hosp":10,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Sevilla",
+        "num_def":11,
+        "new_cases":0,
+        "num_hosp":107,
+        "num_uci":10
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Soria",
+        "num_def":0,
+        "new_cases":26,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Tarragona",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":39,
+        "num_hosp":2,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Toledo",
+        "num_def":10,
+        "new_cases":0,
+        "num_hosp":32,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":1,
+        "new_cases":380,
+        "num_hosp":19,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Valladolid",
+        "num_def":4,
+        "new_cases":118,
+        "num_hosp":29,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Zamora",
+        "num_def":4,
+        "new_cases":20,
+        "num_hosp":8,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"Zaragoza",
+        "num_def":2,
+        "new_cases":569,
+        "num_hosp":91,
+        "num_uci":12
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Monday",
+        "province":"\u00c1vila",
+        "num_def":1,
+        "new_cases":44,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Albacete",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Alicante\/Alacant",
+        "num_def":0,
+        "new_cases":162,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Almer\u00eda",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":2,
+        "new_cases":203,
+        "num_hosp":6,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Asturias",
+        "num_def":4,
+        "new_cases":292,
+        "num_hosp":27,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Badajoz",
+        "num_def":2,
+        "new_cases":152,
+        "num_hosp":15,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Balears, Illes",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":13,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Barcelona",
+        "num_def":10,
+        "new_cases":0,
+        "num_hosp":91,
+        "num_uci":16
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Bizkaia",
+        "num_def":17,
+        "new_cases":1024,
+        "num_hosp":48,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Burgos",
+        "num_def":1,
+        "new_cases":316,
+        "num_hosp":20,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Cantabria",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":31,
+        "num_uci":11
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":3,
+        "new_cases":73,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Ceuta",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Ciudad Real",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":9,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Coru\u00f1a, A",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Cuenca",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"C\u00e1ceres",
+        "num_def":0,
+        "new_cases":94,
+        "num_hosp":3,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"C\u00e1diz",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":30,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"C\u00f3rdoba",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":24,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Gipuzkoa",
+        "num_def":7,
+        "new_cases":627,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Girona",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Granada",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":79,
+        "num_uci":13
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Guadalajara",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Huelva",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":20,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Huesca",
+        "num_def":2,
+        "new_cases":90,
+        "num_hosp":9,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Ja\u00e9n",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":25,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Le\u00f3n",
+        "num_def":1,
+        "new_cases":250,
+        "num_hosp":11,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Lleida",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":3,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Lugo",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Madrid",
+        "num_def":32,
+        "new_cases":0,
+        "num_hosp":354,
+        "num_uci":37
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Melilla",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Murcia",
+        "num_def":1,
+        "new_cases":217,
+        "num_hosp":23,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"M\u00e1laga",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":47,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Navarra",
+        "num_def":8,
+        "new_cases":0,
+        "num_hosp":15,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Ourense",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Palencia",
+        "num_def":1,
+        "new_cases":120,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Palmas, Las",
+        "num_def":0,
+        "new_cases":202,
+        "num_hosp":26,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Pontevedra",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":20,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Rioja, La",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":16,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Salamanca",
+        "num_def":1,
+        "new_cases":152,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":1,
+        "new_cases":287,
+        "num_hosp":24,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Segovia",
+        "num_def":1,
+        "new_cases":104,
+        "num_hosp":6,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Sevilla",
+        "num_def":9,
+        "new_cases":0,
+        "num_hosp":92,
+        "num_uci":12
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Soria",
+        "num_def":2,
+        "new_cases":33,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Tarragona",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":8,
+        "num_hosp":2,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Toledo",
+        "num_def":7,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":1,
+        "new_cases":198,
+        "num_hosp":20,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Valladolid",
+        "num_def":0,
+        "new_cases":352,
+        "num_hosp":23,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Zamora",
+        "num_def":1,
+        "new_cases":95,
+        "num_hosp":7,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"Zaragoza",
+        "num_def":12,
+        "new_cases":656,
+        "num_hosp":54,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Saturday",
+        "province":"\u00c1vila",
+        "num_def":0,
+        "new_cases":62,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Albacete",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":10,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Alicante\/Alacant",
+        "num_def":0,
+        "new_cases":70,
+        "num_hosp":5,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Almer\u00eda",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":21,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":0,
+        "new_cases":154,
+        "num_hosp":2,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Asturias",
+        "num_def":3,
+        "new_cases":174,
+        "num_hosp":23,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Badajoz",
+        "num_def":1,
+        "new_cases":102,
+        "num_hosp":11,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Balears, Illes",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Barcelona",
+        "num_def":9,
+        "new_cases":0,
+        "num_hosp":102,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Bizkaia",
+        "num_def":8,
+        "new_cases":848,
+        "num_hosp":24,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Burgos",
+        "num_def":4,
+        "new_cases":180,
+        "num_hosp":14,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Cantabria",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":20,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":1,
+        "new_cases":43,
+        "num_hosp":7,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Ceuta",
+        "num_def":0,
+        "new_cases":3,
+        "num_hosp":1,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Ciudad Real",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":13,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Coru\u00f1a, A",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Cuenca",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"C\u00e1ceres",
+        "num_def":1,
+        "new_cases":63,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"C\u00e1diz",
+        "num_def":6,
+        "new_cases":0,
+        "num_hosp":18,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"C\u00f3rdoba",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":36,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Gipuzkoa",
+        "num_def":2,
+        "new_cases":612,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Girona",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Granada",
+        "num_def":8,
+        "new_cases":0,
+        "num_hosp":69,
+        "num_uci":11
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Guadalajara",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Huelva",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Huesca",
+        "num_def":0,
+        "new_cases":39,
+        "num_hosp":10,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Ja\u00e9n",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":32,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Le\u00f3n",
+        "num_def":1,
+        "new_cases":106,
+        "num_hosp":19,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Lleida",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Lugo",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Madrid",
+        "num_def":41,
+        "new_cases":0,
+        "num_hosp":365,
+        "num_uci":40
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Melilla",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":8,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Murcia",
+        "num_def":4,
+        "new_cases":81,
+        "num_hosp":21,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"M\u00e1laga",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":38,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Navarra",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":21,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Ourense",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":10,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Palencia",
+        "num_def":3,
+        "new_cases":55,
+        "num_hosp":7,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Palmas, Las",
+        "num_def":2,
+        "new_cases":223,
+        "num_hosp":11,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Pontevedra",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":17,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Rioja, La",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":17,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Salamanca",
+        "num_def":0,
+        "new_cases":75,
+        "num_hosp":7,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":4,
+        "new_cases":293,
+        "num_hosp":17,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Segovia",
+        "num_def":1,
+        "new_cases":60,
+        "num_hosp":8,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Sevilla",
+        "num_def":12,
+        "new_cases":0,
+        "num_hosp":76,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Soria",
+        "num_def":1,
+        "new_cases":24,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Tarragona",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":12,
+        "num_hosp":3,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Toledo",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":28,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":1,
+        "new_cases":120,
+        "num_hosp":11,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Valladolid",
+        "num_def":4,
+        "new_cases":162,
+        "num_hosp":23,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Zamora",
+        "num_def":0,
+        "new_cases":25,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"Zaragoza",
+        "num_def":8,
+        "new_cases":367,
+        "num_hosp":57,
+        "num_uci":9
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Sunday",
+        "province":"\u00c1vila",
+        "num_def":1,
+        "new_cases":47,
+        "num_hosp":6,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Albacete",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Alicante\/Alacant",
+        "num_def":0,
+        "new_cases":217,
+        "num_hosp":10,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Almer\u00eda",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":14,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":3,
+        "new_cases":174,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Asturias",
+        "num_def":1,
+        "new_cases":238,
+        "num_hosp":30,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Badajoz",
+        "num_def":0,
+        "new_cases":199,
+        "num_hosp":14,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Balears, Illes",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Barcelona",
+        "num_def":8,
+        "new_cases":0,
+        "num_hosp":83,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Bizkaia",
+        "num_def":11,
+        "new_cases":970,
+        "num_hosp":31,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Burgos",
+        "num_def":2,
+        "new_cases":266,
+        "num_hosp":15,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Cantabria",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":24,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":0,
+        "new_cases":111,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Ceuta",
+        "num_def":0,
+        "new_cases":4,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Ciudad Real",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Coru\u00f1a, A",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Cuenca",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"C\u00e1ceres",
+        "num_def":0,
+        "new_cases":67,
+        "num_hosp":5,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"C\u00e1diz",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"C\u00f3rdoba",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":14,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Gipuzkoa",
+        "num_def":10,
+        "new_cases":604,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Girona",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Granada",
+        "num_def":7,
+        "new_cases":0,
+        "num_hosp":63,
+        "num_uci":12
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Guadalajara",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Huelva",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Huesca",
+        "num_def":1,
+        "new_cases":124,
+        "num_hosp":7,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Ja\u00e9n",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":44,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Le\u00f3n",
+        "num_def":0,
+        "new_cases":183,
+        "num_hosp":16,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Lleida",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Lugo",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Madrid",
+        "num_def":32,
+        "new_cases":0,
+        "num_hosp":370,
+        "num_uci":34
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Melilla",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Murcia",
+        "num_def":0,
+        "new_cases":353,
+        "num_hosp":27,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"M\u00e1laga",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":34,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Navarra",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":29,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Ourense",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Palencia",
+        "num_def":1,
+        "new_cases":75,
+        "num_hosp":13,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Palmas, Las",
+        "num_def":3,
+        "new_cases":226,
+        "num_hosp":16,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Pontevedra",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":21,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Rioja, La",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":20,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Salamanca",
+        "num_def":0,
+        "new_cases":97,
+        "num_hosp":9,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":1,
+        "new_cases":289,
+        "num_hosp":14,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Segovia",
+        "num_def":0,
+        "new_cases":76,
+        "num_hosp":8,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Sevilla",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":95,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Soria",
+        "num_def":0,
+        "new_cases":31,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Tarragona",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":29,
+        "num_hosp":3,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Toledo",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":24,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":3,
+        "new_cases":353,
+        "num_hosp":21,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Valladolid",
+        "num_def":4,
+        "new_cases":209,
+        "num_hosp":12,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Zamora",
+        "num_def":1,
+        "new_cases":48,
+        "num_hosp":4,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"Zaragoza",
+        "num_def":9,
+        "new_cases":722,
+        "num_hosp":69,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Thursday",
+        "province":"\u00c1vila",
+        "num_def":0,
+        "new_cases":40,
+        "num_hosp":1,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Albacete",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":8,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Alicante\/Alacant",
+        "num_def":0,
+        "new_cases":136,
+        "num_hosp":10,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Almer\u00eda",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":29,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":2,
+        "new_cases":150,
+        "num_hosp":0,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Asturias",
+        "num_def":0,
+        "new_cases":208,
+        "num_hosp":23,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Badajoz",
+        "num_def":2,
+        "new_cases":203,
+        "num_hosp":8,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Balears, Illes",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Barcelona",
+        "num_def":19,
+        "new_cases":0,
+        "num_hosp":96,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Bizkaia",
+        "num_def":14,
+        "new_cases":1113,
+        "num_hosp":49,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Burgos",
+        "num_def":2,
+        "new_cases":268,
+        "num_hosp":20,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Cantabria",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":27,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":0,
+        "new_cases":104,
+        "num_hosp":9,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Ceuta",
+        "num_def":0,
+        "new_cases":6,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Ciudad Real",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":13,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Coru\u00f1a, A",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Cuenca",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"C\u00e1ceres",
+        "num_def":2,
+        "new_cases":114,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"C\u00e1diz",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":28,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"C\u00f3rdoba",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":25,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Gipuzkoa",
+        "num_def":5,
+        "new_cases":619,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Girona",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Granada",
+        "num_def":7,
+        "new_cases":0,
+        "num_hosp":75,
+        "num_uci":11
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Guadalajara",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Huelva",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Huesca",
+        "num_def":0,
+        "new_cases":135,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Ja\u00e9n",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":34,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Le\u00f3n",
+        "num_def":0,
+        "new_cases":211,
+        "num_hosp":12,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Lleida",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":1,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Lugo",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Madrid",
+        "num_def":40,
+        "new_cases":0,
+        "num_hosp":454,
+        "num_uci":43
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Melilla",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":6,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Murcia",
+        "num_def":3,
+        "new_cases":336,
+        "num_hosp":26,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"M\u00e1laga",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":40,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Navarra",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":24,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Ourense",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Palencia",
+        "num_def":1,
+        "new_cases":56,
+        "num_hosp":9,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Palmas, Las",
+        "num_def":2,
+        "new_cases":279,
+        "num_hosp":15,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Pontevedra",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":33,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Rioja, La",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Salamanca",
+        "num_def":1,
+        "new_cases":106,
+        "num_hosp":13,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":4,
+        "new_cases":256,
+        "num_hosp":23,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Segovia",
+        "num_def":0,
+        "new_cases":90,
+        "num_hosp":8,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Sevilla",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":82,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Soria",
+        "num_def":2,
+        "new_cases":28,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Tarragona",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":8,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":34,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Toledo",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":4,
+        "new_cases":242,
+        "num_hosp":23,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Valladolid",
+        "num_def":2,
+        "new_cases":217,
+        "num_hosp":19,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Zamora",
+        "num_def":1,
+        "new_cases":48,
+        "num_hosp":7,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"Zaragoza",
+        "num_def":9,
+        "new_cases":858,
+        "num_hosp":66,
+        "num_uci":11
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Tuesday",
+        "province":"\u00c1vila",
+        "num_def":0,
+        "new_cases":61,
+        "num_hosp":3,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Albacete",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":9,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Alicante\/Alacant",
+        "num_def":2,
+        "new_cases":184,
+        "num_hosp":6,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Almer\u00eda",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":15,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Araba\/\u00c1lava",
+        "num_def":4,
+        "new_cases":159,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Asturias",
+        "num_def":4,
+        "new_cases":222,
+        "num_hosp":27,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Badajoz",
+        "num_def":0,
+        "new_cases":189,
+        "num_hosp":7,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Balears, Illes",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":5,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Barcelona",
+        "num_def":13,
+        "new_cases":0,
+        "num_hosp":90,
+        "num_uci":11
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Bizkaia",
+        "num_def":13,
+        "new_cases":1056,
+        "num_hosp":32,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Burgos",
+        "num_def":2,
+        "new_cases":245,
+        "num_hosp":27,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Cantabria",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":27,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Castell\u00f3n\/Castell\u00f3",
+        "num_def":1,
+        "new_cases":99,
+        "num_hosp":6,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Ceuta",
+        "num_def":2,
+        "new_cases":6,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Ciudad Real",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":7,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Coru\u00f1a, A",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Cuenca",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":2,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"C\u00e1ceres",
+        "num_def":2,
+        "new_cases":60,
+        "num_hosp":1,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"C\u00e1diz",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"C\u00f3rdoba",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":23,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Gipuzkoa",
+        "num_def":5,
+        "new_cases":607,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Girona",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Granada",
+        "num_def":14,
+        "new_cases":0,
+        "num_hosp":60,
+        "num_uci":15
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Guadalajara",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Huelva",
+        "num_def":4,
+        "new_cases":0,
+        "num_hosp":28,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Huesca",
+        "num_def":0,
+        "new_cases":105,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Ja\u00e9n",
+        "num_def":5,
+        "new_cases":0,
+        "num_hosp":47,
+        "num_uci":6
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Le\u00f3n",
+        "num_def":1,
+        "new_cases":228,
+        "num_hosp":16,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Lleida",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Lugo",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Madrid",
+        "num_def":30,
+        "new_cases":0,
+        "num_hosp":383,
+        "num_uci":47
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Melilla",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":8,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Murcia",
+        "num_def":0,
+        "new_cases":318,
+        "num_hosp":33,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"M\u00e1laga",
+        "num_def":3,
+        "new_cases":0,
+        "num_hosp":45,
+        "num_uci":7
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Navarra",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":13,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Ourense",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":3,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Palencia",
+        "num_def":2,
+        "new_cases":74,
+        "num_hosp":12,
+        "num_uci":2
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Palmas, Las",
+        "num_def":3,
+        "new_cases":246,
+        "num_hosp":18,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Pontevedra",
+        "num_def":0,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":3
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Rioja, La",
+        "num_def":1,
+        "new_cases":0,
+        "num_hosp":15,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Salamanca",
+        "num_def":0,
+        "new_cases":95,
+        "num_hosp":8,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Santa Cruz de Tenerife",
+        "num_def":3,
+        "new_cases":389,
+        "num_hosp":16,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Segovia",
+        "num_def":0,
+        "new_cases":72,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Sevilla",
+        "num_def":10,
+        "new_cases":0,
+        "num_hosp":116,
+        "num_uci":18
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Soria",
+        "num_def":0,
+        "new_cases":24,
+        "num_hosp":0,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Tarragona",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Teruel",
+        "num_def":0,
+        "new_cases":37,
+        "num_hosp":5,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Toledo",
+        "num_def":2,
+        "new_cases":0,
+        "num_hosp":22,
+        "num_uci":5
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Valencia\/Val\u00e8ncia",
+        "num_def":2,
+        "new_cases":329,
+        "num_hosp":23,
+        "num_uci":1
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Valladolid",
+        "num_def":2,
+        "new_cases":240,
+        "num_hosp":28,
+        "num_uci":4
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Zamora",
+        "num_def":0,
+        "new_cases":57,
+        "num_hosp":4,
+        "num_uci":0
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"Zaragoza",
+        "num_def":14,
+        "new_cases":816,
+        "num_hosp":63,
+        "num_uci":8
+    },
+    {
+        "carga_id":"202105",
+        "mes":"Mayo 2021",
+        "dia_semana":"Wednesday",
+        "province":"\u00c1vila",
+        "num_def":2,
+        "new_cases":64,
+        "num_hosp":9,
+        "num_uci":1
     }
 ]
