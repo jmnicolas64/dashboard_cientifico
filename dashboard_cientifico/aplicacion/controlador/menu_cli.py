@@ -94,20 +94,20 @@ def controlador_cli():
             # EJECUCIÓN DEL GRÁFICO
             # --------------------------------------------------------
 
-        if opcion == '1':
-            print("Preparando datos y mostrando Gráfico Acumulado Diario...")
- 
-            df_acumulado = obtener_acumulados_por_dia_semana(df_completo, metrica="num_def", cargas_a_filtrar=['202105'])
+            if opcion == '1':
+                print("Preparando datos y mostrando Gráfico Acumulado Diario...")
+    
+                df_acumulado = obtener_acumulados_por_dia_semana(df_completo, metrica="num_def", cargas_a_filtrar=['202105'])
 
-            grafico_acumulados_dia_cli(titulo_metrica, df_acumulado, "num_def")
-            
-        elif opcion == '2':
-            print("Preparando datos y mostrando Gráfico Tarta por Provincia...")
+                grafico_acumulados_dia_cli(titulo_metrica, df_acumulado, "num_def")
+                
+            elif opcion == '2':
+                print("Preparando datos y mostrando Gráfico Tarta por Provincia...")
 
-            df_provincia = obtener_totales_por_provincia(df_completo, metrica="new_cases", cargas_a_filtrar=['202105'])
-            
-            grafico_queso_provincia_cli(titulo_metrica, df_provincia, "new_cases") 
-            
+                df_provincia = obtener_totales_por_provincia(df_completo, metrica="new_cases", cargas_a_filtrar=['202105'])
+                
+                grafico_queso_provincia_cli(titulo_metrica, df_provincia, "new_cases") 
+                
         elif opcion == '0':
             print("Saliendo de la aplicación. ¡Hasta pronto!")
             break
