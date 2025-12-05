@@ -26,7 +26,9 @@ def obtener_acumulados_por_dia_semana(df: pd.DataFrame, metrica: str, cargas_a_f
     if 'date' not in df_copia.columns:
         raise ValueError("Columna 'date' no encontrada. Asegúrate de la pre-carga.")
 
-    df_copia['dia_semana'] = df_copia['date'].dt.day_name(locale='es_ES.utf8') # type: ignore
+    #df_copia['dia_semana'] = df_copia['date'].dt.day_name(locale='es_ES.utf8') # type: ignore
+    dia_num = df_copia['date'].dt.dayofweek # type: ignore
+    df_copia['dia_semana'] = dia_num.map(lambda x: ORDEN_DIAS[x]) # type: ignore
 
     df_dia = (
         df_copia[df_copia['carga_id'].isin(cargas_a_filtrar)]

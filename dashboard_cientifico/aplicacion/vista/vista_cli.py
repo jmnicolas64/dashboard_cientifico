@@ -25,7 +25,7 @@ def grafico_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
         print(f"AVISO: No hay datos para mostrar el gráfico de {titulo}.")
         return
 
-    plt.figure(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(12, 7))
     
     sns.barplot(
         x='dia_semana', 
@@ -34,12 +34,27 @@ def grafico_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
         palette='viridis',
         hue='dia_semana',
         legend=False,
-        hue_order=df_dia['dia_semana'].tolist()
+        hue_order=df_dia['dia_semana'].tolist(),
+        ax=ax
     )
-    
-    plt.title(f"Total Acumulado de {titulo} por Día de la Semana", fontsize=16)
-    plt.xlabel('Día de la Semana', fontsize=12)
-    plt.ylabel(f'Total Acumulado ({titulo})', fontsize=12)
+
+    for bar in ax.patches:
+        valor = bar.get_height() # type: ignore
+        x_pos = bar.get_x() + bar.get_width() / 2 # type: ignore
+        offset = valor * 0.01 
+        
+        ax.text(
+            x_pos,
+            valor + offset,
+            f"{int(valor):,}",
+            ha='center',
+            va='bottom',
+            fontsize=10
+        )
+
+    ax.set_title(f"Total Acumulado de {titulo} por Día de la Semana", fontsize=16)
+    ax.set_xlabel('Día de la Semana', fontsize=12)
+    ax.set_ylabel(f'Total Acumulado ({titulo})', fontsize=12)
     plt.xticks(rotation=45, ha='right')
     
     plt.tight_layout()
