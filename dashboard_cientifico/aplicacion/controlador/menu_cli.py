@@ -11,8 +11,17 @@ from dashboard_cientifico.aplicacion.modelo.funciones_graficos import (obtener_a
 from dashboard_cientifico.aplicacion.vista.vista_cli import (grafico_acumulados_dia_cli,
                                                              grafico_queso_provincia_cli)
 
-from dashboard_cientifico.aplicacion.config.settings import METRICAS_ANALISIS
+from dashboard_cientifico.aplicacion.vista.vista_menu import (TEXTO_OPCIONES,
+                                                              mostrar_menu,
+                                                              mostrar_despedida,
+                                                              solicitar_opcion)
 
+from dashboard_cientifico.aplicacion.config.settings import METRICAS_ANALISIS
+from dashboard_cientifico.aplicacion.modelo.utiles import (limpiar_pantalla,
+                                                           cabecera,
+                                                           pie)
+
+CARGA_ID_UNICA='202105'
 plt.ion()
 
 
@@ -24,45 +33,29 @@ def obtener_metricas_para_menu() -> Dict[str, str]:
     return metricas_menu
 
 
-def seleccionar_metrica() -> str:
+def seleccionar_metrica(opcion: str, titulo: str) -> str:
     while True:
-        print("\n--- Selección de Métrica ---")
+        limpiar_pantalla()
+        cabecera(opcion,titulo)
+
+        print("--- Selección de Métrica ---\n")
         
         metricas_menu_keys = obtener_metricas_para_menu()
         
         for num, col_key in metricas_menu_keys.items():
-            nombre_descriptivo = METRICAS_ANALISIS.get(col_key, col_key) # <-- Usa METRICAS_ANALISIS
+            nombre_descriptivo = METRICAS_ANALISIS.get(col_key, col_key)
             print(f"{num}. {nombre_descriptivo}")
 
-        opcion = input("Seleccione el número de la métrica: ") # <-- ¡AQUÍ ESTÁ!
-        
-        # 3. Validar la opción
+        print("0. Volver")
+        opcion = input("\nSeleccione el número de la métrica: ")
+
         if opcion in metricas_menu_keys:
-            return metricas_menu_keys[opcion] # Devuelve el nombre de la columna ('num_def', etc.)
-        else:
-            print("Opción no válida. Intente de nuevo.")
+            return metricas_menu_keys[opcion]
+        elif opcion=='0':
+            return '0'
 
             
-def mostrar_menu():
-    """Muestra el menú de opciones al usuario y pide una entrada."""
-    print("\n" + "="*40)
-    print("      Dashboard Científico (Versión CLI)")
-    print("="*40)
-    print("1. Mostrar Gráfico Acumulado Diario (Matplotlib)")
-    print("2. Mostrar Gráfico Tarta por Provincia (Matplotlib)")
-    print("0. Salir")
-    print("="*40)
-    
-    opcion = input("Seleccione una opción: ")
-    return opcion
-
-
-def controlador_cli():
-    """
-    Función principal del controlador CLI que gestiona el flujo del menú.
-    """
-    print("Iniciando aplicación CLI...")
-    
+def controlador_cli():    
     #try:
         #reset_datos()
         #print("Base de datos cargada e inicializada correctamente.")
@@ -77,44 +70,39 @@ def controlador_cli():
         # ...
 
     while True:
-        opcion = mostrar_menu()
-        if opcion == '1' or opcion == '2':
-            # --------------------------------------------------------
-            # AÑADIDO: LÓGICA DE SELECCIÓN DE PARÁMETROS
-            # --------------------------------------------------------
-            
-            # 1. Seleccionar la métrica a analizar
-            metrica_columna = seleccionar_metrica() # <-- ¡AQUÍ ESTÁ LA LLAMADA!
-            
-            # 3. Obtener el título descriptivo
-            # Buscamos el valor descriptivo (ej: 'Defunciones') a partir de la columna ('num_def')
-            titulo_metrica = METRICAS_ANALISIS.get(metrica_columna, metrica_columna)
-            
-            # --------------------------------------------------------
-            # EJECUCIÓN DEL GRÁFICO
-            # --------------------------------------------------------
+        limpiar_pantalla()
+        mostrar_menu()
+        opcion_principal = solicitar_opcion()
 
-            if opcion == '1':
-                print("Preparando datos y mostrando Gráfico Acumulado Diario...")
-    
-                df_acumulado = obtener_acumulados_por_dia_semana(df_completo, metrica="num_def", cargas_a_filtrar=['202105'])
+        if opcion_principal == '1' or opcion_principal == '2':
+            while True:
+                metrica_columna = seleccionar_metrica(opcion_principal,TEXTO_OPCIONES[int(opcion_principal)-1])
+            
+                if metrica_columna=='0':
+                    break
+            
+                titulo_metrica = METRICAS_ANALISIS.get(metrica_columna, metrica_columna)
 
-                grafico_acumulados_dia_cli(titulo_metrica, df_acumulado, "num_def")
-                
-            elif opcion == '2':
-                print("Preparando datos y mostrando Gráfico Tarta por Provincia...")
+                if opcion_principal == '1':      
+                    df_acumulado = obtener_acumulados_por_dia_semana(df_completo,
+                                                                    metrica=metrica_columna,
+                                                                    cargas_a_filtrar=[CARGA_ID_UNICA])
 
-                df_provincia = obtener_totales_por_provincia(df_completo, metrica="new_cases", cargas_a_filtrar=['202105'])
-                
-                grafico_queso_provincia_cli(titulo_metrica, df_provincia, "new_cases") 
-                
-        elif opcion == '0':
-            print("Saliendo de la aplicación. ¡Hasta pronto!")
+                    grafico_acumulados_dia_cli(titulo_metrica, df_acumulado, metrica=metrica_columna)
+
+                elif opcion_principal == '2':
+                    df_provincia = obtener_totales_por_provincia(df_completo,
+                                                                metrica=metrica_columna,
+                                                                cargas_a_filtrar=[CARGA_ID_UNICA])
+                    
+                    grafico_queso_provincia_cli(titulo_metrica, df_provincia, metrica=metrica_columna) 
+                    pie()
+
+        elif opcion_principal == '0':
+            limpiar_pantalla()
+            mostrar_despedida()
             break
-            
-        else:
-            print("Opción no válida. Por favor, introduzca un número del menú.")
+
 
 if __name__ == '__main__':
-
     controlador_cli()
