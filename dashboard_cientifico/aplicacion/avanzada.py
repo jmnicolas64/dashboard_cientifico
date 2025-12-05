@@ -1,5 +1,5 @@
 """
-Ejecución: python -m dashboard_cientifico.aplicacion.main
+Ejecución: python -m dashboard_cientifico.aplicacion.avanzada
 
 """
 from pathlib import Path
