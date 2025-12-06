@@ -181,13 +181,6 @@ def grafica_queso_provincia(titulo: str, df_provincia_total: pd.DataFrame, metri
 
 
 def grafico_evolucion_mensual(df_evolucion: pd.DataFrame, metrica: str, titulo: str):
-    MAPA_COLORES_METRICAS = {
-        'Defunciones': 'darkblue',
-        'Casos': 'red',
-        'Hospitalizados': 'orange',
-        'Ingresos UCI': 'purple'
-    }
-
     titulo_grafico=f"Evolución Mensual de {titulo}"
     fig = px.line(
         df_evolucion,

@@ -11,13 +11,34 @@ from dashboard_cientifico.aplicacion.config.settings import (RUTA_ARCHIVOS,
 
 plt.style.use('seaborn-v0_8-whitegrid')
 
+
+def mostrar_tabla_resumen_cli(df: pd.DataFrame, titulo: str):
+    if df.empty:
+        print(f"AVISO: La tabla de resumen '{titulo}' está vacía.")
+        return
+
+    print("\n" + "-"*50)
+    print(f"\nRESUMEN DE DATOS PARA EL GRÁFICO DE {titulo.upper()}\n")
+
+    df_mostrar = df.copy()
+
+    df_mostrar = df_mostrar.rename(columns={
+        'province': 'PROVINCIA',
+        'porcentaje': 'PORCENTAJE',
+        df_mostrar.columns[1]: 'TOTAL'
+    })
+
+    df_mostrar['TOTAL'] = df_mostrar['TOTAL'].apply(lambda x: f"{int(x):,}")
+    df_mostrar['PORCENTAJE'] = df_mostrar['PORCENTAJE'].apply(lambda x: f"{x:.2f}%")
+
+    print(df_mostrar.to_string(index=False))
+
+
 def mostrar_mensaje_resumen(titulo: str, max_min_data: Dict):
     print("\n" + "-"*50)
-    print(f"       Resultados del Análisis de {titulo}\n")
-    #print("="*50)
+    print(f"\nRESULTADOS DEL ANÁLISIS DE {titulo}\n")
     print(f"Provincia con valor MÁXIMO: {max_min_data['max_provincia']} (Total: {max_min_data['max_valor']:,})")
     print(f"Provincia con valor MÍNIMO: {max_min_data['min_provincia']} (Total: {max_min_data['min_valor']:,})")
-    #print("="*50 + "\n")
 
 
 def grafico_acumulados_dia_cli(titulo: str, df_dia: pd.DataFrame, metrica: str):
@@ -66,25 +87,33 @@ def grafico_queso_provincia_cli(titulo: str, df_provincia_total: pd.DataFrame, m
         print(f"AVISO: No hay datos para mostrar el gráfico de {titulo}.")
         return
 
-
     max_min_data = obtener_max_min_provincia(df_provincia_total, metrica)
+    mostrar_tabla_resumen_cli(df_provincia_total, titulo)
     mostrar_mensaje_resumen(titulo, max_min_data)
 
     plt.figure(figsize=(10, 10))
 
     valores = df_provincia_total[metrica]
     etiquetas = df_provincia_total['province']
-
-    plt.pie(
+  
+    wedges, texts, autotexts =plt.pie( # type: ignore
         valores, 
-        labels=etiquetas, # type: ignore
-        autopct='%1.1f%%', # Formato para mostrar el porcentaje en la tarta
+        labels=None,
+        autopct='%1.1f%%',
         startangle=90,
         wedgeprops={'edgecolor': 'black', 'linewidth': 0.7}
     )
 
+    plt.legend(
+        wedges,
+        etiquetas,
+        title="Provincias",
+        loc="center left",
+        bbox_to_anchor=(1, 0, 0.5, 1)
+    )
+
     plt.title(f"Distribución Total de {titulo} por Provincia", fontsize=16)
-    plt.axis('equal') # Asegura que el gráfico es un círculo
+    plt.axis('equal')
 
     plt.show()
 
